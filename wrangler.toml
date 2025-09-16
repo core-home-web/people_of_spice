@@ -1,13 +1,9 @@
-name = "people-of-spice"
+name = "peopleofspice"
 compatibility_date = "2025-01-21"
 
+# Worker configuration for static site serving
 [env.production]
-name = "people-of-spice"
-
-# Static site configuration
-[site]
-bucket = "./"
-entry-point = "index.html"
+name = "peopleofspice"
 
 # Custom domain configuration
 [[env.production.routes]]
@@ -17,12 +13,3 @@ custom_domain = true
 # Custom domains
 [[env.production.custom_domains]]
 domain = "peopleofspice.com"
-
-# Build configuration
-[build]
-command = ""
-cwd = ""
-
-# Pages configuration
-[pages]
-build_output_dir = "./"
