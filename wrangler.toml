@@ -1,3 +1,6 @@
-name = "peopleofspice"
-main = "src/index.js"
+name = "peopleofspice-pages"
 compatibility_date = "2025-01-21"
+
+# Pages configuration
+[pages]
+pages_build_output_dir = "./"
