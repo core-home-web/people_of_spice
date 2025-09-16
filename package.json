@@ -1,0 +1,30 @@
+{
+  "name": "people-of-spice",
+  "version": "1.0.0",
+  "description": "People of Spice website - A culinary journey through global flavors",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "wrangler pages deploy .",
+    "deploy:production": "wrangler pages deploy . --project-name=people-of-spice",
+    "dev": "wrangler pages dev .",
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [
+    "spices",
+    "cooking",
+    "recipes",
+    "culinary",
+    "food",
+    "website"
+  ],
+  "author": "Core Home Web",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/core-home-web/people_of_spice.git"
+  },
+  "homepage": "https://peopleofspice.com"
+}
