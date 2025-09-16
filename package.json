@@ -4,10 +4,10 @@
   "description": "People of Spice website - A culinary journey through global flavors",
   "main": "index.html",
   "scripts": {
-    "deploy": "wrangler deploy",
-    "deploy:production": "wrangler deploy --env production",
-    "dev": "wrangler dev",
-    "build": "echo 'No build step required for Worker'"
+    "deploy": "wrangler pages deploy . --project-name=peopleofspice-pages",
+    "deploy:production": "wrangler pages deploy . --project-name=peopleofspice-pages",
+    "dev": "wrangler pages dev . --project-name=peopleofspice-pages",
+    "build": "echo 'No build step required for static site'"
   },
   "keywords": [
     "spices",

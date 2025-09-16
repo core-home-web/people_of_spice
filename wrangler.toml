@@ -1,6 +1,5 @@
-name = "peopleofspice-pages"
-compatibility_date = "2025-01-21"
+# Cloudflare Pages configuration
+# This file is used for Pages deployment, not Workers
 
-# Pages configuration
 [pages]
 pages_build_output_dir = "./"
