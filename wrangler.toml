@@ -1,15 +1,3 @@
 name = "peopleofspice"
+main = "src/index.js"
 compatibility_date = "2025-01-21"
-
-# Worker configuration for static site serving
-[env.production]
-name = "peopleofspice"
-
-# Custom domain configuration
-[[env.production.routes]]
-pattern = "peopleofspice.com/*"
-custom_domain = true
-
-# Custom domains
-[[env.production.custom_domains]]
-domain = "peopleofspice.com"
