@@ -22,13 +22,32 @@ export default {
       // In production, you would integrate with R2 storage or another static file service
       
       if (filePath === 'index.html' || filePath === '') {
+        // Fetch the real index.html from GitHub
+        try {
+          const githubUrl = 'https://raw.githubusercontent.com/core-home-web/people_of_spice/main/index.html';
+          const response = await fetch(githubUrl);
+          if (response.ok) {
+            const html = await response.text();
+            return new Response(html, {
+              headers: {
+                'Content-Type': 'text/html; charset=utf-8',
+                'Cache-Control': 'public, max-age=3600',
+                'X-Content-Type-Options': 'nosniff'
+              }
+            });
+          }
+        } catch (error) {
+          console.log('Failed to fetch from GitHub, serving fallback');
+        }
+        
+        // Fallback to a simple page with a link to the Pages site
         return new Response(`
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>People of Spice - Culinary Journey</title>
+    <title>People of Spice - Redirecting...</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -40,7 +59,7 @@ export default {
             justify-content: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
             background: white;
             padding: 60px 40px;
@@ -50,35 +69,19 @@ export default {
         }
         .logo { font-size: 3em; margin-bottom: 20px; }
         h1 { color: #d2691e; margin-bottom: 30px; font-size: 2.5em; }
-        .subtitle { color: #666; font-size: 1.2em; margin-bottom: 40px; }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .feature {
-            padding: 20px;
-            background: #f8f9fa;
+        .redirect-link {
+            display: inline-block;
+            background: #d2691e;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
             border-radius: 10px;
-            border-left: 4px solid #d2691e;
-        }
-        .feature h3 { color: #d2691e; margin-bottom: 10px; }
-        .status {
-            background: #e8f5e8;
-            color: #2d5a2d;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
-        .deploy-info {
-            background: #f0f8ff;
-            color: #1e3a8a;
-            padding: 15px;
-            border-radius: 10px;
+            font-weight: bold;
             margin-top: 20px;
-            font-family: monospace;
-            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+        .redirect-link:hover {
+            background: #b8571a;
         }
     </style>
 </head>
@@ -86,36 +89,18 @@ export default {
     <div class="container">
         <div class="logo">🌶️</div>
         <h1>People of Spice</h1>
-        <p class="subtitle">A Culinary Journey Through Global Flavors</p>
-        
-        <div class="features">
-            <div class="feature">
-                <h3>🌍 Global Recipes</h3>
-                <p>Discover authentic recipes from around the world</p>
-            </div>
-            <div class="feature">
-                <h3>🛒 Spice Shop</h3>
-                <p>Premium spices and ingredients delivered fresh</p>
-            </div>
-            <div class="feature">
-                <h3>👨‍🍳 Chef Stories</h3>
-                <p>Meet the people behind the flavors</p>
-            </div>
-        </div>
-        
-        <div class="status">
-            ✅ <strong>Worker Deployed Successfully!</strong><br>
-            Your Cloudflare Worker is now serving this website.
-        </div>
-        
-        <div class="deploy-info">
-            <strong>Deployment Info:</strong><br>
-            • Worker: peopleofspice<br>
-            • Environment: Production<br>
-            • Status: Active<br>
-            • Next: Configure custom domain (peopleofspice.com)
-        </div>
+        <p>Your website is being served by Cloudflare Worker.</p>
+        <p>For the full website experience, visit:</p>
+        <a href="https://people-of-spice.pages.dev" class="redirect-link">
+            View Full Website →
+        </a>
     </div>
+    <script>
+        // Auto-redirect after 3 seconds
+        setTimeout(() => {
+            window.location.href = 'https://people-of-spice.pages.dev';
+        }, 3000);
+    </script>
 </body>
 </html>
         `, {
