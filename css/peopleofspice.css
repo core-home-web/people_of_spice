@@ -3557,11 +3557,24 @@ figcaption {
   font-weight: 400;
   line-height: .9;
   position: absolute;
-  inset: 0% 0% auto;
+  top: -200px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
 }
 
+.enjoy-heading:nth-child(1) { animation-delay: 0s; }
+.enjoy-heading:nth-child(2) { animation-delay: 0.5s; }
+.enjoy-heading:nth-child(3) { animation-delay: 1s; }
+.enjoy-heading:nth-child(4) { animation-delay: 1.5s; }
+.enjoy-heading:nth-child(5) { animation-delay: 2s; }
+.enjoy-heading:nth-child(6) { animation-delay: 2.5s; }
+.enjoy-heading:nth-child(7) { animation-delay: 3s; }
+
 .enjoy-heading-wrap {
-  text-align: right;
+  text-align: center;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -3569,7 +3582,9 @@ figcaption {
   height: 12.1em;
   display: block;
   position: absolute;
-  inset: 0% 0% 0;
+  top: -200px;
+  left: 0;
+  right: 0;
   overflow: hidden;
 }
 
