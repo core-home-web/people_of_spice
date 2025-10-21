@@ -11406,7 +11406,7 @@ figcaption {
   }
 
   .menu-button-2 {
-    z-index: 99;
+    z-index: 1000;
     border: 3px solid #6d715d;
     border-radius: 100%;
     padding: 12px;
