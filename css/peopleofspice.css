@@ -11845,7 +11845,7 @@ figcaption {
   .ci-main-slide-content {
     text-align: left;
     align-items: flex-start;
-    width: 85%;
+    width: 95%;
   }
 
   .main-slide-title {
@@ -13194,7 +13194,7 @@ figcaption {
 
   .ci-main-slide-content {
     align-items: center;
-    width: 100%;
+    width: 98%;
   }
 
   .main-slide-title {
@@ -13205,7 +13205,7 @@ figcaption {
   .c-main-slide-content {
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 95vw;
+    max-width: 98vw;
     display: flex;
   }
 
