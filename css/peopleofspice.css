@@ -10848,7 +10848,11 @@ figcaption {
   }
 
   h2 {
-    font-size: 55px;
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 2em;
   }
 
   .hero-wrap {
@@ -11939,11 +11943,11 @@ figcaption {
   }
 
   h2 {
-    font-size: 35px;
+    font-size: 2em;
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 2em;
   }
 
   .background-image-effect.absolute {
