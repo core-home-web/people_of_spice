@@ -10800,16 +10800,16 @@ figcaption {
   }
 
   .hero-wrap {
-    display: none;
-  }
-
-  .hero-wrap.mobile {
     display: block;
   }
 
+  .hero-wrap.mobile {
+    display: none;
+  }
+
   .wrap-hero-video.hero {
-    height: 700px;
-    position: static;
+    height: 100vh;
+    position: sticky;
   }
 
   .size-container {
@@ -10817,7 +10817,7 @@ figcaption {
   }
 
   .sticky-image-background, .sticky-image-background.absolute {
-    position: static;
+    position: sticky;
   }
 
   .background-image-effect.absolute {
