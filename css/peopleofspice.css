@@ -11468,7 +11468,10 @@ figcaption {
     border-radius: 100%;
     padding: 12px;
     position: fixed;
-    inset: auto 16px 5vh auto;
+    top: 20px;
+    right: 16px;
+    bottom: auto;
+    left: auto;
   }
 
   .navigation-container {
