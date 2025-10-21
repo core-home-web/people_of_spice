@@ -11483,9 +11483,9 @@ figcaption {
     border-radius: 100%;
     padding: 12px;
     position: fixed;
-    top: 20px;
+    top: auto;
     right: 16px;
-    bottom: auto;
+    bottom: 20px;
     left: auto;
   }
 
@@ -11925,15 +11925,15 @@ figcaption {
 
   .main-slide-title {
     letter-spacing: 5px;
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .c-main-slide-content {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding-left: 7vw;
-    padding-right: 7vw;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
