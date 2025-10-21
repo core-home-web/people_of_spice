@@ -8739,7 +8739,7 @@ figcaption {
 
 .c-main-slide-content {
   text-align: center;
-  max-width: 77vw;
+  max-width: 90vw;
 }
 
 .funtext {
@@ -13279,7 +13279,7 @@ figcaption {
   .c-main-slide-content {
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 98vw;
+    max-width: 90vw;
     display: flex;
   }
 
