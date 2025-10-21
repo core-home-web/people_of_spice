@@ -11837,7 +11837,7 @@ figcaption {
   }
 
   .c-main-slide-description {
-    width: auto;
+    width: 90%;
     margin-bottom: 10px;
     font-size: 1em;
   }
@@ -11845,7 +11845,7 @@ figcaption {
   .ci-main-slide-content {
     text-align: left;
     align-items: flex-start;
-    width: 70%;
+    width: 85%;
   }
 
   .main-slide-title {
