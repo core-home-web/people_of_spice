@@ -804,6 +804,15 @@
   .w-commerce-commercelayoutsidebar {
     flex-basis: auto;
   }
+
+  .main-slide-title {
+    letter-spacing: 5px;
+    font-size: 2em;
+  }
+
+  .hero-wrap {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -13450,6 +13459,10 @@ figcaption {
 
   #w-node-bcc96532-9276-04fe-1383-7d18c64dfe17-92f49ab6 {
     order: 9999;
+  }
+
+  .hero-wrap {
+    display: none;
   }
 }
 
