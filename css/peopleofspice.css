@@ -1786,7 +1786,7 @@ figcaption {
 }
 
 .background-move-image.second {
-  background-image: url('../images/AdobeStock_601004060.webp');
+  background-image: url('../images/Thai_Green_Curry.webp');
   bottom: auto;
   right: -6%;
 }
@@ -10865,7 +10865,7 @@ figcaption {
   }
 
   .hero-wrap {
-    display: block;
+    display: none;
   }
 
   .hero-wrap.mobile {
