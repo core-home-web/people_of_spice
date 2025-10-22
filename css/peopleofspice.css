@@ -11484,17 +11484,18 @@ figcaption {
   .menu-icon {
     height: 24px;
     margin-left: 0;
+    filter: brightness(0) saturate(100%) invert(47%) sepia(8%) saturate(778%) hue-rotate(37deg) brightness(95%) contrast(87%);
   }
 
   .menu-button-2 {
-    z-index: 1000;
+    z-index: 10000;
     border: 3px solid #6d715d;
     border-radius: 100%;
     padding: 12px;
     position: fixed;
-    top: auto;
+    top: 20px;
     right: 16px;
-    bottom: 20px;
+    bottom: auto;
     left: auto;
   }
 
