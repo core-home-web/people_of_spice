@@ -45,6 +45,8 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
+.env.local
+.env.*.local
 
 # parcel-bundler cache
 .cache
@@ -79,3 +81,10 @@ jspm_packages/
 
 # Cloudflare
 .dev.vars
+
+# Secrets and API keys - NEVER commit these!
+# Airtable tokens and other sensitive data should be set in Cloudflare Pages dashboard
+*secret*
+*key*
+*token*
+*password*
