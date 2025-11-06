@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtable Integration Test - People of Spice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #d2691e;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      background: #d2691e;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    button:hover {
+      background: #b8571a;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 5px;
+      border-left: 4px solid #d2691e;
+    }
+    .error {
+      border-left-color: #dc3545;
+      background: #fff5f5;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 12px;
+    }
+    .loading {
+      color: #666;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌶️ Airtable Integration Test</h1>
+    <p>Test your Airtable connection and see data from your tables.</p>
+
+    <div class="form-group">
+      <label for="tableName">Table Name:</label>
+      <input type="text" id="tableName" placeholder="e.g., Products, Recipes, Subscribers" value="">
+    </div>
+
+    <div class="form-group">
+      <label for="action">Action:</label>
+      <select id="action">
+        <option value="list">List Records</option>
+        <option value="get">Get Single Record</option>
+        <option value="create">Create Record</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="recordIdGroup" style="display: none;">
+      <label for="recordId">Record ID:</label>
+      <input type="text" id="recordId" placeholder="rec...">
+    </div>
+
+    <div class="form-group" id="createFieldsGroup" style="display: none;">
+      <label for="createFields">Fields (JSON):</label>
+      <textarea id="createFields" rows="4" placeholder='{"Name": "Test Product", "Price": 29.99}'></textarea>
+    </div>
+
+    <button onclick="testConnection()">Test Connection</button>
+    <button onclick="clearResults()">Clear</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="js/airtable.js"></script>
+  <script>
+    // Show/hide fields based on action
+    document.getElementById('action').addEventListener('change', function() {
+      const action = this.value;
+      document.getElementById('recordIdGroup').style.display = action === 'get' ? 'block' : 'none';
+      document.getElementById('createFieldsGroup').style.display = action === 'create' ? 'block' : 'none';
+    });
+
+    async function testConnection() {
+      const resultDiv = document.getElementById('result');
+      const tableName = document.getElementById('tableName').value.trim();
+      const action = document.getElementById('action').value;
+
+      if (!tableName) {
+        resultDiv.innerHTML = '<div class="result error">Please enter a table name</div>';
+        return;
+      }
+
+      resultDiv.innerHTML = '<div class="result loading">Loading...</div>';
+
+      try {
+        let data;
+        
+        switch(action) {
+          case 'list':
+            data = await airtable.getRecords(tableName);
+            resultDiv.innerHTML = `
+              <div class="result">
+                <h3>✅ Success! Found ${data.records.length} record(s)</h3>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+              </div>
+            `;
+            break;
+
+          case 'get':
+            const recordId = document.getElementById('recordId').value.trim();
+            if (!recordId) {
+              resultDiv.innerHTML = '<div class="result error">Please enter a record ID</div>';
+              return;
+            }
+            data = await airtable.getRecord(tableName, recordId);
+            resultDiv.innerHTML = `
+              <div class="result">
+                <h3>✅ Success! Retrieved record</h3>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+              </div>
+            `;
+            break;
+
+          case 'create':
+            const fieldsJson = document.getElementById('createFields').value.trim();
+            if (!fieldsJson) {
+              resultDiv.innerHTML = '<div class="result error">Please enter fields as JSON</div>';
+              return;
+            }
+            const fields = JSON.parse(fieldsJson);
+            data = await airtable.createRecord(tableName, fields);
+            resultDiv.innerHTML = `
+              <div class="result">
+                <h3>✅ Success! Created record(s)</h3>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+              </div>
+            `;
+            break;
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `
+          <div class="result error">
+            <h3>❌ Error</h3>
+            <p><strong>Message:</strong> ${error.message}</p>
+            <p><strong>Details:</strong></p>
+            <pre>${error.stack || error.toString()}</pre>
+            <p><strong>Troubleshooting:</strong></p>
+            <ul>
+              <li>Make sure the table name is correct (case-sensitive)</li>
+              <li>Check that AIRTABLE_TOKEN is set in Cloudflare Pages environment variables</li>
+              <li>Verify your Airtable base ID is correct</li>
+              <li>Ensure the site has been redeployed after setting environment variables</li>
+            </ul>
+          </div>
+        `;
+      }
+    }
+
+    function clearResults() {
+      document.getElementById('result').innerHTML = '';
+    }
+  </script>
+</body>
+</html>
+
