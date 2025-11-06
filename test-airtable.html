@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtable Integration Test - People of Spice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #d2691e;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #333;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #d2691e;
+      padding-bottom: 10px;
+    }
+    .test-section {
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    button {
+      background: #d2691e;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #b8571a;
+    }
+    button.secondary {
+      background: #666;
+    }
+    button.secondary:hover {
+      background: #555;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+      border-left: 4px solid #d2691e;
+      background: #f9f9f9;
+    }
+    .result.success {
+      border-left-color: #28a745;
+      background: #d4edda;
+    }
+    .result.error {
+      border-left-color: #dc3545;
+      background: #f8d7da;
+    }
+    .result.info {
+      border-left-color: #17a2b8;
+      background: #d1ecf1;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .loading {
+      color: #666;
+      font-style: italic;
+    }
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .status-indicator.success {
+      background: #28a745;
+    }
+    .status-indicator.error {
+      background: #dc3545;
+    }
+    .status-indicator.pending {
+      background: #ffc107;
+    }
+    .instructions {
+      background: #e7f3ff;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 4px solid #2196F3;
+    }
+    .instructions ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    .instructions li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌶️ Airtable Integration Test</h1>
+    <p>Test your Airtable connection and form submissions.</p>
+
+    <div class="instructions">
+      <h3>📋 Before Testing:</h3>
+      <ol>
+        <li>Make sure you've created the Airtable tables:
+          <ul>
+            <li><strong>"Contact Submissions"</strong> table</li>
+            <li><strong>"Newsletter Subscriptions"</strong> table</li>
+          </ul>
+        </li>
+        <li>Check that environment variables are set in Cloudflare Pages:
+          <ul>
+            <li><code>AIRTABLE_TOKEN</code></li>
+            <li><code>AIRTABLE_BASE_ID</code> (optional)</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Test 1: API Connection -->
+    <div class="test-section">
+      <h2>1. Test API Connection</h2>
+      <p>Test if the Airtable API endpoint is working.</p>
+      <div class="form-group">
+        <label for="testTable">Table Name:</label>
+        <input type="text" id="testTable" placeholder="e.g., Contact Submissions" value="Contact Submissions">
+      </div>
+      <button onclick="testConnection()">Test Connection</button>
+      <button onclick="listTables()" class="secondary">List All Tables</button>
+      <div id="connectionResult"></div>
+    </div>
+
+    <!-- Test 2: Contact Form -->
+    <div class="test-section">
+      <h2>2. Test Contact Form Submission</h2>
+      <p>Simulate a contact form submission.</p>
+      <div class="form-group">
+        <label for="contactName">Name:</label>
+        <input type="text" id="contactName" placeholder="John Doe" value="Test User">
+      </div>
+      <div class="form-group">
+        <label for="contactEmail">Email:</label>
+        <input type="email" id="contactEmail" placeholder="test@example.com" value="test@example.com">
+      </div>
+      <div class="form-group">
+        <label for="contactMessage">Message:</label>
+        <textarea id="contactMessage" placeholder="Your message here">This is a test message from the Airtable integration test page.</textarea>
+      </div>
+      <button onclick="testContactForm()">Submit Contact Form</button>
+      <div id="contactResult"></div>
+    </div>
+
+    <!-- Test 3: Newsletter Form -->
+    <div class="test-section">
+      <h2>3. Test Newsletter Subscription</h2>
+      <p>Simulate a recipe newsletter subscription.</p>
+      <div class="form-group">
+        <label for="newsletterEmail">Email:</label>
+        <input type="email" id="newsletterEmail" placeholder="subscriber@example.com" value="subscriber@example.com">
+      </div>
+      <div class="form-group">
+        <label for="newsletterRecipe">Recipe:</label>
+        <select id="newsletterRecipe">
+          <option value="Spicy Beef Stir Fry">Spicy Beef Stir Fry</option>
+          <option value="Grilled Chicken Kebabs">Grilled Chicken Kebabs</option>
+          <option value="Moroccan Lamb Tagine">Moroccan Lamb Tagine</option>
+          <option value="Fiesta Guacamole">Fiesta Guacamole</option>
+          <option value="Thai Green Curry">Thai Green Curry</option>
+        </select>
+      </div>
+      <button onclick="testNewsletterForm()">Subscribe to Newsletter</button>
+      <div id="newsletterResult"></div>
+    </div>
+
+    <!-- Test 4: Check Records -->
+    <div class="test-section">
+      <h2>4. View Recent Records</h2>
+      <p>Retrieve records from Airtable to verify submissions.</p>
+      <div class="form-group">
+        <label for="viewTable">Table Name:</label>
+        <select id="viewTable">
+          <option value="Contact Submissions">Contact Submissions</option>
+          <option value="Newsletter Subscriptions">Newsletter Subscriptions</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="maxRecords">Max Records:</label>
+        <input type="number" id="maxRecords" value="5" min="1" max="100">
+      </div>
+      <button onclick="viewRecords()">View Records</button>
+      <div id="recordsResult"></div>
+    </div>
+  </div>
+
+  <script src="js/airtable.js"></script>
+  <script>
+    function showResult(elementId, message, type = 'info') {
+      const resultDiv = document.getElementById(elementId);
+      const typeClass = type === 'success' ? 'success' : type === 'error' ? 'error' : 'info';
+      resultDiv.innerHTML = `<div class="result ${typeClass}">${message}</div>`;
+    }
+
+    async function testConnection() {
+      const tableName = document.getElementById('testTable').value.trim();
+      if (!tableName) {
+        showResult('connectionResult', 'Please enter a table name', 'error');
+        return;
+      }
+
+      showResult('connectionResult', '<span class="status-indicator pending"></span>Testing connection...', 'info');
+
+      try {
+        const data = await airtable.getRecords(tableName, { maxRecords: 1 });
+        showResult('connectionResult', 
+          `<span class="status-indicator success"></span><strong>✅ Connection Successful!</strong><br>
+          Table "${tableName}" is accessible.<br>
+          Found ${data.records ? data.records.length : 0} record(s).<br>
+          <pre>${JSON.stringify(data, null, 2)}</pre>`, 
+          'success'
+        );
+      } catch (error) {
+        showResult('connectionResult', 
+          `<span class="status-indicator error"></span><strong>❌ Connection Failed</strong><br>
+          Error: ${error.message}<br>
+          <pre>${error.stack || error.toString()}</pre>
+          <p><strong>Troubleshooting:</strong></p>
+          <ul>
+            <li>Make sure the table "${tableName}" exists in Airtable</li>
+            <li>Check that AIRTABLE_TOKEN is set in Cloudflare Pages</li>
+            <li>Verify your Airtable base ID is correct</li>
+            <li>Ensure the site has been redeployed after setting environment variables</li>
+          </ul>`, 
+          'error'
+        );
+      }
+    }
+
+    async function listTables() {
+      showResult('connectionResult', '<span class="status-indicator pending"></span>Fetching tables...', 'info');
+      
+      // Note: Airtable API doesn't have a direct "list tables" endpoint
+      // We'll try common table names
+      const commonTables = ['Contact Submissions', 'Newsletter Subscriptions', 'Contacts', 'Subscribers'];
+      const results = [];
+      
+      for (const table of commonTables) {
+        try {
+          const data = await airtable.getRecords(table, { maxRecords: 1 });
+          results.push(`✅ "${table}" - Accessible`);
+        } catch (error) {
+          results.push(`❌ "${table}" - ${error.message}`);
+        }
+      }
+      
+      showResult('connectionResult', 
+        `<strong>Table Availability Check:</strong><br>
+        <pre>${results.join('\n')}</pre>
+        <p><em>Note: This checks common table names. Create tables in Airtable if they don't exist.</em></p>`, 
+        'info'
+      );
+    }
+
+    async function testContactForm() {
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+
+      if (!name || !email || !message) {
+        showResult('contactResult', 'Please fill in all fields', 'error');
+        return;
+      }
+
+      showResult('contactResult', '<span class="status-indicator pending"></span>Submitting contact form...', 'info');
+
+      try {
+        const data = {
+          Name: name,
+          Email: email,
+          Message: message,
+          FormType: 'Contact',
+          Source: 'Test Page',
+          Timestamp: new Date().toISOString()
+        };
+
+        const result = await airtable.createRecord('Contact Submissions', data);
+        showResult('contactResult', 
+          `<span class="status-indicator success"></span><strong>✅ Contact Form Submitted!</strong><br>
+          Record created in Airtable.<br>
+          <pre>${JSON.stringify(result, null, 2)}</pre>`, 
+          'success'
+        );
+      } catch (error) {
+        showResult('contactResult', 
+          `<span class="status-indicator error"></span><strong>❌ Submission Failed</strong><br>
+          Error: ${error.message}<br>
+          <pre>${error.stack || error.toString()}</pre>
+          <p><strong>Make sure:</strong></p>
+          <ul>
+            <li>The "Contact Submissions" table exists in Airtable</li>
+            <li>All required fields are present in the table</li>
+          </ul>`, 
+          'error'
+        );
+      }
+    }
+
+    async function testNewsletterForm() {
+      const email = document.getElementById('newsletterEmail').value.trim();
+      const recipe = document.getElementById('newsletterRecipe').value;
+
+      if (!email) {
+        showResult('newsletterResult', 'Please enter an email address', 'error');
+        return;
+      }
+
+      showResult('newsletterResult', '<span class="status-indicator pending"></span>Submitting newsletter subscription...', 'info');
+
+      try {
+        const data = {
+          Email: email,
+          Recipe: recipe,
+          FormType: 'Newsletter Subscription',
+          Source: 'Test Page',
+          Timestamp: new Date().toISOString()
+        };
+
+        const result = await airtable.createRecord('Newsletter Subscriptions', data);
+        showResult('newsletterResult', 
+          `<span class="status-indicator success"></span><strong>✅ Newsletter Subscription Created!</strong><br>
+          Record created in Airtable.<br>
+          <pre>${JSON.stringify(result, null, 2)}</pre>`, 
+          'success'
+        );
+      } catch (error) {
+        showResult('newsletterResult', 
+          `<span class="status-indicator error"></span><strong>❌ Subscription Failed</strong><br>
+          Error: ${error.message}<br>
+          <pre>${error.stack || error.toString()}</pre>
+          <p><strong>Make sure:</strong></p>
+          <ul>
+            <li>The "Newsletter Subscriptions" table exists in Airtable</li>
+            <li>All required fields are present in the table</li>
+          </ul>`, 
+          'error'
+        );
+      }
+    }
+
+    async function viewRecords() {
+      const tableName = document.getElementById('viewTable').value;
+      const maxRecords = parseInt(document.getElementById('maxRecords').value) || 5;
+
+      showResult('recordsResult', '<span class="status-indicator pending"></span>Fetching records...', 'info');
+
+      try {
+        const data = await airtable.getRecords(tableName, { maxRecords });
+        
+        if (!data.records || data.records.length === 0) {
+          showResult('recordsResult', 
+            `<span class="status-indicator info"></span><strong>No Records Found</strong><br>
+            The table "${tableName}" exists but has no records yet.<br>
+            Try submitting a test form first!`, 
+            'info'
+          );
+          return;
+        }
+
+        let html = `<span class="status-indicator success"></span><strong>✅ Found ${data.records.length} Record(s)</strong><br><br>`;
+        
+        data.records.forEach((record, index) => {
+          html += `<div style="margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-radius: 5px;">`;
+          html += `<strong>Record ${index + 1} (ID: ${record.id})</strong><br>`;
+          html += `<pre>${JSON.stringify(record.fields, null, 2)}</pre>`;
+          html += `</div>`;
+        });
+
+        showResult('recordsResult', html, 'success');
+      } catch (error) {
+        showResult('recordsResult', 
+          `<span class="status-indicator error"></span><strong>❌ Failed to Fetch Records</strong><br>
+          Error: ${error.message}<br>
+          <pre>${error.stack || error.toString()}</pre>`, 
+          'error'
+        );
+      }
+    }
+  </script>
+</body>
+</html>
+
