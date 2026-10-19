@@ -511,10 +511,10 @@ function homePage() {
   const [lead, ...more] = recipes.filter((x) => x.featured);
   const busiest = [...regions].sort((a, b) => products.filter((p) => p.region === b.id).length - products.filter((p) => p.region === a.id).length).slice(0, 6);
   const ig = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>';
-  const pillars = [
-    ["Grow", "images/AdobeStock_377259178-p-800.webp", "Freshly harvested turmeric root held in two hands", "We start with growers who know their soil, their climate and the exact moment each spice reaches its peak."],
-    ["Source", "images/AdobeStock_631181774-p-800.webp", "A lantern-lit night market stall", "From the night markets of Bangkok to the souks of Tangier, every blend carries the story of where it comes from."],
-    ["Create", "images/AdobeStock_601004060-p-800.webp", "Rows of ground spices in wooden trays", "Balanced with a chef's precision and a home cook's heart, so simple ingredients taste like somewhere."],
+  const journey = [
+    ["Grow", "In the field", "images/AdobeStock_377259178", "Freshly harvested turmeric root held in two hands", "We start with growers who know their soil, their climate and the exact moment each spice reaches its peak."],
+    ["Source", "At the market", "images/AdobeStock_631181774", "A lantern-lit night market stall", "From the night markets of Bangkok to the souks of Tangier, every blend carries the story of where it comes from."],
+    ["Create", "In the kitchen", "images/AdobeStock_601004060", "Rows of ground spices in wooden trays", "Balanced with a chef's precision and a home cook's heart, so simple ingredients taste like somewhere."],
   ];
   const mosaic = [
     ["images/AdobeStock_492490915-p-800.jpeg", "A table spread with dishes for a shared feast"],
@@ -568,15 +568,31 @@ function homePage() {
       <div class="container">
         <span class="eyebrow reveal">Introducing People of Spice</span>
         <h2 class="sr-only" id="story-title">Our story</h2>
-        <p class="story__statement reveal" style="--i:1">For thousands of years, civilizations around the globe have used spices to turn mealtimes into ritual — healing experiences for body and soul. We crave that same sense of <em>community</em>, <em>adventure</em> and <em>savoring</em> all of the world’s unique cuisines.</p>
-        <p class="lede reveal" style="--i:2">Our blends carry you from the food carts of Bangkok to a bayou-front kitchen in New Orleans, with equal parts comfort and excitement.</p>
-        <ol class="pillars">${pillars.map(([name, img, alt, text], i) => `
-          <li class="pillar reveal" style="--i:${i}">
-            <div class="pillar__media"><img src="${img}" alt="${esc(alt)}" loading="lazy" decoding="async"></div>
-            <div><h3><span>0${i + 1}</span>${name}</h3><p>${esc(text)}</p></div>
-          </li>`).join("")}
-        </ol>
+        <p class="story__statement" data-split="fill">For thousands of years, civilizations around the globe have used spices to turn mealtimes into ritual — healing experiences for body and soul. We crave that same sense of <em>community</em>, <em>adventure</em> and <em>savoring</em> all of the world’s unique cuisines.</p>
+        <p class="lede" data-split="fill">Our blends carry you from the food carts of Bangkok to a bayou-front kitchen in New Orleans, with equal parts comfort and excitement.</p>
         <a class="link-arrow reveal" href="about.html">Read our story ${ICON.arrow}</a>
+      </div>
+    </section>
+
+    <section class="journey" id="journey" aria-labelledby="journey-title" data-journey>
+      <div class="container">
+        <div class="journey__head"><span class="eyebrow reveal">From soil to table</span><h2 id="journey-title" data-split="rise">Every jar has a <em>journey</em></h2></div>
+      </div>
+      <div class="journey__pin" data-journey-pin>
+        <div class="container journey__stage">
+          <ol class="journey__chapters">${journey.map(([name, kicker, img, alt, text], i) => `
+            <li class="journey__chapter" data-chapter>
+              <figure class="journey__media"><img src="${img}-p-800.webp" srcset="${img}-p-800.webp 800w, ${img}-p-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 90vw" alt="${esc(alt)}" loading="lazy" decoding="async"></figure>
+              <div class="journey__text">
+                <span class="journey__num" data-part aria-hidden="true">0${i + 1}</span>
+                <span class="eyebrow eyebrow--plain" data-part>${kicker}</span>
+                <h3 data-part>${name}</h3>
+                <p data-part>${esc(text)}</p>
+              </div>
+            </li>`).join("")}
+          </ol>
+          <div class="journey__progress" aria-hidden="true">${journey.map(([name], i) => `<span data-progress-label${i ? "" : ' class="is-on"'}>${name}</span>`).join("")}<i data-progress-bar></i></div>
+        </div>
       </div>
     </section>
 
@@ -586,7 +602,7 @@ function homePage() {
           <div class="globe-teaser__art"><img src="images/globe-teaser.svg" alt="A globe dotted with gold pins over the Mediterranean, the Middle East and South Asia" width="600" height="600" loading="lazy" decoding="async"></div>
           <div class="globe-teaser__body">
             <span class="eyebrow">World of Spice</span>
-            <h2 id="globe-title">Where in the <em>world?</em></h2>
+            <h2 id="globe-title" data-split="rise">Where in the <em>world?</em></h2>
             <p class="lede">Every jar is pinned to the kitchen that inspired it. Spin the globe, tap a pin, and cook your way across ${regions.length} regions.</p>
             <ul class="tags">${busiest.map((g) => `<li class="tag">${esc(g.name)}</li>`).join("")}</ul>
             <dl class="globe-stats"><div><dt>Spices</dt><dd>${products.length}</dd></div><div><dt>Regions</dt><dd>${regions.length}</dd></div><div><dt>Recipes</dt><dd>${recipes.length}</dd></div></dl>
@@ -599,7 +615,7 @@ function homePage() {
     <section class="section shelf" id="new" data-filter aria-labelledby="shelf-title">
       <div class="container">
         <div class="section-head">
-          <div><span class="eyebrow reveal">New for 2026</span><h2 class="reveal" style="--i:1" id="shelf-title">Fresh on the <em>shelf</em></h2></div>
+          <div><span class="eyebrow reveal">New for 2026</span><h2 data-split="rise" id="shelf-title">Fresh on the <em>shelf</em></h2></div>
           <p class="reveal" style="--i:2">${fresh.length} new blends, salts and pantry spices across ${shelfChips.length - 1} collections — each in glass, with no artificial fillers.</p>
         </div>
         ${chips(shelfChips, "Filter new spices by collection")}
@@ -612,7 +628,7 @@ function homePage() {
     <section class="section" style="padding-top:0" id="recipes" aria-labelledby="recipes-title">
       <div class="container">
         <div class="section-head">
-          <div><span class="eyebrow reveal">Cook the world</span><h2 class="reveal" style="--i:1" id="recipes-title">Featured <em>recipes</em></h2></div>
+          <div><span class="eyebrow reveal">Cook the world</span><h2 data-split="rise" id="recipes-title">Featured <em>recipes</em></h2></div>
           <a class="btn btn--ghost reveal" style="--i:2" href="recipes.html">All ${recipes.length} recipes ${ICON.arrow}</a>
         </div>
         ${featureRecipe(lead, r)}
@@ -625,7 +641,7 @@ function homePage() {
     <section class="section connect" id="connect" aria-labelledby="connect-title">
       <div class="container">
         <div class="section-head">
-          <div><span class="eyebrow reveal">Connect with us</span><h2 class="reveal" style="--i:1" id="connect-title">Inspired by <em>you</em>, always</h2></div>
+          <div><span class="eyebrow reveal">Connect with us</span><h2 data-split="rise" id="connect-title">Inspired by <em>you</em>, always</h2></div>
           <a class="btn btn--ghost reveal" style="--i:2" href="${IG}" target="_blank" rel="noopener">${ig} @peopleofspice</a>
         </div>
         <ul class="ig-grid">${mosaic.map(([src, alt], i) => `<li class="reveal" style="--i:${i % 6}"><a href="${IG}" target="_blank" rel="noopener"><img src="${src}" alt="${esc(alt)}" loading="lazy" decoding="async"><span class="sr-only"> — see more on Instagram</span></a></li>`).join("")}</ul>
@@ -633,7 +649,7 @@ function homePage() {
         <div class="gift-card reveal" id="gift">
           <div class="stack" style="--stack:1rem">
             <span class="eyebrow">Send a gift</span>
-            <h2>Share the <em>table</em></h2>
+            <h2 data-split="rise">Share the <em>table</em></h2>
             <p class="lede">Send a gift of spice to someone you love, or add a private chef’s menu for two, four or six. Tell us who it’s for and we’ll be in touch by email.</p>
           </div>
           <form class="form" action="https://formsubmit.co/corehomeweb2@gmail.com" method="POST" id="email-form-3" name="email-form-3">
@@ -662,7 +678,12 @@ function homePage() {
     description: `Discover ${products.length} authentic spice blends inspired by ${regions.length} cooking traditions. From Thai curry to Moroccan ras el hanout, bring the world's kitchens to your family table.`,
     head: `${introBoot}\n  <link rel="preload" as="image" href="${HERO}-poster-00001.jpg" fetchpriority="high">\n  <link rel="stylesheet" href="css/home.css">`,
     body,
-    scripts: '<script src="js/intro.js" defer></script>',
+    scripts: [
+      '<script src="js/intro.js" defer></script>',
+      '<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>',
+      '<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>',
+      '<script src="js/scroll-fx.js" defer></script>',
+    ].join("\n  "),
     jsonld: {
       "@context": "https://schema.org", "@type": "Organization", name: "People of Spice", url: `${SITE}/`,
       logo: `${SITE}/images/brand/pos-logo-cream.png`, sameAs: [IG],
