@@ -7,7 +7,8 @@
     "deploy": "wrangler pages deploy . --project-name=peopleofspice-pages",
     "deploy:production": "wrangler pages deploy . --project-name=peopleofspice-pages",
     "dev": "wrangler pages dev . --project-name=peopleofspice-pages",
-    "build": "echo 'No build step required for static site'"
+    "build": "node scripts/build.mjs",
+    "images:deck": "python3 scripts/extract-deck-jars.py"
   },
   "keywords": [
     "spices",

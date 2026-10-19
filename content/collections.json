@@ -1,0 +1,12 @@
+[
+  { "id": "signature", "name": "Signature Blends", "short": "Signature", "format": "Signature canister", "blurb": "The five blends that started the journey — each one a passport stamp from a market we love." },
+  { "id": "global-flavors", "name": "Global Flavors", "short": "Global", "format": "Glass jar · flip-top shaker", "blurb": "Street-food soul and backyard fire from Texas to Damascus." },
+  { "id": "specialty-salt", "name": "Specialty Salts", "short": "Salts", "format": "Glass jar · grinder lid", "blurb": "Finishing salts with character — pink, smoked, herbed and fired up." },
+  { "id": "seasonal", "name": "Seasonal Spice", "short": "Seasonal", "format": "Glass jar · flip-top shaker", "blurb": "Holiday tables, harvest roasts and the smell of gingerbread in the oven." },
+  { "id": "citrus", "name": "Citrus Blends", "short": "Citrus", "format": "Glass jar · flip-top shaker", "blurb": "Bright zest for grills, greens and anything that needs a wake-up." },
+  { "id": "pasta", "name": "Pasta Seasoning", "short": "Pasta", "format": "Glass jar · flip-top shaker", "blurb": "Weeknight pasta, Italian-grandmother approved." },
+  { "id": "pizza", "name": "Pizza Toppers", "short": "Pizza", "format": "Glass jar · flip-top shaker", "blurb": "Slice-shop shakers for crust, oil and everything in between." },
+  { "id": "salad", "name": "Salad Seasoning", "short": "Salad", "format": "Glass jar · flip-top shaker", "blurb": "Dressings in a jar — whisk, shake, done." },
+  { "id": "ice-cream-topper", "name": "Ice Cream Toppers", "short": "Sweet", "format": "Glass jar · flip-top shaker", "blurb": "Spiced sugars for scoops, lattes and toast." },
+  { "id": "pantry", "name": "Pantry Essentials", "short": "Pantry", "format": "Glass jar · flip-top shaker", "blurb": "The single-origin staples every global kitchen leans on." }
+]

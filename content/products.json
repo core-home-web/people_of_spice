@@ -1,0 +1,318 @@
+[
+  {
+    "id": "middle-eastern-manqual", "sku": "52858", "name": "Middle Eastern Manqual", "collection": "signature", "region": "levant", "origin": "Levantine grill houses",
+    "tagline": "Middle Eastern Grill Seasoning", "heat": 2, "notes": ["Smoky", "Warm", "Savory"],
+    "ingredients": ["Allspice", "Coriander", "Cumin", "Paprika", "Black pepper", "Cinnamon"],
+    "story": "Built for the grill, this bold blend takes cues from baharat and seven-spice traditions. Allspice, cumin and cinnamon ignite over fire and conjure the scent of spice-laden alleyways.",
+    "pairsWith": ["Chicken thighs", "Eggplant", "Lamb kofta", "Flatbread"], "recipe": "grilled-chicken-kebabs", "image": "images/52858_01.jpg", "photo": true, "color": "#8a3b5e"
+  },
+  {
+    "id": "hacienda-salsa-guacamole", "sku": "52859", "name": "Hacienda Salsa Guacamole", "collection": "signature", "region": "mexico", "origin": "Jalisco hacienda patios",
+    "tagline": "Fiesta-Ready Seasoning", "heat": 2, "notes": ["Zesty", "Fresh", "Bright"],
+    "ingredients": ["Onion", "Garlic", "Lime zest", "Cumin", "Tomato", "Jalapeño", "Cilantro"],
+    "story": "Onion and garlic mingle with lime zest, cumin, tomato, jalapeño and cilantro — the taste of warm chips and cold drinks on a hacienda patio.",
+    "pairsWith": ["Avocado", "Sour cream", "Tortilla chips", "Grilled corn"], "recipe": "fiesta-guacamole", "image": "images/52859_01.jpg", "photo": true, "color": "#2f6b3a"
+  },
+  {
+    "id": "tangier-ras-el-hanout", "sku": "52860", "name": "Tangier Ras El Hanout", "collection": "signature", "region": "morocco", "origin": "Tangier spice souks",
+    "tagline": "Moroccan Top Shelf Blend", "heat": 1, "notes": ["Floral", "Warm", "Sweet"],
+    "ingredients": ["Coriander", "Cumin", "Cinnamon", "Ginger", "Nutmeg", "Cardamom", "Allspice", "Black pepper"],
+    "story": "Ras el hanout means \"head of the shop\" — the very best the merchant has to offer. From the hills of Tangier to the depths of a slow tagine, this is the king of North African spice racks.",
+    "pairsWith": ["Lamb shoulder", "Apricots", "Chickpeas", "Couscous"], "recipe": "moroccan-lamb-tagine", "image": "images/52860_01.jpg", "photo": true, "color": "#5b3a7a"
+  },
+  {
+    "id": "szechuan-five-spice", "sku": "52861", "name": "Szechuan Five Spice", "collection": "signature", "region": "sichuan", "origin": "Chengdu night markets",
+    "tagline": "Eastern Balance of Flavors", "heat": 3, "notes": ["Numbing", "Anise", "Aromatic"],
+    "ingredients": ["Star anise", "Fennel", "Cinnamon", "Cloves", "Szechuan peppercorns"],
+    "story": "The legendary blend of star anise, fennel, cinnamon, cloves and Szechuan peppercorn — the tingling heat and aromatic depth of ancient trade routes and imperial kitchens.",
+    "pairsWith": ["Flank steak", "Pork belly", "Duck", "Green beans"], "recipe": "spicy-beef-stir-fry", "image": "images/52861_01.jpg", "photo": true, "color": "#b3262b"
+  },
+  {
+    "id": "bangkok-green-curry", "sku": "52863", "name": "Bangkok Green Curry", "collection": "signature", "region": "thailand", "origin": "Bangkok floating markets",
+    "tagline": "Thai Curry Powder", "heat": 3, "notes": ["Herbal", "Citrusy", "Fresh heat"],
+    "ingredients": ["Green chile", "Lemongrass", "Galangal", "Basil", "Kaffir lime leaf", "Coriander", "Cumin", "White pepper"],
+    "story": "A flash of basil, a whisper of kaffir lime and the green bite of Thai chiles — the vibrant complexity of Bangkok's floating markets and roadside kitchens.",
+    "pairsWith": ["Coconut milk", "Chicken", "Eggplant", "Jasmine rice"], "recipe": "thai-green-curry-with-chicken-and-vegetables", "image": "images/52863_01.jpg", "photo": true, "color": "#1f6b4a"
+  },
+
+  {
+    "id": "himalayan-pink-salt", "sku": "69723", "name": "Himalayan Pink Salt", "collection": "specialty-salt", "region": "punjab", "origin": "Khewra salt range",
+    "tagline": "Pretty in Pink", "heat": 0, "notes": ["Mineral", "Clean", "Crunchy"],
+    "ingredients": ["Himalayan pink salt"],
+    "story": "Rose-coloured crystals from the salt range at the foot of the Himalaya. Crack it fresh over anything that deserves a little sparkle.",
+    "pairsWith": ["Salmon", "Steak", "Dark chocolate", "Watermelon"], "recipe": "pink-salt-crusted-salmon"
+  },
+  {
+    "id": "smoked-salt", "sku": "69724", "name": "Smoked Salt", "collection": "specialty-salt", "region": "scandinavia", "origin": "Læsø island, Denmark",
+    "tagline": "Where Fire Meets Flavor", "heat": 0, "notes": ["Smoky", "Woodsy", "Savory"],
+    "ingredients": ["Sea salt", "Natural wood smoke"],
+    "story": "Vikings boiled and smoked sea salt over driftwood fires on the island of Læsø. One grind brings the campfire to any plate.",
+    "pairsWith": ["Eggs", "Caramel", "Potatoes", "Grilled vegetables"], "recipe": "smoked-salt-jammy-eggs"
+  },
+  {
+    "id": "spicy-chili-salt", "sku": "69725", "name": "Spicy Chili Salt", "collection": "specialty-salt", "region": "mexico", "origin": "Mexican street carts",
+    "tagline": "Turn Up the Heat", "heat": 4, "notes": ["Hot", "Salty", "Tangy"],
+    "ingredients": ["Sea salt", "Chili flakes", "Cayenne", "Garlic"],
+    "story": "Inspired by the sal de chile shaken over mango and cucumber at every Mexican fruit cart. Salty, fiery, addictive.",
+    "pairsWith": ["Mango", "Cucumber", "Margarita rims", "Grilled corn"], "recipe": "chili-salt-mango-cups"
+  },
+  {
+    "id": "herb-salt", "sku": "69726", "name": "Herb Salt", "collection": "specialty-salt", "region": "france", "origin": "Guérande salt marshes",
+    "tagline": "A Little Green Goes A Long Way", "heat": 0, "notes": ["Herbal", "Bright", "Savory"],
+    "ingredients": ["Sea salt", "Parsley", "Thyme", "Rosemary", "Garlic"],
+    "story": "Atlantic sea salt ground with garden herbs, the way French cooks keep a crock by the stove. A pinch turns plain into proper.",
+    "pairsWith": ["Roast chicken", "Tomatoes", "Buttered bread", "Fish"], "recipe": "herb-salt-roast-potatoes"
+  },
+
+  {
+    "id": "turkey-brine-blend", "sku": "69727", "name": "Turkey Brine Blend", "collection": "seasonal", "region": "new-england", "origin": "Plymouth, Massachusetts",
+    "tagline": "Juicy Starts Here", "heat": 0, "notes": ["Herbal", "Savory", "Citrusy"],
+    "ingredients": ["Sea salt", "Brown sugar", "Black peppercorns", "Rosemary", "Sage", "Thyme", "Orange peel", "Garlic"],
+    "story": "A Thanksgiving secret weapon. Dissolve, submerge and let salt, sugar and herbs do the work overnight for the juiciest bird on the block.",
+    "pairsWith": ["Whole turkey", "Pork chops", "Chicken", "Cranberry"], "recipe": "herb-brined-turkey"
+  },
+  {
+    "id": "sweet-spicy-holiday-rub", "sku": "69728", "name": "Sweet & Spicy Holiday Rub", "collection": "seasonal", "region": "american-south", "origin": "Nashville holiday tables",
+    "tagline": "A Little Naughty, Very Nice", "heat": 3, "notes": ["Sweet", "Warm heat", "Caramelized"],
+    "ingredients": ["Brown sugar", "Paprika", "Cayenne", "Cinnamon", "Garlic", "Sea salt", "Black pepper"],
+    "story": "Brown sugar and cayenne in perfect mischief. Made for glazed hams, roasted nuts and anything headed for a holiday table.",
+    "pairsWith": ["Ham", "Pecans", "Sweet potatoes", "Salmon"], "recipe": "holiday-glazed-ham"
+  },
+  {
+    "id": "gingerbread-spice", "sku": "69729", "name": "Gingerbread Spice", "collection": "seasonal", "region": "germany", "origin": "Nuremberg Christmas market",
+    "tagline": "Warm, Sweet, & Nostalgic", "heat": 1, "notes": ["Warm", "Sweet", "Festive"],
+    "ingredients": ["Ginger", "Cinnamon", "Cloves", "Nutmeg", "Allspice"],
+    "story": "Nuremberg's bakers have been perfecting Lebkuchen since the 1300s. One spoon and your kitchen smells like a Christmas market.",
+    "pairsWith": ["Molasses", "Butter", "Coffee", "Pancakes"], "recipe": "gingerbread-skillet-cookie"
+  },
+  {
+    "id": "harvest-herb-rub", "sku": "69730", "name": "Harvest Herb Rub", "collection": "seasonal", "region": "british-isles", "origin": "Cotswold harvest suppers",
+    "tagline": "Rooted in the Season", "heat": 0, "notes": ["Herbal", "Earthy", "Savory"],
+    "ingredients": ["Rosemary", "Thyme", "Sage", "Garlic", "Onion", "Black pepper", "Sea salt"],
+    "story": "Rosemary, sage and thyme — the herbs of a harvest supper, ready for roots, roasts and anything fresh from the market.",
+    "pairsWith": ["Root vegetables", "Pork loin", "Squash", "Mushrooms"], "recipe": "harvest-roasted-roots"
+  },
+  {
+    "id": "poultry-seasoning", "sku": "69731", "name": "Poultry Seasoning", "collection": "seasonal", "region": "new-england", "origin": "Boston, since 1867",
+    "tagline": "The Classic Roast Companion", "heat": 0, "notes": ["Herbal", "Savory", "Classic"],
+    "ingredients": ["Sage", "Thyme", "Marjoram", "Rosemary", "Nutmeg", "Black pepper"],
+    "story": "Sage-forward and endlessly reliable — the herb blend that has flavoured New England stuffing and Sunday chicken for generations.",
+    "pairsWith": ["Roast chicken", "Stuffing", "Gravy", "Chicken soup"], "recipe": "classic-roast-chicken"
+  },
+
+  {
+    "id": "texas-bbq", "sku": "69732", "name": "Texas BBQ", "collection": "global-flavors", "region": "texas", "origin": "Lockhart smokehouses",
+    "tagline": "Backyard Approved", "heat": 2, "notes": ["Smoky", "Peppery", "Sweet"],
+    "ingredients": ["Black pepper", "Sea salt", "Paprika", "Brown sugar", "Garlic", "Onion", "Chili powder"],
+    "story": "Salt, coarse pepper and a little sweetness for that mahogany bark. Texas Hill Country barbecue, no pit required.",
+    "pairsWith": ["Brisket", "Ribs", "Chicken wings", "Baked beans"], "recipe": "texas-bbq-oven-ribs"
+  },
+  {
+    "id": "shawarma", "sku": "69733", "name": "Shawarma", "collection": "global-flavors", "region": "levant", "origin": "Damascus street stalls",
+    "tagline": "Street Food Soul", "heat": 1, "notes": ["Warm", "Aromatic", "Savory"],
+    "ingredients": ["Cumin", "Coriander", "Paprika", "Turmeric", "Cinnamon", "Garlic", "Cardamom", "Black pepper"],
+    "story": "Every spinning spit in Damascus and Beirut has its own secret. Ours is warm cumin, bright coriander and a hint of cinnamon.",
+    "pairsWith": ["Chicken thighs", "Garlic toum", "Pita", "Pickles"], "recipe": "sheet-pan-chicken-shawarma"
+  },
+  {
+    "id": "asado-rub", "sku": "69734", "name": "Asado Rub", "collection": "global-flavors", "region": "argentina", "origin": "The Pampas",
+    "tagline": "South American Fire", "heat": 2, "notes": ["Garlicky", "Herbal", "Smoky"],
+    "ingredients": ["Sea salt", "Garlic", "Oregano", "Paprika", "Red pepper flakes", "Parsley", "Black pepper"],
+    "story": "The Argentine asado is a whole-afternoon ritual of embers, beef and friends. This rub brings the parrilla to your grill.",
+    "pairsWith": ["Skirt steak", "Chorizo", "Provoleta", "Chimichurri"], "recipe": "asado-skirt-steak-chimichurri"
+  },
+  {
+    "id": "zaatar", "sku": "69735", "name": "Za'atar", "collection": "global-flavors", "region": "levant", "origin": "Levantine bakeries",
+    "tagline": "Earthy, Bright, Timeless", "heat": 0, "notes": ["Tangy", "Nutty", "Herbal"],
+    "ingredients": ["Thyme", "Sumac", "Toasted sesame", "Oregano", "Sea salt"],
+    "story": "Wild thyme, tart sumac and toasted sesame — the blend Levantine bakers swirl into olive oil and bake onto breakfast bread.",
+    "pairsWith": ["Olive oil", "Labneh", "Flatbread", "Roast carrots"], "recipe": "zaatar-manakish"
+  },
+  {
+    "id": "sunday-roast-pork-rub", "sku": "69736", "name": "Sunday Roast Pork Rub", "collection": "global-flavors", "region": "british-isles", "origin": "London Sunday roasts",
+    "tagline": "From Snout to Tail", "heat": 1, "notes": ["Savory", "Herbal", "Fennel"],
+    "ingredients": ["Fennel seed", "Sage", "Garlic", "Mustard", "Black pepper", "Sea salt", "Brown sugar"],
+    "story": "Fennel, sage and mustard for crackling worth fighting over. The British Sunday roast, distilled into one shake.",
+    "pairsWith": ["Pork shoulder", "Apples", "Roast potatoes", "Cabbage"], "recipe": "sunday-roast-pork-shoulder"
+  },
+
+  {
+    "id": "citrus-herb-blend", "sku": "69737", "name": "Citrus Herb Blend", "collection": "citrus", "region": "italy", "origin": "The Amalfi Coast",
+    "tagline": "Fresh Feels Forever", "heat": 0, "notes": ["Zesty", "Herbal", "Bright"],
+    "ingredients": ["Lemon peel", "Orange peel", "Parsley", "Thyme", "Garlic", "Sea salt", "Black pepper"],
+    "story": "Amalfi lemons, sun-warmed orange peel and garden herbs. A shake of Mediterranean coastline for fish, chicken and greens.",
+    "pairsWith": ["White fish", "Shrimp", "Asparagus", "Chicken breast"], "recipe": "citrus-herb-baked-cod"
+  },
+  {
+    "id": "citrus-chili-lime", "sku": "69738", "name": "Citrus Chili Lime", "collection": "citrus", "region": "mexico", "origin": "Yucatán fruit stands",
+    "tagline": "Zest with a Zap", "heat": 3, "notes": ["Tangy", "Hot", "Bright"],
+    "ingredients": ["Lime peel", "Chili pepper", "Sea salt", "Garlic", "Citric acid"],
+    "story": "Lime, chile and salt — the street-corner trio that makes everything from corn to cucumbers impossible to stop eating.",
+    "pairsWith": ["Grilled corn", "Shrimp tacos", "Watermelon", "Popcorn"], "recipe": "chili-lime-elote"
+  },
+
+  {
+    "id": "chai-sugar", "sku": "69739", "name": "Chai Sugar", "collection": "ice-cream-topper", "region": "india", "origin": "Mumbai chai stalls",
+    "tagline": "Sweet With Spice", "heat": 0, "notes": ["Sweet", "Warm", "Aromatic"],
+    "ingredients": ["Cane sugar", "Cinnamon", "Cardamom", "Ginger", "Cloves", "Black pepper"],
+    "story": "Every Indian chai wallah has a masala of their own. We stirred ours into sugar for scoops, toast and lattes.",
+    "pairsWith": ["Vanilla ice cream", "Lattes", "French toast", "Oatmeal"], "recipe": "chai-sugar-affogato"
+  },
+  {
+    "id": "cinnamon-sugar", "sku": "69740", "name": "Cinnamon Sugar", "collection": "ice-cream-topper", "region": "sri-lanka", "origin": "Ceylon cinnamon gardens",
+    "tagline": "Warm Meets Cold", "heat": 0, "notes": ["Sweet", "Warm", "Comforting"],
+    "ingredients": ["Cane sugar", "Cinnamon"],
+    "story": "Two ingredients, endless comfort. Fragrant cinnamon and crunchy sugar for ice cream, churros and buttered toast.",
+    "pairsWith": ["Ice cream", "Churros", "Apples", "Buttered toast"], "recipe": "cinnamon-sugar-churro-bites"
+  },
+
+  {
+    "id": "arrabbiata", "sku": "69741", "name": "Arrabbiata", "collection": "pasta", "region": "italy", "origin": "Roman trattorias",
+    "tagline": "A Little Fire", "heat": 3, "notes": ["Spicy", "Garlicky", "Tomato-friendly"],
+    "ingredients": ["Red pepper flakes", "Garlic", "Basil", "Oregano", "Parsley", "Sea salt"],
+    "story": "Arrabbiata means \"angry\" in Italian — the Roman way of saying this sauce has a temper. Garlic, chile and herbs, ready in minutes.",
+    "pairsWith": ["Penne", "Canned tomatoes", "Pecorino", "Olive oil"], "recipe": "penne-arrabbiata"
+  },
+  {
+    "id": "lemon-herb-pasta", "sku": "69742", "name": "Lemon Herb", "collection": "pasta", "region": "italy", "origin": "Amalfi lemon groves",
+    "tagline": "Bright, Not Heavy", "heat": 0, "notes": ["Zesty", "Herbal", "Light"],
+    "ingredients": ["Lemon peel", "Garlic", "Parsley", "Basil", "Black pepper", "Sea salt"],
+    "story": "Pasta al limone is how the Amalfi coast eats on a hot day — butter, lemon and herbs, nothing heavy.",
+    "pairsWith": ["Spaghetti", "Butter", "Parmesan", "Peas"], "recipe": "spaghetti-al-limone"
+  },
+  {
+    "id": "chili-garlic-pizza", "sku": "69743", "name": "Chili Garlic", "collection": "pizza", "region": "italy", "origin": "Calabrian chile country",
+    "tagline": "Turn Up the Heat", "heat": 4, "notes": ["Hot", "Garlicky", "Toasty"],
+    "ingredients": ["Red pepper flakes", "Garlic", "Oregano", "Sea salt"],
+    "story": "Calabria loves its chiles, and so does every slice shop worth the name. Toasted garlic and fiery flakes for the crust-to-tip crowd.",
+    "pairsWith": ["Pepperoni", "Honey", "Olive oil", "Garlic knots"], "recipe": "hot-honey-pepperoni-pizza"
+  },
+  {
+    "id": "pizzeria-herb", "sku": "69744", "name": "Pizzeria Herb", "collection": "pizza", "region": "italy", "origin": "Naples pizzerias",
+    "tagline": "Slice-Shop Vibes", "heat": 0, "notes": ["Herbal", "Savory", "Classic"],
+    "ingredients": ["Oregano", "Basil", "Garlic", "Onion", "Parsley", "Sea salt"],
+    "story": "The oregano-and-basil shake that defines the corner pizzeria — from Neapolitan ovens to New York counters.",
+    "pairsWith": ["Margherita", "Garlic bread", "Marinara", "Mozzarella"], "recipe": "pizzeria-garlic-knots"
+  },
+  {
+    "id": "sicilian-sprinkle", "sku": "69745", "name": "Sicilian Sprinkle", "collection": "pizza", "region": "italy", "origin": "Palermo bakeries",
+    "tagline": "Bold, Not Basic", "heat": 1, "notes": ["Savory", "Herbal", "Nutty"],
+    "ingredients": ["Oregano", "Garlic", "Fennel seed", "Sesame seed", "Red pepper flakes", "Sea salt"],
+    "story": "Sicily's crossroads cooking in a shaker — oregano, fennel and toasted sesame, just like the sfincione of Palermo.",
+    "pairsWith": ["Focaccia", "Tomato pie", "Roast cauliflower", "Ricotta"], "recipe": "sicilian-sheet-pan-focaccia"
+  },
+
+  {
+    "id": "caesar-style", "sku": "69746", "name": "Caesar-Style", "collection": "salad", "region": "mexico", "origin": "Tijuana, 1924",
+    "tagline": "A Classic, Sharpened", "heat": 0, "notes": ["Savory", "Garlicky", "Tangy"],
+    "ingredients": ["Garlic", "Parmesan cheese", "Black pepper", "Mustard", "Lemon peel", "Sea salt"],
+    "story": "Caesar Cardini tossed the first Caesar salad tableside in Tijuana in 1924. Garlic, parmesan and pepper keep the legend alive.",
+    "pairsWith": ["Romaine", "Croutons", "Grilled chicken", "Mayonnaise"], "recipe": "grilled-caesar-wedges"
+  },
+  {
+    "id": "greek-style", "sku": "69747", "name": "Greek Style", "collection": "salad", "region": "greece", "origin": "Athenian tavernas",
+    "tagline": "Bright, Salty, Craveable", "heat": 0, "notes": ["Herbal", "Tangy", "Salty"],
+    "ingredients": ["Oregano", "Garlic", "Lemon peel", "Onion", "Dill", "Black pepper", "Sea salt"],
+    "story": "Oregano and lemon, the taverna essentials. Whisk with olive oil and red wine vinegar for a horiatiki you'll make all summer.",
+    "pairsWith": ["Feta", "Cucumber", "Tomatoes", "Lamb chops"], "recipe": "horiatiki-greek-salad"
+  },
+  {
+    "id": "green-goddess", "sku": "69748", "name": "Green Goddess", "collection": "salad", "region": "california", "origin": "San Francisco, 1923",
+    "tagline": "Herb-Forward, Always", "heat": 0, "notes": ["Herbal", "Creamy-friendly", "Fresh"],
+    "ingredients": ["Parsley", "Chives", "Tarragon", "Dill", "Garlic", "Onion", "Lemon peel"],
+    "story": "Created at San Francisco's Palace Hotel in 1923, Green Goddess is the original herb-everything dressing.",
+    "pairsWith": ["Greek yogurt", "Avocado", "Crudités", "Grain bowls"], "recipe": "green-goddess-crunch-bowl"
+  },
+
+  {
+    "id": "paprika", "sku": "69749", "name": "Paprika", "collection": "pantry", "region": "hungary", "origin": "Szeged pepper fields",
+    "tagline": "Sweet, Red, Essential", "heat": 1, "notes": ["Sweet", "Fruity", "Earthy"],
+    "ingredients": ["Paprika"],
+    "story": "Hungary's sweet paprika — sun-dried peppers ground into the brick-red heart of goulash and paprikash.",
+    "pairsWith": ["Chicken", "Sour cream", "Onions", "Deviled eggs"], "recipe": "chicken-paprikash"
+  },
+  {
+    "id": "smoked-paprika", "sku": "69750", "name": "Smoked Paprika", "collection": "pantry", "region": "spain", "origin": "La Vera, Extremadura",
+    "tagline": "Instant Smoky Depth", "heat": 1, "notes": ["Smoky", "Sweet", "Rich"],
+    "ingredients": ["Smoked paprika"],
+    "story": "In La Vera, peppers are dried for two weeks over smouldering oak. The result is pimentón — Spain's instant shortcut to smoke.",
+    "pairsWith": ["Potatoes", "Chorizo", "Chickpeas", "Aioli"], "recipe": "patatas-bravas"
+  },
+  {
+    "id": "herb-chive-potatoes", "sku": "69751", "name": "Herb & Chive Potatoes", "collection": "pantry", "region": "british-isles", "origin": "Irish farmhouse kitchens",
+    "tagline": "Fluffy, Not Flat", "heat": 0, "notes": ["Savory", "Oniony", "Buttery-friendly"],
+    "ingredients": ["Chives", "Garlic", "Onion", "Parsley", "Sea salt", "Black pepper"],
+    "story": "A mashed potato blend in the spirit of Irish champ — chives, garlic and parsley folded through buttery potatoes.",
+    "pairsWith": ["Potatoes", "Butter", "Sour cream", "Roast beef"], "recipe": "herb-chive-champ"
+  },
+  {
+    "id": "turmeric", "sku": "69752", "name": "Turmeric", "collection": "pantry", "region": "india", "origin": "Erode turmeric fields",
+    "tagline": "Golden by Nature", "heat": 0, "notes": ["Earthy", "Peppery", "Golden"],
+    "ingredients": ["Turmeric"],
+    "story": "The golden root of Indian kitchens — earthy, warm and the colour of sunshine in every pot of dal.",
+    "pairsWith": ["Lentils", "Rice", "Coconut milk", "Cauliflower"], "recipe": "golden-tadka-dal"
+  },
+  {
+    "id": "herbes-de-provence", "sku": "69753", "name": "Herbes de Provence", "collection": "pantry", "region": "france", "origin": "Provence hillsides",
+    "tagline": "French Pantry Staple", "heat": 0, "notes": ["Floral", "Herbal", "Savory"],
+    "ingredients": ["Thyme", "Rosemary", "Savory", "Marjoram", "Oregano", "Lavender"],
+    "story": "The wild herbs of the Provençal hills, with a whisper of lavender. Ratatouille, roast chicken and summer on a plate.",
+    "pairsWith": ["Tomatoes", "Zucchini", "Lamb", "Goat cheese"], "recipe": "provencal-ratatouille"
+  },
+  {
+    "id": "cinnamon-sticks", "sku": "69754", "name": "Cinnamon Sticks", "collection": "pantry", "region": "sri-lanka", "origin": "Ceylon cinnamon gardens",
+    "tagline": "Simmer-Worthy Warmth", "heat": 0, "notes": ["Sweet", "Woody", "Warm"],
+    "ingredients": ["Cinnamon sticks"],
+    "story": "Hand-rolled quills of cinnamon bark for simmering into cider, curries and slow-cooked stews.",
+    "pairsWith": ["Apple cider", "Rice pudding", "Biryani", "Mulled wine"], "recipe": "spiced-apple-cider"
+  },
+  {
+    "id": "whole-dill", "sku": "69755", "name": "Whole Dill", "collection": "pantry", "region": "scandinavia", "origin": "Swedish summer gardens",
+    "tagline": "Pickle-Ready", "heat": 0, "notes": ["Grassy", "Tangy", "Fresh"],
+    "ingredients": ["Dill"],
+    "story": "Scandinavia's favourite herb — for gravlax, new potatoes and the crispest quick pickles you've ever made.",
+    "pairsWith": ["Cucumbers", "Salmon", "New potatoes", "Yogurt"], "recipe": "quick-dill-pickles"
+  },
+  {
+    "id": "whole-fennel", "sku": "69756", "name": "Whole Fennel", "collection": "pantry", "region": "greece", "origin": "Marathon, Greece",
+    "tagline": "Fragrant, Clean Finish", "heat": 0, "notes": ["Anise", "Sweet", "Clean"],
+    "ingredients": ["Fennel seed"],
+    "story": "The town of Marathon was named for the wild fennel (marathon) that grew there. Sweet, anise-bright seeds for sausage, bread and fish.",
+    "pairsWith": ["Pork sausage", "Oranges", "Fish", "Rye bread"], "recipe": "fennel-orange-pork-chops"
+  },
+  {
+    "id": "ground-cinnamon", "sku": "69757", "name": "Ground Cinnamon", "collection": "pantry", "region": "sri-lanka", "origin": "Ceylon cinnamon gardens",
+    "tagline": "Warm & Bakery-Ready", "heat": 0, "notes": ["Sweet", "Warm", "Woody"],
+    "ingredients": ["Cinnamon"],
+    "story": "Finely ground cinnamon for rolls, crumbles and the morning oats — and a pinch in chili, the way Sri Lankan curries do.",
+    "pairsWith": ["Apples", "Oats", "Brown butter", "Lamb"], "recipe": "cinnamon-swirl-banana-bread"
+  },
+  {
+    "id": "ground-ginger", "sku": "69758", "name": "Ground Ginger", "collection": "pantry", "region": "india", "origin": "Malabar coast, Kerala",
+    "tagline": "Warmth with a Kick", "heat": 1, "notes": ["Zingy", "Warm", "Peppery"],
+    "ingredients": ["Ginger"],
+    "story": "Dried ginger from India's spice coast — zingy in a stir-fry, cosy in a cookie, brilliant in a carrot soup.",
+    "pairsWith": ["Carrots", "Soy sauce", "Pumpkin", "Honey"], "recipe": "ginger-carrot-soup"
+  },
+  {
+    "id": "parsley", "sku": "69759", "name": "Parsley", "collection": "pantry", "region": "levant", "origin": "Lebanese mountain gardens",
+    "tagline": "Clean, Green, Easy", "heat": 0, "notes": ["Fresh", "Grassy", "Clean"],
+    "ingredients": ["Parsley"],
+    "story": "In Lebanon, parsley isn't a garnish — it's the salad. Bright, clean and green for every pot and plate.",
+    "pairsWith": ["Bulgur", "Lemon", "Tomatoes", "Garlic butter"], "recipe": "pantry-tabbouleh"
+  },
+  {
+    "id": "basil", "sku": "69760", "name": "Basil", "collection": "pantry", "region": "italy", "origin": "Genoese terraces",
+    "tagline": "A Fresh Finish", "heat": 0, "notes": ["Sweet", "Herbal", "Peppery"],
+    "ingredients": ["Basil"],
+    "story": "Liguria's terraced hillsides gave the world pesto. Dried basil brings that sweet, peppery finish all year round.",
+    "pairsWith": ["Tomatoes", "Mozzarella", "Olive oil", "Strawberries"], "recipe": "tomato-basil-soup"
+  },
+  {
+    "id": "whole-star-anise", "sku": "69761", "name": "Whole Star Anise", "collection": "pantry", "region": "vietnam", "origin": "Lạng Sơn star anise forests",
+    "tagline": "Aroma on Display", "heat": 0, "notes": ["Licorice", "Sweet", "Aromatic"],
+    "ingredients": ["Star anise"],
+    "story": "Star anise grows wild in the hills of Lạng Sơn, and it's the soul of a good bowl of phở. Eight perfect points of aroma.",
+    "pairsWith": ["Beef broth", "Rice noodles", "Pears", "Duck"], "recipe": "weeknight-pho-bo"
+  }
+]
