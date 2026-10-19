@@ -141,7 +141,7 @@
     "tagline": "Fresh Feels Forever", "heat": 0, "notes": ["Zesty", "Herbal", "Bright"],
     "ingredients": ["Lemon peel", "Orange peel", "Parsley", "Thyme", "Garlic", "Sea salt", "Black pepper"],
     "story": "Amalfi lemons, sun-warmed orange peel and garden herbs. A shake of Mediterranean coastline for fish, chicken and greens.",
-    "pairsWith": ["White fish", "Shrimp", "Asparagus", "Chicken breast"], "recipe": "citrus-herb-baked-cod"
+    "pairsWith": ["White fish", "Shrimp", "Asparagus", "Chicken breast"], "recipe": "citrus-herb-baked-cod", "color": "#d9b23a"
   },
   {
     "id": "citrus-chili-lime", "sku": "69738", "name": "Citrus Chili Lime", "collection": "citrus", "region": "mexico", "origin": "Yucatán fruit stands",

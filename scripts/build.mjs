@@ -231,8 +231,17 @@ function shopPage() {
   const chipItems = [["all", "All", products.length], ["new", "New for 2026", products.filter((p) => p.isNew).length], ...collections.map((c) => [c.id, c.short, products.filter((p) => p.collection === c.id).length])];
   const body = `
   <main id="main">
-    <section class="hero hero--short">
-      <div class="hero__bg"><img src="images/AdobeStock_585079465-p-1600.webp" alt="" fetchpriority="high"></div>
+    <section class="hero hero--arches">
+      <div class="arches" aria-hidden="true">
+        ${["l", "c", "r"].map((k) => `<div class="arch arch--${k}"><img class="arch__vista" src="images/AdobeStock_615585664-p-2000.jpeg" alt="" ${k === "c" ? 'fetchpriority="high"' : 'loading="lazy"'}>${k === "c" ? `
+          <div class="arch__still">
+            <div class="plinth plinth--front"></div><div class="plinth plinth--back"></div>
+            <img class="still-jar still-jar--back" src="images/products/turmeric.webp" alt="">
+            <span class="mound mound--back" style="--accent:${P.turmeric.color}"></span>
+            <img class="still-jar still-jar--front" src="images/products/smoked-paprika.webp" alt="">
+            <span class="mound mound--front" style="--accent:${P["smoked-paprika"].color}"></span>
+          </div>` : ""}</div>`).join("")}
+      </div>
       <div class="container stack" style="--stack:1rem">
         <span class="eyebrow reveal">The Spice Rack</span>
         <h1 class="reveal" style="--i:1">Every jar is a <em>passport</em></h1>
