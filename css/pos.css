@@ -224,14 +224,14 @@ ul, ol { margin: 0; padding: 0; }
    Each spice sits on a stone plinth in a mound of itself, framed by an arched window,
    on a deep pigment field made from its label colour (moody field, vibrant pop). */
 .jar, .pigment, .spice-hero, .mound {
-  --pig: color-mix(in oklab, var(--accent, var(--gold)) 62%, #140805);
-  --pig-deep: color-mix(in oklab, var(--accent, var(--gold)) 30%, #0b0503);
+  --pig: color-mix(in oklab, var(--accent, var(--gold)) 42%, #030805);
+  --pig-deep: color-mix(in oklab, var(--accent, var(--gold)) 8%, #020805);
   --pig-hi: color-mix(in oklab, var(--accent, var(--gold)) 88%, #fff3e2);
 }
 @supports (color: oklch(from red l c h)) {
   .jar, .pigment, .spice-hero, .mound {
-    --pig: oklch(from var(--accent, var(--gold)) clamp(.32, calc(l * .62), .46) clamp(.06, calc(c * 1.5), .2) h);
-    --pig-deep: oklch(from var(--accent, var(--gold)) clamp(.15, calc(l * .3), .22) clamp(.03, calc(c * 1.05), .12) h);
+    --pig: oklch(from var(--accent, var(--gold)) clamp(.24, calc(l * .45), .32) clamp(.05, calc(c * 1.25), .16) h);
+    --pig-deep: oklch(from var(--accent, var(--gold)) .13 clamp(.015, calc(c * .3), .04) h);
     --pig-hi: oklch(from var(--accent, var(--gold)) clamp(.58, l, .8) clamp(.06, calc(c * 1.6), .22) h);
   }
 }
@@ -239,9 +239,10 @@ ul, ol { margin: 0; padding: 0; }
   position: relative; display: block; aspect-ratio: 4 / 5; isolation: isolate; overflow: hidden;
   border-radius: var(--radius-l);
   background:
-    linear-gradient(115deg, transparent 28%, rgba(255, 236, 210, .1) 40%, transparent 54%),
-    radial-gradient(130% 70% at 50% 118%, rgba(0, 0, 0, .75), transparent 62%),
-    radial-gradient(110% 90% at 28% 0%, var(--pig), var(--pig-deep) 78%);
+    linear-gradient(115deg, transparent 28%, rgba(255, 236, 210, .06) 40%, transparent 54%),
+    radial-gradient(130% 70% at 50% 118%, rgba(0, 0, 0, .8), transparent 62%),
+    radial-gradient(58% 46% at 50% 38%, color-mix(in oklab, var(--pig) 80%, transparent), transparent 78%),
+    linear-gradient(180deg, var(--forest-900), #010603);
 }
 .jar::before { /* arched window */
   content: ""; position: absolute; z-index: -1; left: 20%; right: 20%; top: 8%; bottom: 24%;
@@ -249,14 +250,14 @@ ul, ol { margin: 0; padding: 0; }
   background:
     linear-gradient(115deg, rgba(255, 255, 255, .14), transparent 45%),
     linear-gradient(180deg, color-mix(in oklab, var(--pig-hi) 45%, #efe2d0) 0%, var(--pig-hi) 58%, var(--pig) 100%);
-  box-shadow: 0 0 0 7px rgba(0, 0, 0, .2), inset 10px 0 18px -6px rgba(0, 0, 0, .35), inset 0 -40px 50px -24px rgba(0, 0, 0, .4);
+  box-shadow: 0 0 0 7px rgba(0, 0, 0, .35), 0 0 60px -10px color-mix(in oklab, var(--pig-hi) 45%, transparent), inset 10px 0 18px -6px rgba(0, 0, 0, .4), inset 0 -40px 50px -24px rgba(0, 0, 0, .5);
 }
 .jar::after { /* stone plinth + spice mound */
   content: ""; position: absolute; z-index: -1; left: 15%; right: 15%; bottom: 0; height: 29%;
   background:
     radial-gradient(34% 26% at 50% 30%, var(--pig-hi) 0%, var(--pig) 70%, transparent 73%),
-    radial-gradient(50% 13% at 50% 30%, #8d857c 0%, #6e665e 94%, transparent 100%),
-    linear-gradient(90deg, #2b2623, #5f5851 32%, #6d665e 46%, #3e3834 78%, #221e1b) 0 30% / 100% 70% no-repeat;
+    radial-gradient(50% 13% at 50% 30%, #4b544d 0%, #323a34 94%, transparent 100%),
+    linear-gradient(90deg, #0b100d, #2c342e 32%, #38413a 46%, #1b211d 78%, #070a08) 0 30% / 100% 70% no-repeat;
 }
 .jar img {
   position: absolute; left: 8%; right: 8%; bottom: 20%; width: 84%; height: 68%;
@@ -271,24 +272,24 @@ ul, ol { margin: 0; padding: 0; }
 }
 
 /* ---------- Arched-window hero (stone wall, one vista through three arches) ---------- */
-.hero--arches { min-height: 0; padding: var(--header-h) 0 clamp(2.5rem, 2rem + 3vw, 4.5rem); align-items: start; background: #1d1916; }
+.hero--arches { min-height: 0; padding: var(--header-h) 0 clamp(2.5rem, 2rem + 3vw, 4.5rem); align-items: start; background: #020805; }
 .hero--arches::after { display: none; }
 .arches {
   position: relative; height: clamp(380px, 64svh, 720px); container-type: size; overflow: hidden; margin-bottom: -4rem;
   background:
-    linear-gradient(118deg, transparent 22%, rgba(255, 228, 196, .1) 34%, transparent 48%),
-    radial-gradient(70% 90% at 50% 30%, #4a423b, #262019 75%);
+    linear-gradient(118deg, transparent 22%, rgba(255, 228, 196, .06) 34%, transparent 48%),
+    radial-gradient(70% 90% at 50% 30%, #12271c, #030a06 75%);
 }
 .arches::before { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: url("../images/noise.png"); opacity: .22; mix-blend-mode: overlay; }
-.arches::after { content: ""; position: absolute; inset: auto 0 0; height: 22cqh; z-index: 3; background: linear-gradient(transparent, #1d1916); }
+.arches::after { content: ""; position: absolute; inset: auto 0 0; height: 22cqh; z-index: 3; background: linear-gradient(transparent, #020805); }
 .arch {
   --sill: 10cqh;
   position: absolute; bottom: var(--sill); left: var(--x); width: var(--w); height: var(--h); overflow: hidden;
   border-radius: 999px 999px 0 0;
-  box-shadow: 0 0 0 clamp(8px, 1.4cqw, 18px) rgba(0, 0, 0, .18);
+  box-shadow: 0 0 0 clamp(8px, 1.4cqw, 18px) rgba(0, 0, 0, .35);
 }
 .arch::after { content: ""; position: absolute; inset: 0; box-shadow: inset clamp(10px, 2cqw, 26px) 0 24px -8px rgba(0, 0, 0, .55), inset 0 -12px 18px -10px rgba(0, 0, 0, .5); border-radius: inherit; }
-.arch__vista { position: absolute; max-width: none; width: 170cqw; height: 100cqh; object-fit: cover; object-position: 50% 62%; left: calc(-1 * var(--x) - 4cqw); top: calc(-1 * (100cqh - var(--sill) - var(--h))); filter: saturate(1.15) contrast(1.05); }
+.arch__vista { position: absolute; max-width: none; width: 170cqw; height: 100cqh; object-fit: cover; object-position: 50% 62%; left: calc(-1 * var(--x) - 4cqw); top: calc(-1 * (100cqh - var(--sill) - var(--h))); filter: saturate(1.15) contrast(1.08) brightness(.82); }
 .arch--l { --x: -12cqw; --w: 28cqw; --h: 56cqh; }
 .arch--c { --x: 21cqw; --w: 58cqw; --h: 72cqh; }
 .arch--r { --x: 84cqw; --w: 28cqw; --h: 56cqh; }
@@ -298,8 +299,8 @@ ul, ol { margin: 0; padding: 0; }
   .arch--r { --x: 69cqw; --w: 24cqw; --h: 60cqh; }
 }
 .arch__still { position: absolute; inset: 0; z-index: 1; }
-.plinth { position: absolute; left: 50%; translate: -50% 0; bottom: 0; border-radius: 50% / 14px; background: linear-gradient(90deg, #2b2623, #6a625a 34%, #7a7269 48%, #403a35 80%, #221e1b); }
-.plinth::before { content: ""; position: absolute; inset: -14px 0 auto; height: 28px; border-radius: 50%; background: radial-gradient(closest-side, #a19688, #7b736a); }
+.plinth { position: absolute; left: 50%; translate: -50% 0; bottom: 0; border-radius: 50% / 14px; background: linear-gradient(90deg, #0b100d, #2f3831 34%, #3d463f 48%, #1c221e 80%, #070a08); }
+.plinth::before { content: ""; position: absolute; inset: -14px 0 auto; height: 28px; border-radius: 50%; background: radial-gradient(closest-side, #59625b, #39413b); }
 .plinth--back { width: 46%; height: 30%; bottom: 14%; }
 .plinth--front { width: 78%; height: 16%; }
 .still-jar { position: absolute; z-index: 1; width: auto; filter: drop-shadow(-12px 14px 14px rgba(0, 0, 0, .45)); }
@@ -385,12 +386,12 @@ ul, ol { margin: 0; padding: 0; }
 
 /* ---------- Spice detail ---------- */
 .spice-hero { padding-top: calc(var(--header-h) + 1.5rem); padding-bottom: 4rem; position: relative; isolation: isolate; }
-.spice-hero::before { /* the spice's own pigment as a full-bleed field, sinking into the forest */
+.spice-hero::before { /* near-black forest field with the spice's pigment glowing behind the jar */
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(115deg, transparent 20%, rgba(255, 236, 210, .07) 34%, transparent 50%),
-    linear-gradient(180deg, transparent 55%, var(--forest-950)),
-    radial-gradient(90% 70% at 25% 30%, var(--pig), var(--pig-deep) 70%);
+    linear-gradient(115deg, transparent 20%, rgba(255, 236, 210, .04) 34%, transparent 50%),
+    radial-gradient(48% 52% at 26% 40%, color-mix(in oklab, var(--pig) 75%, transparent), transparent 72%),
+    linear-gradient(180deg, #010603, var(--forest-950));
 }
 .spice-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: url("../images/noise.png"); opacity: .18; mix-blend-mode: overlay; pointer-events: none; }
 .spice-hero__grid { display: grid; gap: 2rem; align-items: center; }
