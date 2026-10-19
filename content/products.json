@@ -101,7 +101,7 @@
   },
 
   {
-    "id": "texas-bbq", "featured": 6, "sku": "69732", "name": "Texas BBQ", "collection": "global-flavors", "region": "texas", "origin": "Lockhart smokehouses",
+    "id": "texas-bbq", "featured": 6, "sku": "69732", "name": "BBQ Seasoning", "collection": "global-flavors", "region": "texas", "origin": "Lockhart smokehouses",
     "tagline": "Backyard Approved", "heat": 2, "notes": ["Smoky", "Peppery", "Sweet"],
     "ingredients": ["Black pepper", "Sea salt", "Paprika", "Brown sugar", "Garlic", "Onion", "Chili powder"],
     "story": "Salt, coarse pepper and a little sweetness for that mahogany bark. Texas Hill Country barbecue, no pit required.",
