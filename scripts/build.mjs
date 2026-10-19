@@ -525,20 +525,17 @@ function homePage() {
     ["images/q8.jpg", "A chef finishing a plate"],
   ];
   const FLAVOURS = [["Smoky", "#b8708f"], ["Zesty", "#e39a5c"], ["Floral", "#a98bd0"], ["Fiery", "#e0745a"], ["Earthy", "#7fae86"]];
-  const arch = (sweep) => `<path d="M100 6A94 94 0 0 ${sweep} ${sweep ? 194 : 6} 100V278" pathLength="1"/>`;
-  /* First-visit intro: an arched window draws itself in gold, spice pours in, then we step through it */
+  /* First-visit intro: salt and spice gather into a turning globe, then we fly into it */
   const intro = `
   <div class="intro" data-intro aria-hidden="true">
-    <div class="intro__stage">
-      <div class="intro__arch">
-        <div class="intro__window"></div>
-        <canvas class="intro__grains" data-intro-grains></canvas>
-        <svg class="intro__line" viewBox="0 0 200 280" preserveAspectRatio="none">${arch(0)}${arch(1)}<path class="intro__sill" d="M0 278.5H200" pathLength="1"/></svg>
-      </div>
-      <div class="intro__caption">
-        ${FLAVOURS.map(([w, c]) => `<span class="intro__word" style="color:${c}">${w}</span>`).join("")}
-        <img class="intro__logo" src="images/brand/pos-logo-cream.png" alt="" width="635" height="221">
-      </div>
+    <canvas class="intro__grains" data-intro-grains></canvas>
+    <div class="intro__globe" data-intro-globe>
+      <div class="intro__window"></div>
+      <svg class="intro__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="99.5" pathLength="1"/><ellipse class="intro__equator" cx="100" cy="100" rx="99.5" ry="30" pathLength="1"/></svg>
+    </div>
+    <div class="intro__caption">
+      ${FLAVOURS.map(([w, c]) => `<span class="intro__word" style="color:${c}">${w}</span>`).join("")}
+      <img class="intro__logo" src="images/brand/pos-logo-cream.png" alt="" width="635" height="221">
     </div>
     <div class="intro__count"><span class="intro__num" data-intro-count>0</span><span class="intro__pct">%</span><span class="intro__label">Loading the spice routes</span></div>
   </div>`;
