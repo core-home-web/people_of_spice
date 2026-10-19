@@ -516,6 +516,7 @@ function homePage() {
     ["Source", "At the market", "images/AdobeStock_631181774", "A lantern-lit night market stall", "From the night markets of Bangkok to the souks of Tangier, every blend carries the story of where it comes from."],
     ["Create", "In the kitchen", "images/AdobeStock_601004060", "Rows of ground spices in wooden trays", "Balanced with a chef's precision and a home cook's heart, so simple ingredients taste like somewhere."],
   ];
+  const featured = products.filter((p) => p.featured).sort((a, b) => a.featured - b.featured);
   const mosaic = [
     ["images/AdobeStock_492490915-p-800.jpeg", "A table spread with dishes for a shared feast"],
     ["images/ramen-bowl---people-of-spice-p-800.jpg", "Steaming noodle bowl lifted with chopsticks"],
@@ -571,6 +572,46 @@ function homePage() {
         <p class="story__statement" data-split="fill">For thousands of years, civilizations around the globe have used spices to turn mealtimes into ritual — healing experiences for body and soul. We crave that same sense of <em>community</em>, <em>adventure</em> and <em>savoring</em> all of the world’s unique cuisines.</p>
         <p class="lede" data-split="fill">Our blends carry you from the food carts of Bangkok to a bayou-front kitchen in New Orleans, with equal parts comfort and excitement.</p>
         <a class="link-arrow reveal" href="about.html">Read our story ${ICON.arrow}</a>
+      </div>
+    </section>
+
+    <section class="spot" id="blends" aria-labelledby="spot-title" data-spot style="--spot:${featured[0].color}">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow reveal">Featured spices</span><h2 data-split="rise" id="spot-title">Meet the <em>blends</em></h2></div>
+          <p class="reveal">Turn the dial to meet ${featured.length} of our ${products.length} spices, then open a jar to see where it comes from and what to cook with it.</p>
+        </div>
+        <div class="spot__layout">
+          <div class="spot__stage" aria-hidden="true" data-spot-stage>${featured.map((p, i) => jar(p, r, { cls: `spot__jar${i ? "" : " is-active"}`, eager: !i })).join("")}</div>
+          <div class="dial" data-dial>
+            <button class="dial__btn" type="button" data-dial-step="-1" aria-label="Previous spice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <div class="dial__track" data-dial-track>${featured.map((p, i) => `
+              <a class="dial__item${p.photo ? " dial__item--photo" : ""}" href="spices/${p.id}.html" style="--accent:${p.color}" data-dial-item${i ? "" : ' aria-current="true"'}><img src="${p.image}" alt="" loading="lazy" decoding="async"><span class="sr-only">${esc(p.name)}</span></a>`).join("")}
+            </div>
+            <button class="dial__btn" type="button" data-dial-step="1" aria-label="Next spice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+            <p class="dial__count" aria-hidden="true"><span data-dial-index>01</span> / ${String(featured.length).padStart(2, "0")}</p>
+          </div>
+          <div class="spot__panels">${featured.map((p, i) => {
+            const rec = recipeFor(p);
+            return `
+            <article class="spot__panel${i ? "" : " is-active"}" data-panel${i ? ' aria-hidden="true"' : ""}>
+              <span class="spot__coll">${esc(C[p.collection].name)}${p.isNew ? " · New for 2026" : ""}</span>
+              <h3 class="spot__name">${esc(p.name)}</h3>
+              <p class="spot__tagline">${esc(p.tagline)}</p>
+              <div class="spot__meta"><span class="spot__origin">${ICON.pin}${esc(p.origin)}</span>${heat(p.heat)}</div>
+              <p class="spot__story">${esc(p.story)}</p>
+              <ul class="tags">${p.notes.map((n) => `<li class="tag tag--note">${esc(n)}</li>`).join("")}</ul>
+              <div class="spot__ctas">
+                <a class="btn" href="spices/${p.id}.html">Discover ${esc(p.name)} ${ICON.arrow}</a>
+                <a class="link-arrow" href="recipes/${rec.id}.html">Cook ${esc(rec.title)} ${ICON.arrow}</a>
+                <a class="link-arrow" href="world-of-spice.html#${p.id}">${ICON.globe} Find it on the globe</a>
+              </div>
+            </article>`;
+          }).join("")}
+          </div>
+        </div>
+        <p class="sr-only" aria-live="polite" data-spot-live></p>
+        <a class="link-arrow" href="shop.html">Browse all ${products.length} spices on the Spice Rack ${ICON.arrow}</a>
       </div>
     </section>
 
@@ -683,6 +724,7 @@ function homePage() {
       '<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>',
       '<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>',
       '<script src="js/scroll-fx.js" defer></script>',
+      '<script src="js/spotlight.js" defer></script>',
     ].join("\n  "),
     jsonld: {
       "@context": "https://schema.org", "@type": "Organization", name: "People of Spice", url: `${SITE}/`,
