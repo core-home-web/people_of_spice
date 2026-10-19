@@ -10,8 +10,10 @@
  *   spices/<id>.html          One page per spice
  *   recipes.html              Recipe index (filterable)
  *   recipes/<id>.html         One page per recipe (legacy URLs kept)
+ *   index.html                Homepage (hero film, story, globe teaser, new shelves, recipes)
  *   world-of-spice.html       Interactive globe (catalog inlined)
  *   data/globe-dots.js        Land dot-grid for the globe
+ *   images/globe-teaser.svg   Still frame of the globe for the homepage
  *
  * Run:  npm run build
  */
@@ -200,6 +202,23 @@ const recipeCard = (rec, r, i = 0) => {
     </a>`;
 };
 
+const featureRecipe = (rec, r, style = "") => {
+  const reg = G[productFor(rec).region];
+  return `<a class="feature-recipe reveal"${style ? ` style="${style}"` : ""} href="${r}recipes/${rec.id}.html">
+          <div class="feature-recipe__media">${recipeMedia(rec, r)}</div>
+          <div class="feature-recipe__body">
+            <span class="r-card__spice">${esc(reg.name)} · ${minutes(total(rec))}</span>
+            <h3>${esc(rec.title)}</h3>
+            <p style="color:var(--text-muted)">${esc(rec.summary)}</p>
+            <div class="r-card__facts"><span>${ICON.serves}Serves ${esc(rec.serves)}</span><span>${ICON.clock}Prep ${minutes(rec.prep)}</span><span>${rec.ingredients.length} ingredients</span></div>
+            <span class="btn btn--sm" style="justify-self:start">View recipe ${ICON.arrow}</span>
+          </div>
+        </a>`;
+};
+
+const GREETINGS = ["Bon appétit", "Buen provecho", "召し上がれ", "Buon appetito", "Sahtein", "Guten Appetit", "Ăn ngon nhé", "Kali orexi"];
+const marquee = () => `<div class="marquee" aria-hidden="true"><div class="marquee__track">${Array(2).fill(GREETINGS.map((w) => `<span>${w}</span>`).join("")).join("")}</div></div>`;
+
 const chips = (items, label) =>
   `<div class="chips" role="group" aria-label="${esc(label)}" data-filter-chips>${items.map(([v, l, n], i) => `<button class="chip" type="button" data-value="${v}" aria-pressed="${i === 0}">${esc(l)}${n != null ? ` <span class="chip__count">${n}</span>` : ""}</button>`).join("")}</div>`;
 
@@ -221,7 +240,7 @@ function shopPage() {
         <div class="reveal" style="--i:3"><a class="btn btn--ghost" href="world-of-spice.html">${ICON.globe} Explore them on the globe</a></div>
       </div>
     </section>
-    <div class="marquee" aria-hidden="true"><div class="marquee__track">${Array(2).fill(["Bon appétit", "Buen provecho", "召し上がれ", "Buon appetito", "Sahtein", "Guten Appetit", "Ăn ngon nhé", "Kali orexi"].map((w) => `<span>${w}</span>`).join("")).join("")}</div></div>
+    ${marquee()}
     <section class="section" data-filter>
       <div class="container">
         <div class="toolbar"><div class="toolbar__row">${chips(chipItems, "Filter by collection")}${search("Search spices")}</div><p class="result-count" data-filter-count aria-live="polite"></p></div>
@@ -281,16 +300,7 @@ function spicePage(p) {
     <section class="section" style="padding-top:0">
       <div class="container">
         <span class="eyebrow reveal">Cook with it</span>
-        <a class="feature-recipe reveal" style="margin-top:1.25rem" href="../recipes/${rec.id}.html">
-          <div class="feature-recipe__media">${recipeMedia(rec, r)}</div>
-          <div class="feature-recipe__body">
-            <span class="r-card__spice">${esc(reg.name)} · ${minutes(total(rec))}</span>
-            <h3>${esc(rec.title)}</h3>
-            <p style="color:var(--text-muted)">${esc(rec.summary)}</p>
-            <div class="r-card__facts"><span>${ICON.serves}Serves ${esc(rec.serves)}</span><span>${ICON.clock}Prep ${minutes(rec.prep)}</span><span>${rec.ingredients.length} ingredients</span></div>
-            <span class="btn btn--sm" style="justify-self:start">View recipe ${ICON.arrow}</span>
-          </div>
-        </a>
+        ${featureRecipe(rec, r, "margin-top:1.25rem")}
       </div>
     </section>
     ${more.length ? `<section class="section" style="padding-top:0">
@@ -483,6 +493,157 @@ function globePage() {
   });
 }
 
+function homePage() {
+  const r = "";
+  const HERO = "videos/people_of_spice_ai_sequence-720p";
+  const IG = "https://www.instagram.com/peopleofspice/";
+  const fresh = collections.filter((c) => c.id !== "signature").flatMap((c) => products.filter((p) => p.collection === c.id));
+  const shelfChips = [["all", "All new", fresh.length], ...collections.filter((c) => c.id !== "signature").map((c) => [c.id, c.short, products.filter((p) => p.collection === c.id).length])];
+  const [lead, ...more] = recipes.filter((x) => x.featured);
+  const busiest = [...regions].sort((a, b) => products.filter((p) => p.region === b.id).length - products.filter((p) => p.region === a.id).length).slice(0, 6);
+  const ig = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>';
+  const pillars = [
+    ["Grow", "images/AdobeStock_377259178-p-800.webp", "Freshly harvested turmeric root held in two hands", "We start with growers who know their soil, their climate and the exact moment each spice reaches its peak."],
+    ["Source", "images/AdobeStock_631181774-p-800.webp", "A lantern-lit night market stall", "From the night markets of Bangkok to the souks of Tangier, every blend carries the story of where it comes from."],
+    ["Create", "images/AdobeStock_601004060-p-800.webp", "Rows of ground spices in wooden trays", "Balanced with a chef's precision and a home cook's heart, so simple ingredients taste like somewhere."],
+  ];
+  const mosaic = [
+    ["images/AdobeStock_492490915-p-800.jpeg", "A table spread with dishes for a shared feast"],
+    ["images/ramen-bowl---people-of-spice-p-800.jpg", "Steaming noodle bowl lifted with chopsticks"],
+    ["images/POS_world_of_spice-8-p-800.jpg", "Friends sharing dinner in the desert at sunset"],
+    ["images/AdobeStock_639969282-p-800.webp", "A bowl of spiced rice held out to the camera"],
+    ["images/POS_world_of_spice-9-p-800.jpg", "Pasta and wine on a vineyard table"],
+    ["images/q8.jpg", "A chef finishing a plate"],
+  ];
+  const body = `
+  <main id="main">
+    <section class="hero hero--home" data-hero aria-labelledby="hero-title">
+      <div class="hero__bg">
+        <video muted loop playsinline preload="none" poster="${HERO}-poster-00001.jpg" aria-hidden="true" data-hero-video>
+          <source src="${HERO}-transcode.mp4" type="video/mp4">
+          <source src="${HERO}-transcode.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="container stack" style="--stack:1rem">
+        <span class="eyebrow reveal">People of Spice</span>
+        <h1 id="hero-title"><span class="split-line"><span>Unique &amp;</span></span><span class="split-line" style="--i:1"><span><em>Authentic</em> Flavors</span></span></h1>
+        <p class="lede reveal" style="--i:2">Savor the knowledge of having a world of spices in your home — ${products.length} blends from ${regions.length} kitchens, gathered at one table.</p>
+        <div class="hero__ctas reveal" style="--i:3">
+          <a class="btn" href="shop.html">Shop the Spice Rack ${ICON.arrow}</a>
+          <a class="btn btn--ghost" href="world-of-spice.html">${ICON.globe} Travel the World of Spice</a>
+        </div>
+      </div>
+      <button class="hero__toggle" type="button" aria-label="Pause background video" data-video-toggle>
+        <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5Z"/></svg>
+      </button>
+    </section>
+
+    <section class="section story" id="story" aria-labelledby="story-title">
+      <div class="container">
+        <span class="eyebrow reveal">Introducing People of Spice</span>
+        <h2 class="sr-only" id="story-title">Our story</h2>
+        <p class="story__statement reveal" style="--i:1">For thousands of years, civilizations around the globe have used spices to turn mealtimes into ritual — healing experiences for body and soul. We crave that same sense of <em>community</em>, <em>adventure</em> and <em>savoring</em> all of the world’s unique cuisines.</p>
+        <p class="lede reveal" style="--i:2">Our blends carry you from the food carts of Bangkok to a bayou-front kitchen in New Orleans, with equal parts comfort and excitement.</p>
+        <ol class="pillars">${pillars.map(([name, img, alt, text], i) => `
+          <li class="pillar reveal" style="--i:${i}">
+            <div class="pillar__media"><img src="${img}" alt="${esc(alt)}" loading="lazy" decoding="async"></div>
+            <div><h3><span>0${i + 1}</span>${name}</h3><p>${esc(text)}</p></div>
+          </li>`).join("")}
+        </ol>
+        <a class="link-arrow reveal" href="about.html">Read our story ${ICON.arrow}</a>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" aria-labelledby="globe-title">
+      <div class="container">
+        <a class="globe-teaser reveal" href="world-of-spice.html">
+          <div class="globe-teaser__art"><img src="images/globe-teaser.svg" alt="A globe dotted with gold pins over the Mediterranean, the Middle East and South Asia" width="600" height="600" loading="lazy" decoding="async"></div>
+          <div class="globe-teaser__body">
+            <span class="eyebrow">World of Spice</span>
+            <h2 id="globe-title">Where in the <em>world?</em></h2>
+            <p class="lede">Every jar is pinned to the kitchen that inspired it. Spin the globe, tap a pin, and cook your way across ${regions.length} regions.</p>
+            <ul class="tags">${busiest.map((g) => `<li class="tag">${esc(g.name)}</li>`).join("")}</ul>
+            <dl class="globe-stats"><div><dt>Spices</dt><dd>${products.length}</dd></div><div><dt>Regions</dt><dd>${regions.length}</dd></div><div><dt>Recipes</dt><dd>${recipes.length}</dd></div></dl>
+            <span class="btn">${ICON.globe} Spin the globe ${ICON.arrow}</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section shelf" id="new" data-filter aria-labelledby="shelf-title">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow reveal">New for 2026</span><h2 class="reveal" style="--i:1" id="shelf-title">Fresh on the <em>shelf</em></h2></div>
+          <p class="reveal" style="--i:2">${fresh.length} new blends, salts and pantry spices across ${shelfChips.length - 1} collections — each in glass, with no artificial fillers.</p>
+        </div>
+        ${chips(shelfChips, "Filter new spices by collection")}
+        <p class="result-count" data-filter-count aria-live="polite"></p>
+        <div class="rail">${fresh.map((p, i) => productCard(p, r, i)).join("")}</div>
+        <a class="link-arrow" href="shop.html">Browse all ${products.length} on the Spice Rack ${ICON.arrow}</a>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" id="recipes" aria-labelledby="recipes-title">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow reveal">Cook the world</span><h2 class="reveal" style="--i:1" id="recipes-title">Featured <em>recipes</em></h2></div>
+          <a class="btn btn--ghost reveal" style="--i:2" href="recipes.html">All ${recipes.length} recipes ${ICON.arrow}</a>
+        </div>
+        ${featureRecipe(lead, r)}
+        <div class="grid grid--recipes grid--four" style="margin-top:clamp(.75rem, .5rem + 1vw, 1.5rem)">${more.map((rec, i) => recipeCard(rec, r, i)).join("")}</div>
+      </div>
+    </section>
+
+    ${marquee()}
+
+    <section class="section connect" id="connect" aria-labelledby="connect-title">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow reveal">Connect with us</span><h2 class="reveal" style="--i:1" id="connect-title">Inspired by <em>you</em>, always</h2></div>
+          <a class="btn btn--ghost reveal" style="--i:2" href="${IG}" target="_blank" rel="noopener">${ig} @peopleofspice</a>
+        </div>
+        <ul class="ig-grid">${mosaic.map(([src, alt], i) => `<li class="reveal" style="--i:${i % 6}"><a href="${IG}" target="_blank" rel="noopener"><img src="${src}" alt="${esc(alt)}" loading="lazy" decoding="async"><span class="sr-only"> — see more on Instagram</span></a></li>`).join("")}</ul>
+
+        <div class="gift-card reveal" id="gift">
+          <div class="stack" style="--stack:1rem">
+            <span class="eyebrow">Send a gift</span>
+            <h2>Share the <em>table</em></h2>
+            <p class="lede">Send a gift of spice to someone you love, or add a private chef’s menu for two, four or six. Tell us who it’s for and we’ll be in touch by email.</p>
+          </div>
+          <form class="form" action="https://formsubmit.co/corehomeweb2@gmail.com" method="POST" id="email-form-3" name="email-form-3">
+            <input type="hidden" name="_subject" value="New Gift Request from People of Spice">
+            <input type="hidden" name="_next" value="${SITE}/thank-you.html">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
+            <div class="form__row">
+              <div class="field"><label for="gift-first">First name</label><input id="gift-first" name="First-Name" type="text" maxlength="256" autocomplete="given-name"></div>
+              <div class="field"><label for="gift-last">Last name</label><input id="gift-last" name="Last-Name" type="text" maxlength="256" autocomplete="family-name" required></div>
+            </div>
+            <div class="field"><label for="gift-email">Email address</label><input id="gift-email" name="email" type="email" maxlength="256" autocomplete="email" required></div>
+            <div class="field"><label for="gift-message">Message</label><textarea id="gift-message" name="Message" rows="4" maxlength="2000" required placeholder="Who is it for, and what are they cooking?"></textarea></div>
+            <fieldset class="field">
+              <legend>Requested chef service</legend>
+              <div class="choice">${["Menu For 2", "Menu For 4", "Menu For 6"].map((v, i) => `<label><input type="radio" name="Requested-Service" value="${v}"${i ? "" : " checked"}><span>${v.replace("For", "for")}</span></label>`).join("")}</div>
+            </fieldset>
+            <button class="btn" type="submit">Send ${ICON.arrow}</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>${footer(r)}`;
+  return layout({
+    r, file: "index.html", bodyClass: "page-home",
+    title: "People of Spice | Authentic Global Spices for Home Cooking",
+    description: `Discover ${products.length} authentic spice blends inspired by ${regions.length} cooking traditions. From Thai curry to Moroccan ras el hanout, bring the world's kitchens to your family table.`,
+    head: `<link rel="preload" as="image" href="${HERO}-poster-00001.jpg" fetchpriority="high">\n  <link rel="stylesheet" href="css/home.css">`,
+    body,
+    jsonld: {
+      "@context": "https://schema.org", "@type": "Organization", name: "People of Spice", url: `${SITE}/`,
+      logo: `${SITE}/images/brand/pos-logo-cream.png`, sameAs: [IG],
+    },
+  });
+}
+
 /* ------------------------------------------------------------------ globe dots */
 function globeDots() {
   const topo = read("scripts/vendor/land-110m.json");
@@ -524,7 +685,38 @@ function globeDots() {
   }
   const buf = Buffer.from(new Int16Array(out).buffer);
   write("data/globe-dots.js", `/* Generated by scripts/build.mjs from Natural Earth 1:110m land (public domain). [lon*10, lat*10] Int16 pairs. */\nwindow.POS_DOTS="${buf.toString("base64")}";\n`);
-  return out.length / 2;
+  return out;
+}
+
+/* Static, still frame of the globe for the homepage teaser: same dot grid, pinned regions,
+   orthographic projection centred between the Mediterranean and India. */
+function globeTeaser(dots) {
+  const S = 600, R = 270, C = S / 2, lon0 = 32, lat0 = 22, rad = Math.PI / 180;
+  const project = (lon, lat) => {
+    const l = (lon - lon0) * rad, p = lat * rad, p0 = lat0 * rad;
+    const depth = Math.sin(p0) * Math.sin(p) + Math.cos(p0) * Math.cos(p) * Math.cos(l);
+    return { x: C + R * Math.cos(p) * Math.sin(l), y: C - R * (Math.cos(p0) * Math.sin(p) - Math.sin(p0) * Math.cos(p) * Math.cos(l)), depth };
+  };
+  const shades = [[0.08, 0.22], [0.35, 0.4], [0.6, 0.62], [1.01, 0.9]];
+  const paths = shades.map(() => []);
+  for (let i = 0; i < dots.length; i += 2) {
+    const { x, y, depth } = project(dots[i] / 10, dots[i + 1] / 10);
+    const band = shades.findIndex(([max]) => depth < max);
+    if (depth > 0.02 && band >= 0) paths[band].push(`M${x.toFixed(1)} ${y.toFixed(1)}h0`);
+  }
+  const pins = regions.map((g) => project(g.lng, g.lat)).filter((p) => p.depth > 0.15);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${S} ${S}" width="${S}" height="${S}">
+<defs>
+<radialGradient id="glow"><stop offset="70%" stop-color="#d6b26a" stop-opacity=".22"/><stop offset="100%" stop-color="#d6b26a" stop-opacity="0"/></radialGradient>
+<radialGradient id="sea" cx="38%" cy="32%"><stop offset="0%" stop-color="#184332"/><stop offset="65%" stop-color="#04251a"/><stop offset="100%" stop-color="#001a0d"/></radialGradient>
+</defs>
+<circle cx="${C}" cy="${C}" r="${C}" fill="url(#glow)"/>
+<circle cx="${C}" cy="${C}" r="${R}" fill="url(#sea)" stroke="#f8ddaf" stroke-opacity=".18"/>
+${paths.map((d, i) => `<path d="${d.join("")}" stroke="#f8ddaf" stroke-opacity="${shades[i][1]}" stroke-width="3.1" stroke-linecap="round"/>`).join("\n")}
+${pins.map(({ x, y, depth }) => `<g opacity="${(0.45 + depth * 0.55).toFixed(2)}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="11" fill="#d6b26a" fill-opacity=".22"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="#d6b26a" stroke="#001a0d" stroke-width="1.5"/></g>`).join("\n")}
+</svg>
+`;
+  write("images/globe-teaser.svg", svg);
 }
 
 /* ------------------------------------------------------------------ run */
@@ -534,4 +726,6 @@ write("recipes.html", recipesIndex());
 recipes.forEach((rec) => write(`recipes/${rec.id}.html`, recipePage(rec)));
 const dots = globeDots();
 write("world-of-spice.html", globePage());
-console.log(`Built shop, ${products.length} spice pages, recipe index, ${recipes.length} recipe pages, globe (${dots} land dots).`);
+globeTeaser(dots);
+write("index.html", homePage());
+console.log(`Built home, shop, ${products.length} spice pages, recipe index, ${recipes.length} recipe pages, globe (${dots.length / 2} land dots).`);

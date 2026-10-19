@@ -46,6 +46,26 @@
     reveals.forEach((el) => io.observe(el));
   }
 
+  /* Home hero film: plays only when motion is welcome, pauses off-screen, and can be paused by hand */
+  const hero = document.querySelector("[data-hero]");
+  const film = hero?.querySelector("[data-hero-video]");
+  if (hero && film) {
+    const btn = hero.querySelector("[data-video-toggle]");
+    let wanted = !reduceMotion && !navigator.connection?.saveData;
+    let onScreen = true;
+    const sync = () => {
+      hero.classList.toggle("is-paused", !wanted);
+      btn?.setAttribute("aria-label", wanted ? "Pause background video" : "Play background video");
+      if (wanted && onScreen) {
+        film.muted = true;
+        film.play().catch((err) => { if (err.name === "NotAllowedError") { wanted = false; sync(); } });
+      } else film.pause();
+    };
+    if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; sync(); }).observe(hero);
+    btn?.addEventListener("click", () => { wanted = !wanted; sync(); });
+    sync();
+  }
+
   /* Chip + search filtering for grids: [data-filter] > [data-filter-chips] / [data-filter-search] / [data-filter-item] */
   document.querySelectorAll("[data-filter]").forEach((root) => {
     const chips = [...root.querySelectorAll("[data-filter-chips] .chip")];
@@ -67,8 +87,12 @@
         if (count) count.textContent = tag === "all" && !q ? "" : `${shown} of ${items.length}`;
         if (empty) empty.hidden = shown > 0;
       };
-      if (document.startViewTransition && !reduceMotion && items.length < 80) document.startViewTransition(run);
-      else run();
+      if (document.startViewTransition && !reduceMotion && items.length < 80) {
+        /* A skipped transition (hidden tab, rapid clicks) still runs `run`; only its promises reject */
+        const vt = document.startViewTransition(run);
+        vt.ready.catch(() => {});
+        vt.finished.catch(() => {});
+      } else run();
     };
 
     const select = (value, scroll) => {
