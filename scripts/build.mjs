@@ -231,26 +231,15 @@ function shopPage() {
   const chipItems = [["all", "All", products.length], ["new", "New for 2026", products.filter((p) => p.isNew).length], ...collections.map((c) => [c.id, c.short, products.filter((p) => p.collection === c.id).length])];
   const body = `
   <main id="main">
-    <section class="hero hero--arches">
-      <div class="arches" aria-hidden="true">
-        ${["l", "c", "r"].map((k) => `<div class="arch arch--${k}"><img class="arch__vista" src="images/AdobeStock_615585664-p-2000.jpeg" alt="" ${k === "c" ? 'fetchpriority="high"' : 'loading="lazy"'}>${k === "c" ? `
-          <div class="arch__still">
-            <div class="plinth plinth--front"></div><div class="plinth plinth--back"></div>
-            <img class="still-jar still-jar--back" src="images/products/turmeric.webp" alt="">
-            <span class="mound mound--back" style="--accent:${P.turmeric.color}"></span>
-            <img class="still-jar still-jar--front" src="images/products/smoked-paprika.webp" alt="">
-            <span class="mound mound--front" style="--accent:${P["smoked-paprika"].color}"></span>
-          </div>` : ""}</div>`).join("")}
-      </div>
+    <section class="hero">
+      <div class="hero__bg"><img src="images/AdobeStock_611173560-p-1600.webp" srcset="images/AdobeStock_611173560-p-800.webp 800w, images/AdobeStock_611173560-p-1600.webp 1600w, images/AdobeStock_611173560-p-2600.webp 2600w" sizes="100vw" alt="" fetchpriority="high"></div>
       <div class="container stack" style="--stack:1rem">
         <span class="eyebrow reveal">The Spice Rack</span>
         <h1 class="reveal" style="--i:1">Every jar is a <em>passport</em></h1>
         <p class="lede reveal" style="--i:2">${products.length} blends, salts and single-origin spices from ${regions.length} corners of the world — packed in glass, with no artificial fillers.</p>
-        <div class="reveal" style="--i:3"><a class="btn btn--ghost" href="world-of-spice.html">${ICON.globe} Explore them on the globe</a></div>
       </div>
     </section>
-    ${marquee()}
-    <section class="section" data-filter>
+    <section class="section" data-filter style="padding-top:2rem">
       <div class="container">
         <div class="toolbar"><div class="toolbar__row">${chips(chipItems, "Filter by collection")}${search("Search spices")}</div><p class="result-count" data-filter-count aria-live="polite"></p></div>
         <div class="grid">${ordered.map((p, i) => productCard(p, r, i)).join("")}</div>
@@ -259,7 +248,7 @@ function shopPage() {
     </section>
   </main>${footer(r)}`;
   return layout({
-    r, file: "shop.html", title: "The Spice Rack — Global Spice Blends & Salts | People of Spice",
+    r, file: "shop.html", image: "images/AdobeStock_611173560-p-1600.webp", title: "The Spice Rack — Global Spice Blends & Salts | People of Spice",
     description: `Shop ${products.length} People of Spice blends, specialty salts and pantry spices inspired by ${regions.length} cooking traditions around the world.`,
     body,
     jsonld: { "@context": "https://schema.org", "@type": "ItemList", itemListElement: ordered.map((p, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/spices/${p.id}.html`, name: p.name })) },
