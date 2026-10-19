@@ -12,6 +12,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy to Cloudflare Pages
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,12 +21,23 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
 
+      - name: Check generated pages are up to date
+        run: |
+          npm run build
+          git diff --exit-code -- . ':!package-lock.json' || (echo "::error::Generated pages are stale. Run 'npm run build' and commit the result." && exit 1)
+
+      # The Cloudflare Pages Git integration also deploys every push/PR. This step only
+      # runs when a CLOUDFLARE_API_TOKEN secret is configured for the repository.
       - name: Install Wrangler
+        if: env.CLOUDFLARE_API_TOKEN != ''
         run: npm install -g wrangler
 
       - name: Deploy to Cloudflare Pages
+        if: env.CLOUDFLARE_API_TOKEN != ''
         run: wrangler pages deploy . --project-name=peopleofspice-pages
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      - name: Skip Wrangler deploy (no API token)
+        if: env.CLOUDFLARE_API_TOKEN == ''
+        run: echo "::notice::CLOUDFLARE_API_TOKEN is not set; skipping Wrangler deploy (Cloudflare Pages Git integration handles previews)."
