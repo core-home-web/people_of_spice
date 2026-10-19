@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/pos.css">
-  <script>(function(){var d=document.documentElement;try{if(sessionStorage.getItem('pos:intro'))return;sessionStorage.setItem('pos:intro','1')}catch(e){return}d.classList.add('pos-intro','pos-intro-hold');setTimeout(function(){d.classList.remove('pos-intro','pos-intro-hold')},4000)})()</script>
+  <script>(function(){var d=document.documentElement;try{if(sessionStorage.getItem('pos:intro'))return;sessionStorage.setItem('pos:intro','1')}catch(e){return}d.classList.add('pos-intro','pos-intro-hold');setTimeout(function(){d.classList.remove('pos-intro','pos-intro-hold')},10000)})()</script>
   <link rel="preload" as="image" href="videos/people_of_spice_ai_sequence-720p-poster-00001.jpg" fetchpriority="high">
   <link rel="stylesheet" href="css/home.css">
   <script>document.documentElement.classList.add('js')</script>
@@ -49,10 +49,11 @@
         <svg class="intro__line" viewBox="0 0 200 280" preserveAspectRatio="none"><path d="M100 6A94 94 0 0 0 6 100V278" pathLength="1"/><path d="M100 6A94 94 0 0 1 194 100V278" pathLength="1"/><path class="intro__sill" d="M0 278.5H200" pathLength="1"/></svg>
       </div>
       <div class="intro__caption">
-        <span class="intro__word" style="--i:0;color:#b8708f">Smoky</span><span class="intro__word" style="--i:1;color:#e39a5c">Zesty</span><span class="intro__word" style="--i:2;color:#a98bd0">Floral</span><span class="intro__word" style="--i:3;color:#e0745a">Fiery</span><span class="intro__word" style="--i:4;color:#7fae86">Earthy</span>
+        <span class="intro__word" style="color:#b8708f">Smoky</span><span class="intro__word" style="color:#e39a5c">Zesty</span><span class="intro__word" style="color:#a98bd0">Floral</span><span class="intro__word" style="color:#e0745a">Fiery</span><span class="intro__word" style="color:#7fae86">Earthy</span>
         <img class="intro__logo" src="images/brand/pos-logo-cream.png" alt="" width="635" height="221">
       </div>
     </div>
+    <div class="intro__count"><span class="intro__num" data-intro-count>0</span><span class="intro__pct">%</span><span class="intro__label">Loading the spice routes</span></div>
   </div>
   <main id="main">
     <section class="hero hero--home" data-hero aria-labelledby="hero-title">

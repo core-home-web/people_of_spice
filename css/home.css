@@ -158,59 +158,79 @@ html:not(.js) .hero__toggle { display: none; }
 .page-home .r-card, .page-home .feature-recipe { background: #04140c; }
 
 /* ---------- First-visit intro ----------
-   One CSS clock from first paint: arch draws (0–.8s), flavours cycle (.25–1.5s),
-   logo (1.35s), the window opens (1.95s), gone by 2.5s. js/intro.js only pours the
-   grains, handles skip and cleans up; html.pos-intro is dropped after 4s regardless. */
+   The arch draws itself in CSS from first paint (.1–1s). js/intro.js then takes over
+   (.intro.is-live): grains pour while a 0–100 counter follows real loading (poster,
+   video, fonts, window load), never faster than the minimum pour; flavour words track
+   the counter; at 100 the logo lands and the arch opens (.is-opening).
+   Failsafes: without the script the loader fades at 4s; the head script drops it at 10s. */
 .intro { display: none; }
 .pos-intro .intro {
   --ink-0: #020805;
   position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; overflow: hidden; cursor: pointer;
-  animation: intro-gone 0s linear 2.5s forwards;
+  animation: intro-gone .4s ease-out 4s forwards;
 }
-.intro__stage { position: relative; display: grid; justify-items: center; gap: clamp(1.25rem, 3vh, 2rem); width: clamp(176px, 40vmin, 300px); }
-.intro__arch { position: relative; width: 100%; aspect-ratio: 200 / 280; transform-origin: 50% 62%; animation: intro-open .6s cubic-bezier(.7, 0, .2, 1) 1.95s forwards; }
+.pos-intro .intro.is-live { animation: none; }
+.intro__stage { position: relative; display: grid; justify-items: center; gap: clamp(1.25rem, 3vh, 2rem); width: clamp(176px, 40vmin, 300px); margin-top: -6vh; }
+.intro__arch { position: relative; width: 100%; aspect-ratio: 200 / 280; transform-origin: 50% 62%; }
 .intro__window {
   position: absolute; inset: 2.1% 3% .5%; border-radius: 999px 999px 0 0;
-  background-color: var(--ink-0);
-  box-shadow: 0 0 0 100vmax var(--ink-0);
-  animation: intro-clear .2s ease-in 1.95s forwards;
+  background-color: var(--ink-0); box-shadow: 0 0 0 100vmax var(--ink-0);
 }
 .intro__window::before { /* a low glow where the spice will land */
-  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  content: ""; position: absolute; inset: 0; border-radius: inherit; opacity: 0;
   background: radial-gradient(75% 36% at 50% 96%, rgba(214, 178, 106, .14), transparent 72%);
-  opacity: 0;
-  animation: intro-glow .5s ease-out .5s forwards, intro-fade .2s ease-in 1.95s forwards;
+  animation: intro-glow .8s ease-out .7s forwards;
 }
 .intro__grains, .intro__line { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
 .intro__line { overflow: visible; fill: none; stroke: var(--gold); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
-.intro__line path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: intro-draw .75s var(--ease-in-out) .05s forwards; }
-.intro__line .intro__sill { stroke-opacity: .45; animation-delay: .55s; animation-duration: .4s; }
+.intro__line path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: intro-draw .9s var(--ease-in-out) .1s forwards; }
+.intro__line .intro__sill { stroke-opacity: .45; animation-delay: .7s; animation-duration: .5s; }
 .intro__caption { position: relative; z-index: 1; display: grid; place-items: center; height: 3.25rem; width: 200%; }
 .intro__caption > * { grid-area: 1 / 1; }
-.intro__word { font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.2rem); opacity: 0; animation: intro-word .4s var(--ease-out) calc(.25s + var(--i) * .25s) both; }
-.intro__logo { width: clamp(118px, 26vmin, 168px); opacity: 0; animation: intro-logo .45s var(--ease-out) 1.35s forwards; }
-.intro__line { animation: intro-fade .35s ease-in 2.05s forwards; }
-.intro__grains { animation: intro-fade .16s ease-in 1.93s forwards; }
-.intro__caption { animation: intro-fade .2s ease-in 1.95s forwards; }
-.intro.is-skipping { animation: intro-skip .25s ease-out forwards; }
+.intro__word {
+  font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.2rem);
+  opacity: 0; transform: translateY(10px); transition: opacity .35s var(--ease-out), transform .5s var(--ease-out);
+}
+.intro__word.is-on { opacity: 1; transform: none; }
+.intro__word.is-past { opacity: 0; transform: translateY(-8px); }
+.intro__logo { width: clamp(118px, 26vmin, 168px); opacity: 0; transform: scale(.94); transition: opacity .5s var(--ease-out), transform .6s var(--ease-out); }
+.intro.is-full .intro__logo { opacity: 1; transform: none; }
+.intro.is-full .intro__word { opacity: 0; }
+
+/* 0–100 counter, bottom-left, clear of the arch */
+.intro__count {
+  position: absolute; left: var(--gutter); bottom: max(var(--gutter), env(safe-area-inset-bottom)); z-index: 1;
+  display: grid; grid-template-columns: auto auto; align-items: baseline; column-gap: .2rem; color: var(--gold);
+  opacity: 0;
+}
+.intro.is-live .intro__count { animation: intro-glow .5s ease-out .1s forwards; } /* only once the script is counting */
+.intro__num { font-family: var(--font-display); font-size: clamp(3rem, 2.2rem + 4vw, 6rem); line-height: .9; font-variant-numeric: tabular-nums lining-nums; min-width: 3ch; text-align: right; }
+.intro__pct { font-family: var(--font-body); font-size: clamp(.9rem, .8rem + .4vw, 1.2rem); color: var(--text-muted); }
+.intro__label { grid-column: 1 / -1; margin-top: .5rem; font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--text-faint); }
+
+/* At 100: the window opens (.9s) and we step through it */
+.intro.is-opening .intro__arch { animation: intro-open .9s cubic-bezier(.65, 0, .2, 1) .05s forwards; }
+.intro.is-opening .intro__window { animation: intro-clear .3s ease-in forwards; }
+.intro.is-opening .intro__window::before, .intro.is-opening .intro__grains { animation: intro-fade .2s ease-in forwards; }
+.intro.is-opening .intro__line { animation: intro-fade .45s ease-in .25s forwards; }
+.intro.is-opening .intro__caption, .intro.is-opening .intro__count { animation: intro-fade .3s ease-in forwards; }
+.pos-intro .intro.is-skipping { animation: intro-skip .25s ease-out forwards; }
 .pos-intro-hold .hero--home .reveal, .pos-intro-hold .hero--home .split-line > span { animation-play-state: paused; }
 
 @keyframes intro-draw { to { stroke-dashoffset: 0; } }
-@keyframes intro-word { 0% { opacity: 0; transform: translateY(10px); } 30%, 72% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-8px); } }
-@keyframes intro-logo { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes intro-glow { to { opacity: 1; } }
 @keyframes intro-open { to { transform: scale(16); } }
 @keyframes intro-clear { to { background-color: transparent; } }
 @keyframes intro-fade { to { opacity: 0; } }
-@keyframes intro-glow { to { opacity: 1; } }
-@keyframes intro-gone { to { visibility: hidden; pointer-events: none; } }
+@keyframes intro-gone { to { opacity: 0; visibility: hidden; pointer-events: none; } }
 @keyframes intro-skip { to { opacity: 0; visibility: hidden; pointer-events: none; } }
 @keyframes intro-quick { 0% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   /* A still frame that fades out in under 300ms */
-  .pos-intro .intro { animation: intro-quick .25s ease-out .04s both !important; }
-  .intro__arch, .intro__window, .intro__window::before, .intro__line path, .intro__line, .intro__caption, .intro__grains, .intro__word { animation: none !important; }
+  .pos-intro .intro, .pos-intro .intro.is-live { animation: intro-quick .25s ease-out .04s both !important; }
+  .intro__arch, .intro__window, .intro__window::before, .intro__line path, .intro__line, .intro__caption, .intro__grains, .intro__count { animation: none !important; }
   .intro__line path { stroke-dashoffset: 0; }
-  .intro__word { display: none; }
-  .intro__logo { animation: none !important; opacity: 1; }
+  .intro__word, .intro__count { display: none; }
+  .intro__logo { opacity: 1; transform: none; transition: none; }
 }

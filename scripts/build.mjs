@@ -536,12 +536,13 @@ function homePage() {
         <svg class="intro__line" viewBox="0 0 200 280" preserveAspectRatio="none">${arch(0)}${arch(1)}<path class="intro__sill" d="M0 278.5H200" pathLength="1"/></svg>
       </div>
       <div class="intro__caption">
-        ${FLAVOURS.map(([w, c], i) => `<span class="intro__word" style="--i:${i};color:${c}">${w}</span>`).join("")}
+        ${FLAVOURS.map(([w, c]) => `<span class="intro__word" style="color:${c}">${w}</span>`).join("")}
         <img class="intro__logo" src="images/brand/pos-logo-cream.png" alt="" width="635" height="221">
       </div>
     </div>
+    <div class="intro__count"><span class="intro__num" data-intro-count>0</span><span class="intro__pct">%</span><span class="intro__label">Loading the spice routes</span></div>
   </div>`;
-  const introBoot = "<script>(function(){var d=document.documentElement;try{if(sessionStorage.getItem('pos:intro'))return;sessionStorage.setItem('pos:intro','1')}catch(e){return}d.classList.add('pos-intro','pos-intro-hold');setTimeout(function(){d.classList.remove('pos-intro','pos-intro-hold')},4000)})()</script>";
+  const introBoot = "<script>(function(){var d=document.documentElement;try{if(sessionStorage.getItem('pos:intro'))return;sessionStorage.setItem('pos:intro','1')}catch(e){return}d.classList.add('pos-intro','pos-intro-hold');setTimeout(function(){d.classList.remove('pos-intro','pos-intro-hold')},10000)})()</script>";
   const body = `${intro}
   <main id="main">
     <section class="hero hero--home" data-hero aria-labelledby="hero-title">
