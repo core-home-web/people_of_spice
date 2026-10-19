@@ -1,0 +1,79 @@
+/* ==========================================================================
+   People of Spice — Our Story (about.html). Builds on css/pos.css.
+   A gold line draws down the timeline as you scroll (js/scroll-fx.js); each chapter's
+   node lights up as the line reaches it. Without JS the line is simply drawn.
+   ========================================================================== */
+.page-story { background: #020805; }
+.page-story .hero h1 { max-width: 13ch; }
+
+/* Intro statement (words brighten as it scrolls through: [data-split="fill"]) */
+.tl-intro { padding-bottom: clamp(2rem, 1rem + 4vw, 5rem); }
+.tl-statement { margin-top: 1.5rem; max-width: 30ch; font-family: var(--font-display); font-size: var(--step-3); line-height: 1.22; text-wrap: balance; }
+.tl-statement em { font-style: italic; color: var(--tan); }
+.split-w { display: inline-block; vertical-align: top; }
+[data-split="rise"] .split-w { overflow: hidden; padding: .06em .05em .16em; margin: -.06em -.05em -.16em; }
+[data-split="rise"] .split-w > span { display: inline-block; }
+.split-glue { font-style: normal; color: var(--cream); }
+
+/* ---------- Timeline ---------- */
+.tl { position: relative; padding-bottom: clamp(4rem, 3rem + 4vw, 7rem); background: radial-gradient(60% 40% at 50% 100%, rgba(12, 51, 36, .45), transparent 70%); }
+.tl__track { --rail: 19px; position: relative; }
+.tl__line { position: absolute; left: var(--rail); top: .5rem; bottom: 2.5rem; width: 1px; background: var(--line-strong); }
+.tl__line i { position: absolute; inset: 0; background: linear-gradient(var(--gold), var(--gold-deep)); transform-origin: 50% 0; box-shadow: 0 0 12px rgba(214, 178, 106, .45); }
+.tl__list { list-style: none; display: grid; gap: clamp(4rem, 3rem + 5vw, 8rem); }
+
+.tl__item { position: relative; display: grid; gap: 1.5rem; padding-left: calc(var(--rail) * 2 + 1.25rem); }
+.tl__node {
+  position: absolute; left: 0; top: 0; z-index: 1; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%;
+  font-size: .75rem; letter-spacing: .08em; font-variant-numeric: tabular-nums; color: var(--text-muted);
+  background: #020805; border: 1px solid var(--line-strong);
+  transition: background-color .4s, color .4s, border-color .4s, box-shadow .6s, transform .6s var(--ease-out);
+}
+.tl__item.is-active .tl__node, .tl__end.is-active .tl__node { background: var(--gold); border-color: var(--gold); color: var(--ink); box-shadow: 0 0 0 6px rgba(214, 178, 106, .14), 0 0 30px rgba(214, 178, 106, .35); transform: scale(1.08); }
+html:not(.js) .tl__node { background: var(--gold); color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .tl__node { background: var(--gold); border-color: var(--gold); color: var(--ink); } } /* no line to follow: show every stop lit */
+.tl__node svg { width: 18px; height: 18px; }
+
+.tl__media { position: relative; margin: 0; }
+.tl__frame { position: relative; aspect-ratio: 5 / 4; overflow: hidden; border-radius: var(--radius-l); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.tl__frame img { width: 100%; height: 100%; object-fit: cover; }
+.tl__media--inset { padding-bottom: 12%; }
+.tl__inset {
+  position: absolute; right: -4%; bottom: 0; width: 44%; aspect-ratio: 1; overflow: hidden;
+  border-radius: 999px 999px var(--radius) var(--radius); border: 6px solid #020805; outline: 1px solid rgba(214, 178, 106, .35); box-shadow: var(--shadow);
+}
+.tl__inset img { width: 100%; height: 100%; object-fit: cover; }
+
+.tl__text { display: grid; gap: .8rem; align-content: start; }
+.tl__kicker { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.tl__text h3 { font-size: var(--step-4); }
+.tl__text p { color: var(--text-muted); font-size: var(--step-1); font-weight: 300; max-width: 40ch; }
+
+/* The line ends at the call to action */
+.tl__end {
+  position: relative; display: grid; justify-items: start; gap: 1rem; margin-top: clamp(4rem, 3rem + 5vw, 8rem);
+  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem); padding-left: calc(var(--rail) * 2 + 1.25rem);
+  border-radius: var(--radius-l);
+  background: radial-gradient(80% 120% at 0% 0%, rgba(214, 178, 106, .12), transparent 60%), radial-gradient(90% 120% at 100% 100%, rgba(24, 67, 50, .5), transparent 65%), #030c07;
+  border: 1px solid var(--line);
+}
+.tl__end .tl__node { top: clamp(1.5rem, 1rem + 3vw, 3.5rem); left: 0; }
+.tl__end h2 { font-size: var(--step-4); }
+.tl__end .lede { max-width: 40ch; }
+.tl__ctas { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .5rem; }
+.tl__end .link-arrow { margin-top: .25rem; }
+
+@media (min-width: 900px) {
+  .tl__track { --rail: 50%; }
+  .tl__line { left: 50%; }
+  .tl__item { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(5rem, 3rem + 6vw, 9rem); align-items: center; padding-left: 0; }
+  .tl__node { left: 50%; top: 50%; translate: -50% -50%; width: 48px; height: 48px; }
+  .tl__item:nth-child(even) .tl__media { order: 2; }
+  .tl__item:nth-child(even) .tl__text { justify-items: end; text-align: right; }
+  .tl__item:nth-child(even) .tl__text p { justify-self: end; }
+  .tl__item:nth-child(even) .tl__inset { right: auto; left: -4%; }
+  .tl__end { justify-items: center; text-align: center; padding: clamp(3rem, 2rem + 3vw, 4.5rem) clamp(2rem, 1rem + 4vw, 5rem); max-width: 860px; margin-inline: auto; }
+  .tl__end .tl__node { top: 0; left: 50%; translate: -50% -50%; width: 56px; height: 56px; }
+  .tl__end .lede { margin-inline: auto; }
+  .tl__ctas { justify-content: center; }
+}
