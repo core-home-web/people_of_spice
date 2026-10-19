@@ -88,3 +88,8 @@ jspm_packages/
 *key*
 *token*
 *password*
+# …but these broad patterns must not swallow site files whose names merely contain
+# the words (e.g. "turkey-brine-blend.webp", "herb-brined-turkey.html")
+!images/**
+!spices/**
+!recipes/**
