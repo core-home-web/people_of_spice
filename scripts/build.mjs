@@ -524,7 +524,25 @@ function homePage() {
     ["images/POS_world_of_spice-9-p-800.jpg", "Pasta and wine on a vineyard table"],
     ["images/q8.jpg", "A chef finishing a plate"],
   ];
-  const body = `
+  const FLAVOURS = [["Smoky", "#b8708f"], ["Zesty", "#e39a5c"], ["Floral", "#a98bd0"], ["Fiery", "#e0745a"], ["Earthy", "#7fae86"]];
+  const arch = (sweep) => `<path d="M100 6A94 94 0 0 ${sweep} ${sweep ? 194 : 6} 100V278" pathLength="1"/>`;
+  /* First-visit intro: an arched window draws itself in gold, spice pours in, then we step through it */
+  const intro = `
+  <div class="intro" data-intro aria-hidden="true">
+    <div class="intro__stage">
+      <div class="intro__arch">
+        <div class="intro__window"></div>
+        <canvas class="intro__grains" data-intro-grains></canvas>
+        <svg class="intro__line" viewBox="0 0 200 280" preserveAspectRatio="none">${arch(0)}${arch(1)}<path class="intro__sill" d="M0 278.5H200" pathLength="1"/></svg>
+      </div>
+      <div class="intro__caption">
+        ${FLAVOURS.map(([w, c], i) => `<span class="intro__word" style="--i:${i};color:${c}">${w}</span>`).join("")}
+        <img class="intro__logo" src="images/brand/pos-logo-cream.png" alt="" width="635" height="221">
+      </div>
+    </div>
+  </div>`;
+  const introBoot = "<script>(function(){var d=document.documentElement;try{if(sessionStorage.getItem('pos:intro'))return;sessionStorage.setItem('pos:intro','1')}catch(e){return}d.classList.add('pos-intro','pos-intro-hold');setTimeout(function(){d.classList.remove('pos-intro','pos-intro-hold')},4000)})()</script>";
+  const body = `${intro}
   <main id="main">
     <section class="hero hero--home" data-hero aria-labelledby="hero-title">
       <div class="hero__bg">
@@ -644,8 +662,9 @@ function homePage() {
     r, file: "index.html", bodyClass: "page-home",
     title: "People of Spice | Authentic Global Spices for Home Cooking",
     description: `Discover ${products.length} authentic spice blends inspired by ${regions.length} cooking traditions. From Thai curry to Moroccan ras el hanout, bring the world's kitchens to your family table.`,
-    head: `<link rel="preload" as="image" href="${HERO}-poster-00001.jpg" fetchpriority="high">\n  <link rel="stylesheet" href="css/home.css">`,
+    head: `${introBoot}\n  <link rel="preload" as="image" href="${HERO}-poster-00001.jpg" fetchpriority="high">\n  <link rel="stylesheet" href="css/home.css">`,
     body,
+    scripts: '<script src="js/intro.js" defer></script>',
     jsonld: {
       "@context": "https://schema.org", "@type": "Organization", name: "People of Spice", url: `${SITE}/`,
       logo: `${SITE}/images/brand/pos-logo-cream.png`, sameAs: [IG],

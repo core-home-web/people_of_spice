@@ -129,3 +129,88 @@ html:not(.js) .hero__toggle { display: none; }
 .choice input:checked + span { background: var(--cream); color: var(--ink); border-color: var(--cream); }
 .choice input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 3px; }
 .form .btn { justify-self: start; margin-top: .5rem; }
+
+/* ---------- Art direction: black / deep forest, colour only as glow ---------- */
+.page-home { background: #020805; }
+.hero--home .hero__bg video { filter: brightness(.8) saturate(.82) contrast(1.06); }
+.hero--home .hero__bg::after { /* pull the film's warm greys toward forest */
+  content: ""; position: absolute; inset: 0; pointer-events: none; background: #0c3324; mix-blend-mode: multiply; opacity: .55;
+}
+.hero--home::after {
+  background:
+    linear-gradient(180deg, rgba(2, 8, 5, .6) 0%, rgba(2, 8, 5, .35) 32%, rgba(2, 8, 5, .82) 72%, #020805 100%),
+    linear-gradient(90deg, rgba(2, 8, 5, .6), transparent 70%);
+}
+.story { background: radial-gradient(70% 55% at 88% 8%, rgba(12, 51, 36, .5), transparent 70%); }
+.globe-teaser {
+  background:
+    radial-gradient(60% 70% at 28% 40%, rgba(214, 178, 106, .1), transparent 70%),
+    radial-gradient(90% 90% at 100% 100%, rgba(12, 51, 36, .45), transparent 70%),
+    #030c07;
+}
+.shelf { background: linear-gradient(180deg, transparent, rgba(0, 26, 13, .55) 30%, rgba(0, 26, 13, .55) 70%, transparent); }
+.gift-card {
+  background:
+    radial-gradient(80% 110% at 100% 0%, rgba(24, 67, 50, .55), transparent 65%),
+    radial-gradient(50% 60% at 0% 100%, rgba(214, 178, 106, .07), transparent 70%),
+    #030c07;
+}
+.page-home .r-card, .page-home .feature-recipe { background: #04140c; }
+
+/* ---------- First-visit intro ----------
+   One CSS clock from first paint: arch draws (0–.8s), flavours cycle (.25–1.5s),
+   logo (1.35s), the window opens (1.95s), gone by 2.5s. js/intro.js only pours the
+   grains, handles skip and cleans up; html.pos-intro is dropped after 4s regardless. */
+.intro { display: none; }
+.pos-intro .intro {
+  --ink-0: #020805;
+  position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; overflow: hidden; cursor: pointer;
+  animation: intro-gone 0s linear 2.5s forwards;
+}
+.intro__stage { position: relative; display: grid; justify-items: center; gap: clamp(1.25rem, 3vh, 2rem); width: clamp(176px, 40vmin, 300px); }
+.intro__arch { position: relative; width: 100%; aspect-ratio: 200 / 280; transform-origin: 50% 62%; animation: intro-open .6s cubic-bezier(.7, 0, .2, 1) 1.95s forwards; }
+.intro__window {
+  position: absolute; inset: 2.1% 3% .5%; border-radius: 999px 999px 0 0;
+  background-color: var(--ink-0);
+  box-shadow: 0 0 0 100vmax var(--ink-0);
+  animation: intro-clear .2s ease-in 1.95s forwards;
+}
+.intro__window::before { /* a low glow where the spice will land */
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background: radial-gradient(75% 36% at 50% 96%, rgba(214, 178, 106, .14), transparent 72%);
+  opacity: 0;
+  animation: intro-glow .5s ease-out .5s forwards, intro-fade .2s ease-in 1.95s forwards;
+}
+.intro__grains, .intro__line { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+.intro__line { overflow: visible; fill: none; stroke: var(--gold); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+.intro__line path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: intro-draw .75s var(--ease-in-out) .05s forwards; }
+.intro__line .intro__sill { stroke-opacity: .45; animation-delay: .55s; animation-duration: .4s; }
+.intro__caption { position: relative; z-index: 1; display: grid; place-items: center; height: 3.25rem; width: 200%; }
+.intro__caption > * { grid-area: 1 / 1; }
+.intro__word { font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.2rem); opacity: 0; animation: intro-word .4s var(--ease-out) calc(.25s + var(--i) * .25s) both; }
+.intro__logo { width: clamp(118px, 26vmin, 168px); opacity: 0; animation: intro-logo .45s var(--ease-out) 1.35s forwards; }
+.intro__line { animation: intro-fade .35s ease-in 2.05s forwards; }
+.intro__grains { animation: intro-fade .16s ease-in 1.93s forwards; }
+.intro__caption { animation: intro-fade .2s ease-in 1.95s forwards; }
+.intro.is-skipping { animation: intro-skip .25s ease-out forwards; }
+.pos-intro-hold .hero--home .reveal, .pos-intro-hold .hero--home .split-line > span { animation-play-state: paused; }
+
+@keyframes intro-draw { to { stroke-dashoffset: 0; } }
+@keyframes intro-word { 0% { opacity: 0; transform: translateY(10px); } 30%, 72% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-8px); } }
+@keyframes intro-logo { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes intro-open { to { transform: scale(16); } }
+@keyframes intro-clear { to { background-color: transparent; } }
+@keyframes intro-fade { to { opacity: 0; } }
+@keyframes intro-glow { to { opacity: 1; } }
+@keyframes intro-gone { to { visibility: hidden; pointer-events: none; } }
+@keyframes intro-skip { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+@keyframes intro-quick { 0% { opacity: 1; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  /* A still frame that fades out in under 300ms */
+  .pos-intro .intro { animation: intro-quick .25s ease-out .04s both !important; }
+  .intro__arch, .intro__window, .intro__window::before, .intro__line path, .intro__line, .intro__caption, .intro__grains, .intro__word { animation: none !important; }
+  .intro__line path { stroke-dashoffset: 0; }
+  .intro__word { display: none; }
+  .intro__logo { animation: none !important; opacity: 1; }
+}
