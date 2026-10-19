@@ -35,10 +35,7 @@ html:not(.js) .hero__toggle { display: none; }
 .section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 2rem; margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.75rem); }
 .section-head h2 { font-size: var(--step-4); margin-top: .75rem; }
 .section-head p { color: var(--text-muted); max-width: 44ch; }
-.link-arrow { display: inline-flex; align-items: center; gap: .5rem; margin-top: 2rem; color: var(--tan); text-decoration: none; letter-spacing: .04em; }
-.link-arrow:hover { color: var(--cream); }
-.link-arrow .arrow { transition: transform .3s var(--ease-out); }
-.link-arrow:hover .arrow { transform: translateX(4px); }
+.page-home .link-arrow { margin-top: 2rem; }
 
 /* ---------- Brand story ---------- */
 .story__statement { margin-top: 1.5rem; max-width: 28ch; font-family: var(--font-display); font-size: var(--step-3); line-height: 1.22; font-weight: 400; text-wrap: balance; }

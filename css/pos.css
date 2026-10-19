@@ -186,6 +186,11 @@ ul, ol { margin: 0; padding: 0; }
 .btn--sm { min-height: 40px; padding: .5rem 1rem; font-size: .9rem; }
 .btn .arrow { transition: transform .3s var(--ease-out); }
 .btn:hover .arrow { transform: translateX(4px); }
+/* Text link with a travelling arrow */
+.link-arrow { display: inline-flex; align-items: center; gap: .5rem; color: var(--tan); text-decoration: none; letter-spacing: .04em; }
+.link-arrow:hover { color: var(--cream); }
+.link-arrow .arrow { transition: transform .3s var(--ease-out); }
+.link-arrow:hover .arrow { transform: translateX(4px); }
 
 .chips { display: flex; gap: .5rem; overflow-x: auto; scrollbar-width: none; padding: .25rem var(--chips-pad, 0); margin-inline: calc(-1 * var(--chips-pad, 0)); scroll-snap-type: x proximity; scroll-padding-inline: var(--chips-pad, 0); }
 .chips::-webkit-scrollbar { display: none; }

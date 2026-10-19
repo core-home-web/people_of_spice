@@ -4,6 +4,7 @@
    - [data-split="rise"]  heading words rise out of a mask
    - [data-journey]       soil-to-table chapters: pinned scrollytelling on desktop,
                           arch images wiping open on smaller screens
+   - [data-timeline]      Our Story: a gold line draws down the chapters, photos open
    If GSAP doesn't load, or the visitor prefers reduced motion, the page stays static and
    fully readable: nothing is hidden until a tween takes hold of it. */
 (() => {
@@ -124,6 +125,43 @@
       tl.to({}, { duration: .45 }); // rest on the last chapter before the page moves on
 
       return () => section.classList.remove("is-pinned");
+    });
+  }
+
+  /* ---- Our Story timeline: the gold line draws down as you read; nodes light as it passes ---- */
+  const timeline = document.querySelector("[data-timeline]");
+  if (timeline) {
+    const track = timeline.querySelector("[data-tl-track]");
+    gsap.fromTo(timeline.querySelector("[data-tl-fill]"), { scaleY: 0 }, {
+      scaleY: 1, ease: "none",
+      scrollTrigger: { trigger: track, start: "top 62%", end: "bottom 70%", scrub: .4 },
+    });
+    [...timeline.querySelectorAll("[data-tl-item]"), timeline.querySelector("[data-tl-end]")].forEach((el) => {
+      ScrollTrigger.create({ trigger: el, start: "top 62%", toggleClass: { targets: el, className: "is-active" }, end: () => "+=" + document.documentElement.scrollHeight });
+      const frame = el.querySelector(".tl__frame"), inset = el.querySelector(".tl__inset");
+      if (frame) {
+        gsap.fromTo(frame, { clipPath: "inset(14% 10% 14% 10% round 28px)" }, {
+          clipPath: "inset(0% 0% 0% 0% round 28px)", ease: "none",
+          scrollTrigger: { trigger: el, start: "top 92%", end: "top 40%", scrub: .5 },
+        });
+        gsap.fromTo(frame.querySelector("img"), { scale: 1.25, yPercent: -6 }, {
+          scale: 1.05, yPercent: 6, ease: "none",
+          scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
+        });
+      }
+      if (inset) {
+        gsap.fromTo(inset, { yPercent: 35, autoAlpha: 0 }, {
+          yPercent: -10, autoAlpha: 1, ease: "none",
+          scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 35%", scrub: .6 },
+        });
+      }
+      const words = el.querySelectorAll(".tl__kicker, .tl__text > p, .tl__end > .lede, .tl__ctas, .tl__end > .link-arrow");
+      if (words.length) {
+        gsap.fromTo(words, { autoAlpha: 0, y: 30 }, {
+          autoAlpha: 1, y: 0, stagger: .1, ease: "power2.out",
+          scrollTrigger: { trigger: el, start: "top 80%", end: "top 45%", scrub: .6 },
+        });
+      }
     });
   }
 
