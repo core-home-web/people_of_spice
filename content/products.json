@@ -1,34 +1,34 @@
 [
   {
-    "id": "middle-eastern-manqual", "sku": "52858", "name": "Middle Eastern Manqual", "collection": "signature", "region": "levant", "origin": "Levantine grill houses",
+    "id": "middle-eastern-manqual", "featured": 1, "sku": "52858", "name": "Middle Eastern Manqual", "collection": "signature", "region": "levant", "origin": "Levantine grill houses",
     "tagline": "Middle Eastern Grill Seasoning", "heat": 2, "notes": ["Smoky", "Warm", "Savory"],
     "ingredients": ["Allspice", "Coriander", "Cumin", "Paprika", "Black pepper", "Cinnamon"],
     "story": "Built for the grill, this bold blend takes cues from baharat and seven-spice traditions. Allspice, cumin and cinnamon ignite over fire and conjure the scent of spice-laden alleyways.",
     "pairsWith": ["Chicken thighs", "Eggplant", "Lamb kofta", "Flatbread"], "recipe": "grilled-chicken-kebabs", "image": "images/52858_01.jpg", "photo": true, "color": "#8a3b5e"
   },
   {
-    "id": "hacienda-salsa-guacamole", "sku": "52859", "name": "Hacienda Salsa Guacamole", "collection": "signature", "region": "mexico", "origin": "Jalisco hacienda patios",
+    "id": "hacienda-salsa-guacamole", "featured": 3, "sku": "52859", "name": "Hacienda Salsa Guacamole", "collection": "signature", "region": "mexico", "origin": "Jalisco hacienda patios",
     "tagline": "Fiesta-Ready Seasoning", "heat": 2, "notes": ["Zesty", "Fresh", "Bright"],
     "ingredients": ["Onion", "Garlic", "Lime zest", "Cumin", "Tomato", "Jalapeño", "Cilantro"],
     "story": "Onion and garlic mingle with lime zest, cumin, tomato, jalapeño and cilantro — the taste of warm chips and cold drinks on a hacienda patio.",
     "pairsWith": ["Avocado", "Sour cream", "Tortilla chips", "Grilled corn"], "recipe": "fiesta-guacamole", "image": "images/52859_01.jpg", "photo": true, "color": "#2f6b3a"
   },
   {
-    "id": "tangier-ras-el-hanout", "sku": "52860", "name": "Tangier Ras El Hanout", "collection": "signature", "region": "morocco", "origin": "Tangier spice souks",
+    "id": "tangier-ras-el-hanout", "featured": 5, "sku": "52860", "name": "Tangier Ras El Hanout", "collection": "signature", "region": "morocco", "origin": "Tangier spice souks",
     "tagline": "Moroccan Top Shelf Blend", "heat": 1, "notes": ["Floral", "Warm", "Sweet"],
     "ingredients": ["Coriander", "Cumin", "Cinnamon", "Ginger", "Nutmeg", "Cardamom", "Allspice", "Black pepper"],
     "story": "Ras el hanout means \"head of the shop\" — the very best the merchant has to offer. From the hills of Tangier to the depths of a slow tagine, this is the king of North African spice racks.",
     "pairsWith": ["Lamb shoulder", "Apricots", "Chickpeas", "Couscous"], "recipe": "moroccan-lamb-tagine", "image": "images/52860_01.jpg", "photo": true, "color": "#5b3a7a"
   },
   {
-    "id": "szechuan-five-spice", "sku": "52861", "name": "Szechuan Five Spice", "collection": "signature", "region": "sichuan", "origin": "Chengdu night markets",
+    "id": "szechuan-five-spice", "featured": 7, "sku": "52861", "name": "Szechuan Five Spice", "collection": "signature", "region": "sichuan", "origin": "Chengdu night markets",
     "tagline": "Eastern Balance of Flavors", "heat": 3, "notes": ["Numbing", "Anise", "Aromatic"],
     "ingredients": ["Star anise", "Fennel", "Cinnamon", "Cloves", "Szechuan peppercorns"],
     "story": "The legendary blend of star anise, fennel, cinnamon, cloves and Szechuan peppercorn — the tingling heat and aromatic depth of ancient trade routes and imperial kitchens.",
     "pairsWith": ["Flank steak", "Pork belly", "Duck", "Green beans"], "recipe": "spicy-beef-stir-fry", "image": "images/52861_01.jpg", "photo": true, "color": "#b3262b"
   },
   {
-    "id": "bangkok-green-curry", "sku": "52863", "name": "Bangkok Green Curry", "collection": "signature", "region": "thailand", "origin": "Bangkok floating markets",
+    "id": "bangkok-green-curry", "featured": 9, "sku": "52863", "name": "Bangkok Green Curry", "collection": "signature", "region": "thailand", "origin": "Bangkok floating markets",
     "tagline": "Thai Curry Powder", "heat": 3, "notes": ["Herbal", "Citrusy", "Fresh heat"],
     "ingredients": ["Green chile", "Lemongrass", "Galangal", "Basil", "Kaffir lime leaf", "Coriander", "Cumin", "White pepper"],
     "story": "A flash of basil, a whisper of kaffir lime and the green bite of Thai chiles — the vibrant complexity of Bangkok's floating markets and roadside kitchens.",
@@ -50,7 +50,7 @@
     "pairsWith": ["Eggs", "Caramel", "Potatoes", "Grilled vegetables"], "recipe": "smoked-salt-jammy-eggs"
   },
   {
-    "id": "spicy-chili-salt", "sku": "69725", "name": "Spicy Chili Salt", "collection": "specialty-salt", "region": "mexico", "origin": "Mexican street carts",
+    "id": "spicy-chili-salt", "featured": 4, "sku": "69725", "name": "Spicy Chili Salt", "collection": "specialty-salt", "region": "mexico", "origin": "Mexican street carts",
     "tagline": "Turn Up the Heat", "heat": 4, "notes": ["Hot", "Salty", "Tangy"],
     "ingredients": ["Sea salt", "Chili flakes", "Cayenne", "Garlic"],
     "story": "Inspired by the sal de chile shaken over mango and cucumber at every Mexican fruit cart. Salty, fiery, addictive.",
@@ -79,7 +79,7 @@
     "pairsWith": ["Ham", "Pecans", "Sweet potatoes", "Salmon"], "recipe": "holiday-glazed-ham"
   },
   {
-    "id": "gingerbread-spice", "sku": "69729", "name": "Gingerbread Spice", "collection": "seasonal", "region": "germany", "origin": "Nuremberg Christmas market",
+    "id": "gingerbread-spice", "featured": 11, "sku": "69729", "name": "Gingerbread Spice", "collection": "seasonal", "region": "germany", "origin": "Nuremberg Christmas market",
     "tagline": "Warm, Sweet, & Nostalgic", "heat": 1, "notes": ["Warm", "Sweet", "Festive"],
     "ingredients": ["Ginger", "Cinnamon", "Cloves", "Nutmeg", "Allspice"],
     "story": "Nuremberg's bakers have been perfecting Lebkuchen since the 1300s. One spoon and your kitchen smells like a Christmas market.",
@@ -101,7 +101,7 @@
   },
 
   {
-    "id": "texas-bbq", "sku": "69732", "name": "Texas BBQ", "collection": "global-flavors", "region": "texas", "origin": "Lockhart smokehouses",
+    "id": "texas-bbq", "featured": 6, "sku": "69732", "name": "BBQ Seasoning", "collection": "global-flavors", "region": "texas", "origin": "Lockhart smokehouses",
     "tagline": "Backyard Approved", "heat": 2, "notes": ["Smoky", "Peppery", "Sweet"],
     "ingredients": ["Black pepper", "Sea salt", "Paprika", "Brown sugar", "Garlic", "Onion", "Chili powder"],
     "story": "Salt, coarse pepper and a little sweetness for that mahogany bark. Texas Hill Country barbecue, no pit required.",
@@ -122,7 +122,7 @@
     "pairsWith": ["Skirt steak", "Chorizo", "Provoleta", "Chimichurri"], "recipe": "asado-skirt-steak-chimichurri"
   },
   {
-    "id": "zaatar", "sku": "69735", "name": "Za'atar", "collection": "global-flavors", "region": "levant", "origin": "Levantine bakeries",
+    "id": "zaatar", "featured": 2, "sku": "69735", "name": "Za'atar", "collection": "global-flavors", "region": "levant", "origin": "Levantine bakeries",
     "tagline": "Earthy, Bright, Timeless", "heat": 0, "notes": ["Tangy", "Nutty", "Herbal"],
     "ingredients": ["Thyme", "Sumac", "Toasted sesame", "Oregano", "Sea salt"],
     "story": "Wild thyme, tart sumac and toasted sesame — the blend Levantine bakers swirl into olive oil and bake onto breakfast bread.",
@@ -144,7 +144,7 @@
     "pairsWith": ["White fish", "Shrimp", "Asparagus", "Chicken breast"], "recipe": "citrus-herb-baked-cod", "color": "#d9b23a"
   },
   {
-    "id": "citrus-chili-lime", "sku": "69738", "name": "Citrus Chili Lime", "collection": "citrus", "region": "mexico", "origin": "Yucatán fruit stands",
+    "id": "citrus-chili-lime", "featured": 8, "sku": "69738", "name": "Citrus Chili Lime", "collection": "citrus", "region": "mexico", "origin": "Yucatán fruit stands",
     "tagline": "Zest with a Zap", "heat": 3, "notes": ["Tangy", "Hot", "Bright"],
     "ingredients": ["Lime peel", "Chili pepper", "Sea salt", "Garlic", "Citric acid"],
     "story": "Lime, chile and salt — the street-corner trio that makes everything from corn to cucumbers impossible to stop eating.",
@@ -152,7 +152,7 @@
   },
 
   {
-    "id": "chai-sugar", "sku": "69739", "name": "Chai Sugar", "collection": "ice-cream-topper", "region": "india", "origin": "Mumbai chai stalls",
+    "id": "chai-sugar", "featured": 12, "sku": "69739", "name": "Chai Sugar", "collection": "ice-cream-topper", "region": "india", "origin": "Mumbai chai stalls",
     "tagline": "Sweet With Spice", "heat": 0, "notes": ["Sweet", "Warm", "Aromatic"],
     "ingredients": ["Cane sugar", "Cinnamon", "Cardamom", "Ginger", "Cloves", "Black pepper"],
     "story": "Every Indian chai wallah has a masala of their own. We stirred ours into sugar for scoops, toast and lattes.",
@@ -167,7 +167,7 @@
   },
 
   {
-    "id": "arrabbiata", "sku": "69741", "name": "Arrabbiata", "collection": "pasta", "region": "italy", "origin": "Roman trattorias",
+    "id": "arrabbiata", "featured": 10, "sku": "69741", "name": "Arrabbiata", "collection": "pasta", "region": "italy", "origin": "Roman trattorias",
     "tagline": "A Little Fire", "heat": 3, "notes": ["Spicy", "Garlicky", "Tomato-friendly"],
     "ingredients": ["Red pepper flakes", "Garlic", "Basil", "Oregano", "Parsley", "Sea salt"],
     "story": "Arrabbiata means \"angry\" in Italian — the Roman way of saying this sauce has a temper. Garlic, chile and herbs, ready in minutes.",

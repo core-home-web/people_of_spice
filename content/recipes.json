@@ -100,8 +100,8 @@
   {
     "id": "texas-bbq-oven-ribs", "title": "Texas-Style Oven Ribs", "product": "texas-bbq", "serves": "4", "prep": 15, "cook": 180,
     "summary": "Low-and-slow ribs with a peppery bark — no smoker required.",
-    "ingredients": ["2 racks baby back ribs", "¼ cup Texas BBQ", "2 tbsp yellow mustard", "½ cup barbecue sauce", "2 tbsp apple cider vinegar"],
-    "steps": ["Heat the oven to 275°F. Remove the membrane from the ribs.", "Brush with mustard and coat generously with Texas BBQ.", "Wrap tightly in foil and bake 2½ hours.", "Unwrap, brush with sauce mixed with vinegar and broil 3–5 minutes until sticky."]
+    "ingredients": ["2 racks baby back ribs", "¼ cup BBQ Seasoning", "2 tbsp yellow mustard", "½ cup barbecue sauce", "2 tbsp apple cider vinegar"],
+    "steps": ["Heat the oven to 275°F. Remove the membrane from the ribs.", "Brush with mustard and coat generously with BBQ Seasoning.", "Wrap tightly in foil and bake 2½ hours.", "Unwrap, brush with sauce mixed with vinegar and broil 3–5 minutes until sticky."]
   },
   {
     "id": "sheet-pan-chicken-shawarma", "title": "Sheet-Pan Chicken Shawarma", "product": "shawarma", "serves": "4", "prep": 15, "cook": 30, "rest": 30,

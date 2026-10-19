@@ -143,7 +143,7 @@ Tech: no dependencies.
 
 | Table | Key fields |
 |---|---|
-| **Products** | `id`, `sku`, `name`, `collection→`, `region→`, `origin`, `tagline`, `heat (0–5)`, `notes[]`, `ingredients[]`, `story`, `pairsWith[]`, `recipe→`, `image`, `color` |
+| **Products** | `id`, `sku`, `name`, `collection→`, `region→`, `origin`, `tagline`, `heat (0–5)`, `notes[]`, `ingredients[]`, `story`, `pairsWith[]`, `recipe→`, `image`, `color`, `featured` (rank on the homepage spice dial; leave out to hide) |
 | **Recipes** | `id`, `title`, `product→`, `serves`, `prep`, `cook`, `rest`, `summary`, `image`, `equipment[]`, `ingredients[]`, `steps[]`, `featured` |
 | **Regions** | `id`, `name`, `places`, `lat`, `lng`, `story` |
 | **Collections** | `id`, `name`, `short`, `format`, `blurb` |

@@ -8,6 +8,7 @@
     "deploy:production": "wrangler pages deploy . --project-name=peopleofspice-pages",
     "dev": "wrangler pages dev . --project-name=peopleofspice-pages",
     "build": "node scripts/build.mjs",
+    "og": "node scripts/og-images.mjs",
     "images:deck": "python3 scripts/extract-deck-jars.py"
   },
   "keywords": [
