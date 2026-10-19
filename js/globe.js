@@ -308,7 +308,7 @@
     list = products.filter((p) => (filter.collection === "all" || p.collection === filter.collection) && (!filter.region || p.region === filter.region));
     rail.innerHTML = list.length ? list.map((p) => `
       <li><button class="wos-card" type="button" data-id="${p.id}" style="--accent:${p.color}" aria-label="${esc(p.name)} — ${esc(regions[p.region].name)}">
-        <span class="wos-card__img${p.photo ? " is-photo" : ""}"><img src="${p.image}" alt="" loading="lazy" decoding="async"></span>
+        <span class="wos-card__img jar${p.photo ? " jar--photo" : ""}"><img src="${p.image}" alt="" loading="lazy" decoding="async"></span>
         <span class="wos-card__name">${esc(p.name)}</span>
         <span class="wos-card__meta"><span>${esc(regions[p.region].name)}</span>${p.heat ? heatHTML(p.heat, true) : ""}</span>
       </button></li>`).join("") : `<li class="wos-empty">No spices in this collection yet.</li>`;
@@ -400,10 +400,10 @@
     detail.style.setProperty("--accent", p.color);
     const media = rec.image
       ? `<div class="d-recipe__media"><img src="${rec.image}" alt="${esc(rec.title)}" loading="lazy"></div>`
-      : `<div class="d-recipe__media${p.photo ? " is-photo-jar" : ""}"><img class="is-jar" src="${p.image}" alt="" loading="lazy"></div>`;
+      : `<div class="d-recipe__media jar${p.photo ? " jar--photo" : ""}"><img src="${p.image}" alt="" loading="lazy"></div>`;
     detailBody.innerHTML = `
       <div class="d-head">
-        <div class="d-jar${p.photo ? " is-photo" : ""}"><img src="${p.image}" alt="${esc(p.name)}"></div>
+        <div class="d-jar jar${p.photo ? " jar--photo" : ""}"><img src="${p.image}" alt="${esc(p.name)}"></div>
         <div>
           <div class="d-coll">${esc(collections[p.collection].name)}${p.isNew ? " · New" : ""}</div>
           <h2 class="d-name">${esc(p.name)}</h2>

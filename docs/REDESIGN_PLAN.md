@@ -99,6 +99,14 @@ The **2026 label system** (from *PEOPLE OF SPICE – SPICES – ON PO – 5.6.20
 - Pointer-tilt jars on desktop.
 - All of it disabled under `prefers-reduced-motion`.
 
+**Art direction: moody with vibrant popping colour** (reference: Behance *The Spice Trade*, used as mood only)
+- **The arch is the signature shape.** It echoes the label cartouche and appears in jar frames, the Spice Rack hero, and the detail panels.
+- **Jar still life.** Every product sits on a stone plinth, in a mound of its own spice, framed by a lit arched window, on a **deep pigment field made from its label colour**: sumac, verde, saffron violet, chili red. The forest-green base keeps the pages moody, and the pigments supply the pops.
+- **Light and texture.** Diagonal window-light shafts, floor shadows, vignettes, and visible film grain.
+- **Spice pages** turn the whole hero into that spice's pigment field.
+- **The Spice Rack hero** is a stone wall with three arched windows onto one desert vista, with jars on plinths in the centre arch.
+- **Photography to commission:** jars half-buried in mounds of their own spice, saturated pigment backdrops, market and harvest scenes (Marrakech souk, saffron crocus, sun-dried chiles), and hard window light.
+
 ### 2.3 Sitemap
 ```
 /                       Home (Phase 2 rebuild)
