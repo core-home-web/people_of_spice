@@ -351,7 +351,7 @@ function spicePage(p) {
             <dl class="facts reveal" style="--i:4">
               <div><dt>Inspired by</dt><dd><a href="../world-of-spice.html#${p.id}">${esc(p.origin)}</a></dd></div>
               <div><dt>Region</dt><dd>${esc(reg.name)}</dd></div>
-              <div><dt>Format</dt><dd>${esc(p.photo ? "Signature canister" : col.format)}</dd></div>
+              <div><dt>Format</dt><dd>${esc(col.format)}</dd></div>
               <div><dt>Item</dt><dd>#${esc(p.sku)}</dd></div>
               ${p.label ? `<div><dt>Net weight</dt><dd>${esc(p.label.netWeight)}</dd></div><div><dt>Nutrition</dt><dd><a href="#label">Label &amp; nutrition</a></dd></div>` : ""}
             </dl>
@@ -895,7 +895,7 @@ function homePage() {
   return layout({
     r, file: "index.html", bodyClass: "page-home", og: "home",
     title: "People of Spice | Authentic Global Spices for Home Cooking",
-    description: `Discover ${products.length} authentic spice blends inspired by ${regions.length} cooking traditions. From Thai curry to Moroccan ras el hanout, bring the world's kitchens to your family table.`,
+    description: `Discover ${products.length} authentic spice blends inspired by ${regions.length} cooking traditions. From Levantine za'atar to Texas BBQ, bring the world's kitchens to your family table.`,
     head: `${introBoot}\n  <link rel="preload" as="image" href="${HERO}-poster-00001.jpg" fetchpriority="high">\n  <link rel="stylesheet" href="css/home.css">`,
     body,
     scripts: [

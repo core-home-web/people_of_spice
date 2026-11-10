@@ -1786,7 +1786,7 @@ figcaption {
 }
 
 .background-move-image.second {
-  background-image: url('../images/Thai_Green_Curry.webp');
+  background-image: url('../images/recipes/sheet-pan-chicken-shawarma.jpg');
   bottom: auto;
   right: -6%;
 }
@@ -2015,7 +2015,7 @@ figcaption {
 }
 
 .menu-card.first {
-  background-image: url('../images/Thai_Green_Curry.webp');
+  background-image: url('../images/recipes/sheet-pan-chicken-shawarma.jpg');
   height: 500px;
   min-height: auto;
   max-height: none;
@@ -2023,7 +2023,7 @@ figcaption {
 }
 
 .menu-card.second {
-  background-image: url('../images/Moroccan_Lamb_Tagine.webp');
+  background-image: url('../images/recipes/asado-skirt-steak-chimichurri.jpg');
   height: 500px;
   min-height: auto;
   max-height: none;
@@ -2031,7 +2031,7 @@ figcaption {
 }
 
 .menu-card.hird {
-  background-image: url('../images/Grilled_Chicken_Kebabs.webp');
+  background-image: url('../images/recipes/zaatar-manakish.jpg');
   height: 500px;
   min-height: auto;
   max-height: none;
@@ -8618,24 +8618,12 @@ figcaption {
   box-shadow: 1px 1px 10px #13131380;
 }
 
-.sub-slide-wrapper._5 {
-  background-image: linear-gradient(0deg, #13131380, #0000 30%), url('../images/52863_01.jpg');
-}
-
-.sub-slide-wrapper._4 {
-  background-image: linear-gradient(0deg, #13131380, #0000 30%), url('../images/52861_01.jpg');
-}
-
+.sub-slide-wrapper._5,
+.sub-slide-wrapper._4,
+.sub-slide-wrapper._3,
+.sub-slide-wrapper._2,
 .sub-slide-wrapper._1 {
-  background-image: linear-gradient(0deg, #13131380, #0000 30%), url('../images/52858_01.jpg');
-}
-
-.sub-slide-wrapper._3 {
-  background-image: linear-gradient(0deg, #13131380, #0000 30%), url('../images/52860_01.jpg');
-}
-
-.sub-slide-wrapper._2 {
-  background-image: linear-gradient(0deg, #13131380, #0000 30%), url('../images/52859_01.jpg');
+  background-image: linear-gradient(0deg, #13131380, #0000 30%), url('../images/AdobeStock_601004060-p-1600.webp');
   background-position: 0 0, 50%;
   justify-content: flex-end;
   align-items: flex-end;
