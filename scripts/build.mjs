@@ -681,6 +681,68 @@ function aboutPage() {
   });
 }
 
+function contactPage() {
+  const r = "";
+  const EMAIL = "info@corehome.com";
+  const mail = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>';
+  const body = `
+  <main id="main">
+    <section class="hero hero--contact">
+      <div class="hero__bg">${photo("images/AdobeStock_662866143", "webp", "", "100vw", { eager: true })}</div>
+      <div class="container stack" style="--stack:1rem">
+        <span class="eyebrow reveal">Contact</span>
+        <h1 class="reveal" style="--i:1">Let’s talk <em>spice</em></h1>
+        <p class="lede reveal" style="--i:2">Questions, wholesale and press — write us and a human will get back to you by email.</p>
+        <div class="hero__ctas reveal" style="--i:3">
+          <a class="btn" href="mailto:${EMAIL}">Email ${EMAIL} ${ICON.arrow}</a>
+          <a class="btn btn--ghost" href="#write">Write a message</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-write" id="write" aria-labelledby="write-title">
+      <div class="container contact-write__layout">
+        <div class="contact-write__copy stack" style="--stack:.75rem">
+          <span class="eyebrow reveal">Direct line</span>
+          <h2 class="reveal" style="--i:1" id="write-title">Reach the <em>team</em></h2>
+          <p class="lede reveal" style="--i:2">For spice questions, wholesale, press and gifts — email is the fastest way to reach us. Prefer a form? Send a note below and it lands in the same inbox.</p>
+          <a class="contact-write__email reveal" style="--i:3" href="mailto:${EMAIL}">${mail} ${EMAIL}</a>
+        </div>
+        <div class="contact-panel reveal" style="--i:1">
+          <div class="stack" style="--stack:.5rem">
+            <span class="eyebrow">Message</span>
+            <h2>Send us a note</h2>
+          </div>
+          <form class="form" action="https://formsubmit.co/${EMAIL}" method="POST" name="contact-form" id="contact-form">
+            <input type="hidden" name="_subject" value="New Contact Form Submission from People of Spice">
+            <input type="hidden" name="_next" value="${SITE}/thank-you.html">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
+            <div class="form__row">
+              <div class="field"><label for="contact-name">Name</label><input id="contact-name" name="Name" type="text" maxlength="256" autocomplete="name" required></div>
+              <div class="field"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" maxlength="256" autocomplete="email" required></div>
+            </div>
+            <div class="field"><label for="contact-message">Message</label><textarea id="contact-message" name="Message" rows="5" maxlength="5000" required placeholder="How can we help?"></textarea></div>
+            <button class="btn" type="submit">Send ${ICON.arrow}</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>${footer(r)}`;
+  return layout({
+    r, file: "contact-us.html", bodyClass: "page-contact", og: "contact",
+    title: "Contact People of Spice — Questions, Wholesale & Press",
+    description: "Get in touch with People of Spice about our spice blends, recipes, wholesale or press. Email info@corehome.com — we read every message.",
+    head: '<link rel="stylesheet" href="css/contact.css">',
+    body,
+    scripts: SCROLL_FX.join("\n  "),
+    jsonld: {
+      "@context": "https://schema.org", "@type": "ContactPage", name: "Contact People of Spice",
+      url: cleanUrl("contact-us.html"),
+      mainEntity: { "@type": "Organization", name: "People of Spice", url: `${SITE}/`, email: EMAIL },
+    },
+  });
+}
+
 function homePage() {
   const r = "";
   const HERO = "videos/people_of_spice_ai_sequence-720p";
@@ -914,7 +976,6 @@ function homePage() {
 // Pages not yet rebuilt get the same SEO head: their old title/description/OG/Twitter/robots/
 // canonical tags are replaced by a marked block, so re-running the build changes nothing.
 const LEGACY = {
-  "contact-us.html": { og: "contact", title: "Contact People of Spice — Questions, Wholesale & Press", description: "Get in touch with People of Spice about our spice blends, recipes, wholesale or press. We read every message and reply by email." },
   "privacy-policy.html": { title: "Privacy Policy | People of Spice", description: "How People of Spice collects, uses and protects the information you share with us on peopleofspice.com, including newsletter and contact form details." },
   "licensing.html": { noindex: true, title: "Licensing | People of Spice", description: "Image and font licensing for the People of Spice website." },
   "videos.html": { noindex: true, title: "Videos | People of Spice", description: "Cooking videos from People of Spice." },
@@ -1036,7 +1097,8 @@ write("world-of-spice.html", globePage());
 globeTeaser(dots);
 write("index.html", homePage());
 write("about.html", aboutPage());
+write("contact-us.html", contactPage());
 Object.entries(LEGACY).forEach(([file, meta]) => patchLegacyHead(file, meta));
 const urls = sitemap();
 seoWarnings.forEach((w) => console.warn(`SEO: ${w}`));
-console.log(`Built home, our story, shop, ${products.length} spice pages, recipe index, ${recipes.length} recipe pages, globe (${dots.length / 2} land dots), SEO heads for ${Object.keys(LEGACY).length} legacy pages, sitemap (${urls} URLs).`);
+console.log(`Built home, our story, contact, shop, ${products.length} spice pages, recipe index, ${recipes.length} recipe pages, globe (${dots.length / 2} land dots), SEO heads for ${Object.keys(LEGACY).length} legacy pages, sitemap (${urls} URLs).`);

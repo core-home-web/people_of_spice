@@ -1,0 +1,64 @@
+/* ==========================================================================
+   People of Spice — contact page (contact-us.html). Builds on css/pos.css.
+   ========================================================================== */
+
+.page-contact { background: #020805; }
+
+.hero--contact .hero__bg img {
+  object-position: 60% 40%;
+  filter: brightness(.72) saturate(.85) contrast(1.05);
+}
+.hero--contact::after {
+  background:
+    linear-gradient(180deg, rgba(2, 8, 5, .55) 0%, rgba(2, 8, 5, .35) 40%, rgba(2, 8, 5, .88) 78%, #020805 100%),
+    linear-gradient(90deg, rgba(2, 8, 5, .7), transparent 65%);
+}
+.hero--contact .hero__ctas { display: flex; flex-wrap: wrap; gap: .6rem; padding-top: 1rem; }
+
+.contact-write {
+  padding-block: clamp(3rem, 2rem + 5vw, 6rem);
+  background:
+    radial-gradient(55% 60% at 88% 12%, rgba(24, 67, 50, .45), transparent 70%),
+    radial-gradient(40% 50% at 8% 90%, rgba(214, 178, 106, .06), transparent 70%),
+    #020805;
+}
+.contact-write__layout {
+  display: grid; gap: clamp(2rem, 1.25rem + 3vw, 4rem); align-items: start;
+}
+@media (min-width: 900px) {
+  .contact-write__layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2.5rem, 1.5rem + 4vw, 5rem); }
+}
+.contact-write__copy .lede { margin-top: 1rem; }
+.contact-write__email {
+  display: inline-flex; align-items: center; gap: .65rem; margin-top: 1.5rem;
+  font-family: var(--font-display); font-size: var(--step-2); font-style: italic; color: var(--tan);
+  border-bottom: 1px solid color-mix(in oklab, var(--tan) 45%, transparent);
+  transition: color .2s, border-color .2s;
+}
+.contact-write__email:hover { color: var(--cream); border-color: var(--cream); }
+.contact-write__email svg { width: 1.1em; height: 1.1em; flex: none; }
+
+.contact-panel {
+  display: grid; gap: 1.25rem;
+  padding: clamp(1.25rem, .75rem + 2.5vw, 2.75rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background:
+    radial-gradient(90% 120% at 100% 0%, rgba(24, 67, 50, .4), transparent 65%),
+    #030c07;
+}
+.contact-panel h2 { font-size: var(--step-3); }
+
+.form { display: grid; gap: 1rem; }
+.form__row { display: grid; gap: 1rem; }
+@media (min-width: 560px) { .form__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.field { display: grid; gap: .45rem; min-width: 0; margin: 0; padding: 0; border: 0; }
+.field label { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); }
+.field input, .field textarea {
+  width: 100%; min-height: 48px; padding: .7rem 1rem; border-radius: var(--radius-s); border: 1px solid var(--line-strong);
+  background: rgba(0, 0, 0, .22); color: var(--cream); transition: border-color .2s, background-color .2s;
+}
+.field textarea { min-height: 140px; resize: vertical; line-height: 1.5; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--gold); background: rgba(0, 0, 0, .3); }
+.field ::placeholder { color: var(--text-faint); }
+.form .btn { justify-self: start; margin-top: .35rem; }
