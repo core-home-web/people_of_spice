@@ -40,12 +40,29 @@ const collections = read("content/collections.json");
 const regions = read("content/regions.json");
 const labelColors = read("content/label-colors.json");
 const recipes = read("content/recipes.json");
-const products = read("content/products.json").map((p) => ({
-  ...p,
-  image: p.image || `images/products/${p.id}.webp`,
-  color: p.color || labelColors[p.id] || "#d6b26a",
-  isNew: p.collection !== "signature",
-}));
+const site = read("content/site.json");
+const labels = read("content/labels.json");
+// Photo set produced by scripts/process-product-photos.py and stored in R2 (see docs/REDESIGN_PLAN.md).
+const mediaManifest = fs.existsSync(path.join(ROOT, "content/media-manifest.json")) ? read("content/media-manifest.json") : {};
+const mediaUrl = (key) => `${site.mediaBase}/${key}`;
+const shot = (slug, angle) => {
+  const m = mediaManifest[slug]?.[angle];
+  if (!m) return null;
+  const sizes = Object.entries(m.sizes).map(([h, v]) => ({ h: +h, ...v })).sort((a, b) => a.h - b.h);
+  const pick = (h) => sizes.find((x) => x.h >= h) || sizes[sizes.length - 1];
+  return { src: mediaUrl(pick(960).key), thumb: mediaUrl(sizes[0].key), srcset: sizes.map((x) => `${mediaUrl(x.key)} ${x.w}w`).join(", "), aspect: m.aspect };
+};
+const products = read("content/products.json").map((p) => {
+  const shots = { front: shot(p.id, "front"), back: shot(p.id, "back"), frontFr: shot(p.id, "front-fr") };
+  return {
+    ...p,
+    shots,
+    label: labels[p.sku] || null,
+    image: shots.front?.src || p.image || `images/products/${p.id}.webp`,
+    color: p.color || labelColors[p.id] || "#d6b26a",
+    isNew: p.collection !== "signature",
+  };
+});
 
 const byId = (list) => Object.fromEntries(list.map((x) => [x.id, x]));
 const P = byId(products), R = byId(recipes), G = byId(regions), C = byId(collections);
@@ -82,9 +99,33 @@ const heat = (level, size = "") =>
   `<span class="heat__chiles">${[1, 2, 3, 4, 5].map((i) => ICON.chile.replace("<svg", `<svg class="heat__chile${i <= level ? " is-on" : ""}"`)).join("")}</span>` +
   `<span class="heat__label">${HEAT_WORDS[level]}</span></span>`;
 
-const jar = (p, r, { eager = false, vt = false, cls = "" } = {}) =>
+const asset = (r, src) => (/^https?:/.test(src) ? src : r + src);
+const absolute = (src) => (/^https?:/.test(src) ? src : `${SITE}/${src}`);
+const jar = (p, r, { eager = false, vt = false, cls = "", sizes = "(min-width: 1100px) 10vw, 24vw" } = {}) =>
   `<div class="jar${p.photo ? " jar--photo" : ""}${cls ? " " + cls : ""}"${vt ? ` style="view-transition-name: jar-${p.id}"` : ""}>` +
-  `<img src="${r}${p.image}" alt="${esc(p.name)} ${p.photo ? "canister" : "glass jar"}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></div>`;
+  `<img src="${asset(r, p.image)}"${p.shots?.front ? ` srcset="${p.shots.front.srcset}" sizes="${sizes}"` : ""} alt="${esc(p.name)} ${p.photo ? "canister" : "glass jar"}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></div>`;
+
+/* FDA-style Nutrition Facts panel, rendered from the transcribed label (content/labels.json). */
+const nutritionPanel = (l) => {
+  const n = l.nutrition;
+  const row = (label, amount, dv, cls = "") => `<tr class="${cls}"><th scope="row">${label} <span>${esc(amount)}</span></th><td>${dv == null ? "" : dv + "%"}</td></tr>`;
+  return `<section class="nf" aria-label="Nutrition Facts">
+      <h3 class="nf__title">Nutrition Facts</h3>
+      <p class="nf__servings">${n.servingsPerContainer} servings per container</p>
+      <p class="nf__size"><strong>Serving size</strong><strong>${esc(n.servingSize)}</strong></p>
+      <p class="nf__cal"><span><small>Amount per serving</small>Calories</span><strong>${n.calories}</strong></p>
+      <table><thead><tr><th></th><th>% DV*</th></tr></thead><tbody>
+        ${row("<b>Total Fat</b>", n.totalFat, n.totalFatDV)}
+        ${row("Saturated Fat", n.saturatedFat, n.saturatedFatDV, "nf__sub")}
+        ${row("<b>Sodium</b>", n.sodium, n.sodiumDV)}
+        ${row("<b>Total Carbohydrate</b>", n.totalCarbohydrate, n.totalCarbohydrateDV)}
+        ${row("<b>Protein</b>", n.protein, null)}
+      </tbody></table>
+      <p class="nf__foot">Not a significant source of ${esc(n.notSignificantSourceOf)}.</p>
+      <p class="nf__foot">* %DV = %Daily Value</p>
+    </section>`;
+};
+const allergenText = (l) => [l.allergens.contains ? `Contains ${l.allergens.contains.toLowerCase()}.` : "", `May contain traces of ${l.allergens.mayContain.toLowerCase()} due to the manufacturing environment.`].filter(Boolean).join(" ");
 
 const recipeMedia = (rec, r, eager = false) => {
   const p = productFor(rec);
@@ -297,7 +338,10 @@ function spicePage(p) {
       <div class="container">
         <ol class="crumbs reveal"><li><a href="../shop.html">Spice Rack</a></li><li><a href="../shop.html#${col.id}">${esc(col.name)}</a></li><li aria-current="page">${esc(p.name)}</li></ol>
         <div class="spice-hero__grid" style="margin-top:1.5rem">
-          ${jar(p, r, { eager: true, vt: true })}
+          <div class="gallery" data-gallery>
+            ${jar(p, r, { eager: true, vt: true, sizes: "(min-width: 900px) 22vw, 50vw" })}
+            ${p.shots?.back ? `<div class="gallery__thumbs" role="group" aria-label="Product views">${[["front", "Front"], ["back", "Back label"], ["frontFr", "Français"]].filter(([k]) => p.shots[k]).map(([k, label], i) => `<button type="button" class="gallery__thumb" aria-pressed="${i === 0}" data-src="${p.shots[k].src}" data-srcset="${p.shots[k].srcset}" aria-label="${label}"><img src="${p.shots[k].thumb}" alt="" loading="lazy"><span>${label}</span></button>`).join("")}</div>` : ""}
+          </div>
           <div class="stack" style="--stack:1.25rem">
             <span class="eyebrow reveal">${esc(col.name)}${p.isNew ? " · New for 2026" : ""}</span>
             <h1 class="reveal" style="--i:1">${esc(p.name)}</h1>
@@ -309,6 +353,7 @@ function spicePage(p) {
               <div><dt>Region</dt><dd>${esc(reg.name)}</dd></div>
               <div><dt>Format</dt><dd>${esc(p.photo ? "Signature canister" : col.format)}</dd></div>
               <div><dt>Item</dt><dd>#${esc(p.sku)}</dd></div>
+              ${p.label ? `<div><dt>Net weight</dt><dd>${esc(p.label.netWeight)}</dd></div><div><dt>Nutrition</dt><dd><a href="#label">Label &amp; nutrition</a></dd></div>` : ""}
             </dl>
             <div class="reveal" style="--i:5;display:flex;flex-wrap:wrap;gap:.6rem">
               <a class="btn" href="../recipes/${rec.id}.html">Cook ${esc(rec.title)} ${ICON.arrow}</a>
@@ -320,11 +365,27 @@ function spicePage(p) {
     </section>
     <section class="section" style="padding-top:1rem">
       <div class="container" style="display:grid;gap:2.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
-        <div class="reveal"><h2 style="font-size:var(--step-2);margin-bottom:1rem">In the jar</h2><ul class="tags">${p.ingredients.map((x) => `<li class="tag">${esc(x)}</li>`).join("")}</ul></div>
+        <div class="reveal"><h2 style="font-size:var(--step-2);margin-bottom:1rem">In the jar</h2><ul class="tags">${p.ingredients.map((x) => `<li class="tag">${esc(x)}</li>`).join("")}</ul>${p.label ? "" : `<p class="label-note">Full label details for this blend are coming soon.</p>`}</div>
         <div class="reveal" style="--i:1"><h2 style="font-size:var(--step-2);margin-bottom:1rem">Tastes</h2><ul class="tags">${p.notes.map((x) => `<li class="tag tag--note">${esc(x)}</li>`).join("")}</ul></div>
         <div class="reveal" style="--i:2"><h2 style="font-size:var(--step-2);margin-bottom:1rem">Pairs with</h2><ul class="tags">${p.pairsWith.map((x) => `<li class="tag" style="--accent:var(--tan)">${esc(x)}</li>`).join("")}</ul></div>
       </div>
     </section>
+    ${p.label ? `<section class="section label-section" id="label" style="padding-top:0">
+      <div class="container label-grid">
+        <div class="reveal">${nutritionPanel(p.label)}</div>
+        <div class="label-copy reveal" style="--i:1">
+          <span class="eyebrow">On the label</span>
+          <h2>What's in ${esc(p.name)}</h2>
+          <dl>
+            <div><dt>Ingredients</dt><dd>${esc(p.label.ingredientStatement)}</dd></div>
+            <div><dt>Allergens</dt><dd>${esc(allergenText(p.label))}</dd></div>
+            <div><dt>Net weight</dt><dd>${esc(p.label.netWeight)}</dd></div>
+            <div><dt>Storage</dt><dd>${esc(p.label.storage)}</dd></div>
+          </dl>
+          ${p.shots?.back ? `<figure class="label-photo"><img src="${p.shots.back.src}" srcset="${p.shots.back.srcset}" sizes="(min-width: 900px) 14vw, 40vw" alt="Back label of ${esc(p.name)} showing the Nutrition Facts and ingredients" loading="lazy" decoding="async"><figcaption>As printed on the jar</figcaption></figure>` : ""}
+        </div>
+      </div>
+    </section>` : ""}
     <section class="section" style="padding-top:0">
       <div class="container">
         <span class="eyebrow reveal">Cook with it</span>
@@ -344,7 +405,7 @@ function spicePage(p) {
     description: `${p.name}: ${p.tagline.replace(/[.!]$/, "")}. ${p.story}`,
     body,
     jsonld: {
-      "@context": "https://schema.org", "@type": "Product", name: `People of Spice ${p.name}`, sku: p.sku, image: `${SITE}/${p.image}`,
+      "@context": "https://schema.org", "@type": "Product", name: `People of Spice ${p.name}`, sku: p.sku, image: absolute(p.image), ...(p.label ? { weight: { "@type": "QuantitativeValue", value: parseFloat(p.label.netWeight), unitCode: "ONZ" } } : {}),
       description: p.story, brand: { "@type": "Brand", name: "People of Spice" }, category: col.name,
     },
   });
@@ -412,6 +473,7 @@ function recipePage(rec) {
             <h2>Ingredients</h2>
             <ul class="checklist" data-checklist="${rec.id}">${rec.ingredients.map((x, i) => `<li><label><input type="checkbox" data-i="${i}"><span${spiceWord.test(x) ? ' class="is-spice"' : ""}>${esc(x)}</span></label></li>`).join("")}</ul>
           </div>
+          ${p.label?.allergens.contains ? `<p class="allergen-note reveal"><strong>Allergen note:</strong> ${esc(p.name)} contains ${esc(p.label.allergens.contains.toLowerCase())}.</p>` : ""}
           ${rec.equipment ? `<p class="equipment reveal"><strong style="color:var(--cream)">You'll need:</strong> ${rec.equipment.map(esc).join(", ")}</p>` : ""}
           <a class="spice-callout reveal" href="../spices/${p.id}.html">
             ${jar(p, r)}
@@ -451,7 +513,7 @@ function recipePage(rec) {
     scripts: `<script src="${r}js/form-handler.js" defer></script>`,
     jsonld: {
       "@context": "https://schema.org", "@type": "Recipe", name: rec.title, description: rec.summary,
-      image: [`${SITE}/${rec.image || p.image}`], author: { "@type": "Organization", name: "People of Spice" },
+      image: [absolute(rec.image || p.image)], author: { "@type": "Organization", name: "People of Spice" },
       recipeCuisine: reg.name, recipeYield: rec.serves, prepTime: iso(rec.prep), cookTime: iso(rec.cook), totalTime: iso(total(rec)),
       recipeIngredient: rec.ingredients, recipeInstructions: rec.steps.map((text) => ({ "@type": "HowToStep", text })),
       keywords: [p.name, reg.name, ...p.notes].join(", "),
@@ -468,7 +530,8 @@ function globePage() {
       const rec = recipeFor(p);
       return {
         id: p.id, name: p.name, tagline: p.tagline, collection: p.collection, region: p.region, origin: p.origin, heat: p.heat,
-        notes: p.notes, ingredients: p.ingredients, story: p.story, image: p.image, photo: !!p.photo, color: p.color, isNew: p.isNew,
+        notes: p.notes, ingredients: p.ingredients, story: p.story, image: p.image, thumb: p.shots?.front?.thumb || p.image, photo: !!p.photo, color: p.color, isNew: p.isNew,
+        label: p.label ? { netWeight: p.label.netWeight, servingSize: p.label.nutrition.servingSize, servings: p.label.nutrition.servingsPerContainer, calories: p.label.nutrition.calories, sodium: p.label.nutrition.sodium, sodiumDV: p.label.nutrition.sodiumDV, ingredients: p.label.ingredientStatement, allergens: allergenText(p.label) } : null,
         recipe: { id: rec.id, title: rec.title, summary: rec.summary, image: rec.image || null, serves: rec.serves, time: minutes(total(rec)), ingredients: rec.ingredients, steps: rec.steps },
       };
     }),

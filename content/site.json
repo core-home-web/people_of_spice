@@ -1,0 +1,4 @@
+{
+  "mediaBase": "https://pos-media.elombe.workers.dev",
+  "mediaNote": "Product photography is served from the people-of-spice-media R2 bucket via the pos-media Worker (workers/media). Change mediaBase to e.g. https://media.peopleofspice.com once a custom domain is attached."
+}

@@ -140,3 +140,14 @@
     });
   }
 })();
+
+/* Spice page: switch the hero photo between front, back label and French label */
+document.querySelectorAll("[data-gallery]").forEach((g) => {
+  const img = g.querySelector(".jar img");
+  const thumbs = g.querySelectorAll(".gallery__thumb");
+  thumbs.forEach((t) => t.addEventListener("click", () => {
+    img.srcset = t.dataset.srcset;
+    img.src = t.dataset.src;
+    thumbs.forEach((x) => x.setAttribute("aria-pressed", String(x === t)));
+  }));
+});

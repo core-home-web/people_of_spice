@@ -308,7 +308,7 @@
     list = products.filter((p) => (filter.collection === "all" || p.collection === filter.collection) && (!filter.region || p.region === filter.region));
     rail.innerHTML = list.length ? list.map((p) => `
       <li><button class="wos-card" type="button" data-id="${p.id}" style="--accent:${p.color}" aria-label="${esc(p.name)} — ${esc(regions[p.region].name)}">
-        <span class="wos-card__img jar${p.photo ? " jar--photo" : ""}"><img src="${p.image}" alt="" loading="lazy" decoding="async"></span>
+        <span class="wos-card__img jar${p.photo ? " jar--photo" : ""}"><img src="${p.thumb || p.image}" alt="" loading="lazy" decoding="async"></span>
         <span class="wos-card__name">${esc(p.name)}</span>
         <span class="wos-card__meta"><span>${esc(regions[p.region].name)}</span>${p.heat ? heatHTML(p.heat, true) : ""}</span>
       </button></li>`).join("") : `<li class="wos-empty">No spices in this collection yet.</li>`;
@@ -414,6 +414,7 @@
       <div class="d-row">${heatHTML(p.heat)}<ul class="tags">${p.notes.map((n) => `<li class="tag tag--note">${esc(n)}</li>`).join("")}</ul></div>
       <p class="d-story">${esc(p.story)}</p>
       <div class="d-section"><h3>In the jar <span>${p.ingredients.length}</span></h3><ul class="tags">${p.ingredients.map((i) => `<li class="tag" style="--accent:${p.color}">${esc(i)}</li>`).join("")}</ul></div>
+      ${p.label ? `<div class="d-section"><h3>Label &amp; nutrition</h3><details class="d-label"><summary>Net ${esc(p.label.netWeight)} · ${p.label.calories} cal · ${esc(p.label.sodium)} sodium (${p.label.sodiumDV}% DV) per ${esc(p.label.servingSize)}</summary><p><strong>Ingredients:</strong> ${esc(p.label.ingredients)}</p><p>${esc(p.label.allergens)}</p><a href="spices/${p.id}.html#label">Full Nutrition Facts ${ICON.arrow}</a></details></div>` : ""}
       <div class="d-section">
         <h3>Cook it</h3>
         <article class="d-recipe">
