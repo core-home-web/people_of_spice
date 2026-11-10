@@ -311,3 +311,10 @@
   .wos::before { animation: none; }
   .pin__dot::after { animation: none; }
 }
+
+.d-label summary { cursor: pointer; font-size: .85rem; color: var(--tan); list-style: none; }
+.d-label summary::-webkit-details-marker { display: none; }
+.d-label summary::after { content: " +"; }
+.d-label[open] summary::after { content: " –"; }
+.d-label p { margin-top: .6rem; font-size: .88rem; color: var(--text-muted); }
+.d-label a { display: inline-flex; gap: .35rem; align-items: center; margin-top: .6rem; font-size: .85rem; color: var(--cream); }

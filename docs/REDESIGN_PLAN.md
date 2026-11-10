@@ -153,24 +153,38 @@ Workflow: edit the content, run `npm run build`, commit. Cloudflare Pages deploy
 New product photography goes in `images/products/<slug>.webp` and overrides the deck renders. `scripts/extract-deck-jars.py` regenerates the renders and label colours from any future line-review deck.
 
 ### 2.6 Roadmap
-| Phase | Scope |
-|---|---|
-| **1 · This PR** | Design system, motion layer, globe page, Spice Rack, 44 spice pages, recipe index, 44 recipe pages, CMS JSON, build and image scripts |
-| **2 · Home + story** | Rebuild `index.html` on the new system: a slow-pan hero using the existing *people_of_spice_ai_sequence* video; a "Where in the world?" globe teaser; new-for-2026 collection shelves; featured recipes; greeting marquee; IG. Rebuild About and Contact. Remove jQuery, Swiper, Materialize, and the Webflow runtime site-wide. |
-| **3 · Commerce & reach** | Where-to-buy / retailer links per SKU, gift sets, Airtable-driven build, sitemap.xml, OG images per spice, newsletter double opt-in |
-| **Clean-up** | Delete template leftovers (`detail_*.html`, beer and coffee assets, Slashmint credits, `airtable-test.html`, `test-airtable.html`, `style-guide.html`) and self-host the Webflow-hosted hero video |
+| Phase | Status | Scope |
+|---|---|---|
+| **1 · Design system + catalog** | ✅ Shipped (PR #1) | Design system, motion, World of Spice globe, Spice Rack, 44 spice pages, recipe index and pages, content-as-CMS, build scripts |
+| **2 · Home + story** | ✅ Shipped (PR #2) | 2026 homepage with the first-visit spice intro and loading counter, "Meet the blends" dial, Our Story timeline, SEO and OG images |
+| **3 · Real products** | 🚧 This PR | v2 studio photography (cut out, 3 views per SKU) served from R2 through the `pos-media` edge-cached Worker; ingredient statements, Nutrition Facts, allergens and net weights transcribed from the printed labels; recipes corrected for salt levels, safe internal temperatures and technique |
+| **4 · Find & buy** | Next | Where-to-buy per SKU (retailer links or a store locator), prices and pack sizes, gift sets; Product schema with offers so jars show in Google Shopping; a "build a spice rack" bundle builder |
+| **5 · Cook more** | Next | Recipe photography for the 39 new-line recipes; cook mode (screen wake-lock, step timers, serving scaler); printable recipe cards; recipe search by ingredient across the pantry |
+| **6 · CMS & ops** | Next | Move `content/*.json` into Airtable (tables already modelled) so the team edits products, labels and recipes without code; nightly build; image pipeline (drop photos → cutout → R2) as a one-command script or Worker |
+| **7 · Reach** | Next | Bilingual EN/FR site (the labels are already bilingual), newsletter double opt-in, Instagram feed, Core Web Vitals pass, `media.peopleofspice.com` custom domain |
+| **Clean-up** | Ongoing | Remove Webflow leftovers (`detail_*.html`, beer and coffee assets, Slashmint credits, test pages) and self-host the Webflow-hosted hero video |
 
 ### 2.7 Open items for the brand team
-1. **Ingredient statements.** Blend ingredient lists on the site are drafted from each flavour profile. They **must be replaced with the label-approved ingredient and allergen statements** before launch (e.g. Caesar-Style lists Parmesan, which is a milk allergen).
-2. **Product photography.** The 2026 jars are rendered from the deck label art on an empty jar. Eight SKUs use the deck's filled-jar photos. Drop final photos into `images/products/` and rebuild.
-3. **Recipe photography.** Five recipes have photos, plus the existing salmon and noodle-bowl shots. The rest use jar art until we shoot them.
-4. **Origins.** The regions are the *culinary tradition* each blend is inspired by, not where the spice was grown. Packing origin is Vietnam, per the deck. Confirm the stories (e.g. Læsø smoked salt, Tijuana Caesar) with the brand.
-5. **Heat levels.** These are first-pass 0–5 ratings; product development should confirm them.
-6. **Where to buy.** Retailers and prices for each SKU (Phase 3).
+1. **Signature canisters.** The five signature blends (Manqual, Hacienda Salsa Guacamole, Tangier Ras El Hanout, Szechuan Five Spice, Bangkok Green Curry) have no v2 photos or label data. Confirm whether they stay in the line; their ingredient lists are still drafts and are marked as such on the site.
+2. **Mustard on labels.** Sunday Roast Pork Rub and Caesar-Style list yellow mustard, but the "Contains" statement doesn't name it. Mustard is a priority allergen in Canada, and the labels are bilingual for Canadian sale, so regulatory should check this.
+3. **Texas BBQ name.** The website calls SKU 69732 "BBQ Seasoning", but the printed label says "Texas BBQ" (tagline "Big Smoke Energy"). Pick one.
+4. **"Smoked" products.** Smoked Salt and Smoked Paprika get their smokiness from artificial flavor, per the labels. Site copy now says "smoky flavor" and makes no wood-smoking claims; keep marketing consistent.
+5. **Recipe photography.** Five legacy recipes have photos; the other 39 use the jar still life until they're shot.
+6. **Heat levels.** These are editorial 0–5 ratings, re-checked against each label's ingredient order. Product development should confirm them.
+7. **"No artificial fillers".** The footer repeats this claim from the line-review deck. Smoked Salt, Smoked Paprika and Texas BBQ list artificial flavor, and Smoked Salt lists caramel color; flavors aren't fillers, but marketing/regulatory should confirm the wording.
+8. **Media domain.** Images are served from `pos-media.elombe.workers.dev`. Moving the bucket and Worker into the Cloudflare account that holds the peopleofspice.com zone would allow `media.peopleofspice.com`, which is a one-line change in `content/site.json`.
 
 ---
 
-## 3. What shipped in Phase 1 (this branch)
+## 3. Phase 3: real products (this branch)
+- `content/labels.json`: for every 2026 SKU (39), net weight, the Nutrition Facts panel, the verbatim ingredient statement, allergens and storage. Transcribed from the back-label photos; each record names its source photo.
+- `scripts/cutout.swift` (Apple Vision subject lifting) and `scripts/process-product-photos.py`: these cut out the studio shots and export WebP at 480/960/1600 px plus a PNG master, as front, back and French views.
+- R2 bucket `people-of-spice-media`, served by the `workers/media` Worker with year-long immutable edge caching. `content/media-manifest.json` maps every SKU to its keys.
+- Spice pages: a front/back/French photo switcher, a Nutrition Facts panel, ingredients, allergens, net weight, and a photo of the printed back label. The globe detail gets the same in a compact drawer, and recipes show an allergen note when the spice contains one.
+- Copy corrected to the labels: no Parmesan in Caesar-Style, no lavender in Herbes de Provence, no "Ceylon" cinnamon, no wood-smoked claims; "Whole Dill" is now Dill Weed; taglines match the jars.
+- Recipes checked against the label salt levels and safe cooking temperatures. The turkey becomes a proper dry brine, plus fixes to the ham glaze, focaccia hydration, paprikash, pork, tabbouleh and others.
+
+## 4. What shipped in Phase 1
 - `css/pos.css`, `css/globe.css`, `js/pos.js`, `js/globe.js`: new design system, motion, and globe
 - `content/` (the CMS) and `scripts/build.mjs`, which generate `shop.html`, `spices/*.html`, `recipes.html`, `recipes/*.html`, `world-of-spice.html`, and `data/globe-dots.js`
 - `scripts/extract-deck-jars.py`, which produced `images/products/*.webp` (39 SKUs) and `content/label-colors.json` from the 5.6.2026 deck

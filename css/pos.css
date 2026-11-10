@@ -511,3 +511,48 @@ html:not(.js) .split-line > span { transform: none; }
   .split-line > span { transform: none; }
   .marquee__track { animation: none; }
 }
+
+/* ---------- Product views + label & nutrition (2026 label data) ---------- */
+.gallery { display: grid; gap: .75rem; }
+.gallery__thumbs { display: flex; justify-content: center; gap: .5rem; }
+.gallery__thumb {
+  display: grid; justify-items: center; gap: .3rem; width: 76px; padding: .4rem .3rem .45rem; border-radius: var(--radius-s);
+  border: 1px solid var(--line); background: var(--surface); font-size: .7rem; letter-spacing: .06em; color: var(--text-muted);
+  transition: border-color .2s, background-color .2s, color .2s;
+}
+.gallery__thumb img { height: 64px; width: auto; }
+.gallery__thumb:hover { border-color: var(--gold); color: var(--cream); }
+.gallery__thumb[aria-pressed="true"] { border-color: var(--gold); background: var(--surface-2); color: var(--cream); }
+
+.label-grid { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 900px) { .label-grid { grid-template-columns: minmax(280px, 340px) 1fr; gap: 4rem; } }
+.label-copy h2 { font-size: var(--step-3); margin: .6rem 0 1.25rem; }
+.label-copy dl { display: grid; gap: 1rem; margin: 0; }
+.label-copy dt { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.label-copy dd { margin: .25rem 0 0; color: var(--text-muted); max-width: 60ch; }
+.label-photo { margin: 1.75rem 0 0; display: inline-grid; gap: .5rem; padding: .75rem; border-radius: var(--radius); background: #f4f2ee; }
+.label-photo img { height: 300px; width: auto; }
+.label-photo figcaption { font-size: .75rem; color: #3b3b3b; text-align: center; letter-spacing: .06em; }
+.label-note, .allergen-note { margin-top: .9rem; font-size: .88rem; color: var(--text-faint); }
+.allergen-note { color: var(--tan); padding: .7rem .9rem; border: 1px solid var(--line-strong); border-radius: var(--radius-s); margin: 0; }
+
+/* The panel deliberately mirrors the printed FDA label: black on white, Helvetica, hard rules. */
+.nf {
+  background: #fff; color: #000; padding: .55rem .7rem .7rem; border: 2px solid #000; max-width: 340px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.25;
+}
+.nf__title { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 900; font-size: 2rem; letter-spacing: -.02em; line-height: 1; padding-bottom: .2rem; border-bottom: 1px solid #000; }
+.nf__servings { font-size: .95rem; margin-top: .25rem; }
+.nf__size { display: flex; justify-content: space-between; font-size: 1.05rem; padding-bottom: .25rem; border-bottom: 10px solid #000; }
+.nf__cal { display: flex; justify-content: space-between; align-items: end; padding: .2rem 0; border-bottom: 5px solid #000; }
+.nf__cal span { font-weight: 900; font-size: 1.7rem; line-height: 1; }
+.nf__cal small { display: block; font-size: .72rem; font-weight: 700; }
+.nf__cal strong { font-size: 2.1rem; font-weight: 900; line-height: 1; }
+.nf table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.nf thead th { text-align: right; font-size: .72rem; font-weight: 700; padding: .2rem 0; }
+.nf tbody th, .nf tbody td { border-top: 1px solid #000; padding: .2rem 0; text-align: left; font-weight: 400; }
+.nf tbody td { text-align: right; font-weight: 700; }
+.nf tbody th span { font-weight: 400; }
+.nf__sub th { padding-left: 1rem !important; }
+.nf tbody tr:last-child th, .nf tbody tr:last-child td { border-bottom: 10px solid #000; }
+.nf__foot { font-size: .72rem; margin-top: .35rem; }

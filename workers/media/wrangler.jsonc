@@ -1,0 +1,13 @@
+// Media CDN for People of Spice: serves the people-of-spice-media R2 bucket through the
+// edge cache. Deployed separately from the site (which is a Cloudflare Pages project):
+//   cd workers/media && npx wrangler deploy
+// To serve from media.peopleofspice.com later, the bucket/worker must live in the same
+// Cloudflare account as the peopleofspice.com zone; then add a custom domain route here.
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "pos-media",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "people-of-spice-media" }],
+  "observability": { "enabled": true }
+}
