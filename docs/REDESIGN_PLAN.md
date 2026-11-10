@@ -165,7 +165,7 @@ New product photography goes in `images/products/<slug>.webp` and overrides the 
 | **Clean-up** | Ongoing | Remove Webflow leftovers (`detail_*.html`, beer and coffee assets, Slashmint credits, test pages) and self-host the Webflow-hosted hero video |
 
 ### 2.7 Open items for the brand team
-1. **Signature canisters.** The five signature blends (Manqual, Hacienda Salsa Guacamole, Tangier Ras El Hanout, Szechuan Five Spice, Bangkok Green Curry) have no v2 photos or label data. Confirm whether they stay in the line; their ingredient lists are still drafts and are marked as such on the site.
+1. **Signature canisters.** Removed from the live catalog (PDPs + recipes) — the five legacy canisters had no v2 photos or label data. Keep the assets offline in case the line returns.
 2. **Mustard on labels.** Sunday Roast Pork Rub and Caesar-Style list yellow mustard, but the "Contains" statement doesn't name it. Mustard is a priority allergen in Canada, and the labels are bilingual for Canadian sale, so regulatory should check this.
 3. **Texas BBQ name.** The website calls SKU 69732 "BBQ Seasoning", but the printed label says "Texas BBQ" (tagline "Big Smoke Energy"). Pick one.
 4. **"Smoked" products.** Smoked Salt and Smoked Paprika get their smokiness from artificial flavor, per the labels. Site copy now says "smoky flavor" and makes no wood-smoking claims; keep marketing consistent.

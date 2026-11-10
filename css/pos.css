@@ -269,13 +269,6 @@ ul, ol { margin: 0; padding: 0; }
   object-fit: contain; object-position: 50% 100%;
   filter: drop-shadow(-10px 16px 14px rgba(0, 0, 0, .5)); transition: transform .8s var(--ease-out);
 }
-/* Legacy signature canisters are studio shots on white: multiply them into the scene */
-.jar--photo::before { background: #ebe7e1; }
-.jar--photo img {
-  left: 20%; right: 20%; top: 8%; bottom: 24%; width: 60%; height: 68%;
-  border-radius: 999px 999px 4px 4px; object-fit: cover; object-position: 50% 58%; filter: none;
-}
-
 /* ---------- Arched-window hero (stone wall, one vista through three arches) ---------- */
 .hero--arches { min-height: 0; padding: var(--header-h) 0 clamp(2.5rem, 2rem + 3vw, 4.5rem); align-items: start; background: #020805; }
 .hero--arches::after { display: none; }

@@ -351,7 +351,7 @@ function spicePage(p) {
             <dl class="facts reveal" style="--i:4">
               <div><dt>Inspired by</dt><dd><a href="../world-of-spice.html#${p.id}">${esc(p.origin)}</a></dd></div>
               <div><dt>Region</dt><dd>${esc(reg.name)}</dd></div>
-              <div><dt>Format</dt><dd>${esc(p.photo ? "Signature canister" : col.format)}</dd></div>
+              <div><dt>Format</dt><dd>${esc(col.format)}</dd></div>
               <div><dt>Item</dt><dd>#${esc(p.sku)}</dd></div>
               ${p.label ? `<div><dt>Net weight</dt><dd>${esc(p.label.netWeight)}</dd></div><div><dt>Nutrition</dt><dd><a href="#label">Label &amp; nutrition</a></dd></div>` : ""}
             </dl>
@@ -606,7 +606,7 @@ function aboutPage() {
       kicker: "The search", title: "Journey to the Source",
       img: ["images/AdobeStock_626235382", "jpeg", "A stone path through a jungle market lined with produce"],
       inset: ["images/AdobeStock_631181774", "webp", "A cook at a lantern-lit night market stall"],
-      text: "So we stopped searching and started sourcing. We traced curry powders back to Thai markets, ras el hanout to Moroccan spice merchants and guacamole seasonings to family farms in Mexico — learning from local cooks, street vendors and grandmothers who held centuries of flavor in their hands.",
+      text: "So we stopped searching and started sourcing. We traced blends back to street markets, spice merchants and family farms — learning from local cooks, street vendors and grandmothers who held centuries of flavor in their hands.",
     },
     {
       kicker: "The moment", title: "The Revelation",
@@ -617,7 +617,7 @@ function aboutPage() {
     {
       kicker: "Today", title: "Bringing It Home",
       img: ["images/AdobeStock_492490915", "jpeg", "A table spread with dishes for a shared feast"],
-      text: `Today People of Spice brings ${products.length} blends from ${regions.length} cooking traditions to your cabinet, each crafted to capture the soul of its origin — Thai curry that tastes like Bangkok, tagine that carries you to Tangier, guacamole with the warmth of a Mexican hacienda. Because every family deserves to taste the real thing.`,
+      text: `Today People of Spice brings ${products.length} blends from ${regions.length} cooking traditions to your cabinet, each crafted to capture the soul of its origin — shawarma that tastes like the Levant, asado that carries you to the Pampas, chili-lime that wakes up a summer table. Because every family deserves to taste the real thing.`,
     },
   ];
   const body = `
@@ -634,7 +634,7 @@ function aboutPage() {
     <section class="section tl-intro">
       <div class="container">
         <span class="eyebrow reveal">Around the family table</span>
-        <p class="tl-statement" data-split="fill">Every great adventure begins with a simple question. Ours started around the family table, wondering why the flavors that transport you to Bangkok street markets, Moroccan souks and Mexican haciendas weren’t in our own kitchen cabinets. So we set out across the globe to find them, and to bring that authentic, home-cooked <em>magic</em> to your table.</p>
+        <p class="tl-statement" data-split="fill">Every great adventure begins with a simple question. Ours started around the family table, wondering why the flavors that transport you — street markets, souks and family kitchens around the world — weren’t in our own cabinets. So we set out across the globe to find them, and to bring that authentic, home-cooked <em>magic</em> to your table.</p>
       </div>
     </section>
 
@@ -895,7 +895,7 @@ function homePage() {
   return layout({
     r, file: "index.html", bodyClass: "page-home", og: "home",
     title: "People of Spice | Authentic Global Spices for Home Cooking",
-    description: `Discover ${products.length} authentic spice blends inspired by ${regions.length} cooking traditions. From Thai curry to Moroccan ras el hanout, bring the world's kitchens to your family table.`,
+    description: `Discover ${products.length} authentic spice blends inspired by ${regions.length} cooking traditions. From Levantine za'atar to Texas BBQ, bring the world's kitchens to your family table.`,
     head: `${introBoot}\n  <link rel="preload" as="image" href="${HERO}-poster-00001.jpg" fetchpriority="high">\n  <link rel="stylesheet" href="css/home.css">`,
     body,
     scripts: [

@@ -1,76 +1,5 @@
 [
   {
-    "id": "grilled-chicken-kebabs",
-    "title": "Grilled Chicken Kebabs",
-    "product": "middle-eastern-manqual",
-    "serves": "4–6",
-    "prep": 20,
-    "cook": 15,
-    "rest": 60,
-    "summary": "Juicy kebabs marinated in Middle Eastern Manqual, grilled until smoky and tender.",
-    "image": "images/Grilled_Chicken_Kebabs.webp",
-    "featured": true,
-    "equipment": ["Grill or grill pan","Skewers","Mixing bowl"],
-    "ingredients": ["2 lb boneless chicken thighs, cubed","3 tbsp Middle Eastern Manqual","3 tbsp olive oil","2 tbsp lemon juice","2 garlic cloves, minced","1 red onion, cut in chunks","1 bell pepper, cut in chunks","Flatbreads and yogurt sauce, to serve"],
-    "steps": ["Whisk olive oil, lemon juice, garlic and Manqual in a bowl.","Add the chicken, toss to coat and marinate for 1 hour.","Heat the grill to medium-high.","Thread chicken, onion and pepper onto skewers.","Grill 12–15 minutes, turning occasionally, until charred and cooked through.","Serve with warm flatbreads and yogurt sauce."]
-  },
-  {
-    "id": "fiesta-guacamole",
-    "title": "Fiesta Guacamole",
-    "product": "hacienda-salsa-guacamole",
-    "serves": "6",
-    "prep": 15,
-    "cook": 0,
-    "summary": "Creamy guacamole lifted with Hacienda Salsa Guacamole — zesty, fresh and made for dipping.",
-    "image": "images/Fiesta_Guacamole_with_Creamy_guacamole2.webp",
-    "featured": true,
-    "equipment": ["Mixing bowl","Fork or masher","Measuring spoons"],
-    "ingredients": ["3 ripe avocados","2 tbsp Hacienda Salsa Guacamole","1 tomato, diced","¼ cup red onion, finely chopped","1 jalapeño, minced","2 tbsp lime juice","2 tbsp cilantro, chopped","Tortilla chips, to serve"],
-    "steps": ["Halve the avocados, remove the pits and scoop the flesh into a bowl.","Mash with a fork, leaving it a little chunky.","Stir in the lime juice and Hacienda Salsa Guacamole.","Fold through the tomato, red onion, jalapeño and cilantro.","Taste, adjust with more lime or seasoning, and serve right away with chips."]
-  },
-  {
-    "id": "moroccan-lamb-tagine",
-    "title": "Moroccan Lamb Tagine",
-    "product": "tangier-ras-el-hanout",
-    "serves": "6",
-    "prep": 20,
-    "cook": 120,
-    "summary": "Slow-cooked lamb with Tangier Ras El Hanout, dried fruit and tomatoes — a rich, royal Moroccan feast.",
-    "image": "images/Moroccan_Lamb_Tagine.webp",
-    "featured": true,
-    "equipment": ["Dutch oven or tagine","Wooden spoon","Mixing bowl"],
-    "ingredients": ["2 lb lamb shoulder, cubed","3 tbsp Tangier Ras El Hanout","2 tbsp olive oil","1 onion, chopped","3 garlic cloves, minced","1 cup chicken broth","1 can (14 oz) diced tomatoes","1 cup dried apricots, halved","½ cup golden raisins","¼ cup slivered almonds","Fresh cilantro, chopped"],
-    "steps": ["Toss the lamb with Ras El Hanout until coated.","Heat oil in a Dutch oven and brown the lamb on all sides.","Add onion and garlic and cook until softened.","Stir in broth and tomatoes and bring to a simmer.","Add apricots and raisins, cover and simmer 1½–2 hours until tender.","Scatter with almonds and cilantro; serve with couscous or flatbread."]
-  },
-  {
-    "id": "spicy-beef-stir-fry",
-    "title": "Spicy Beef Stir-Fry",
-    "product": "szechuan-five-spice",
-    "serves": "4",
-    "prep": 15,
-    "cook": 15,
-    "summary": "A bold, fiery stir-fry with Szechuan Five Spice, tender beef and crisp vegetables. Weeknight perfect.",
-    "image": "images/Spicy_Beef_Stir-Fry_Recipe_Banner.jpg",
-    "featured": true,
-    "equipment": ["Wok or large skillet","Wooden spoon","Mixing bowl"],
-    "ingredients": ["1 lb flank steak, thinly sliced","2 tbsp soy sauce","2 tbsp Szechuan Five Spice","2 tbsp vegetable oil","1 red bell pepper, sliced","1 onion, sliced","1 cup snow peas","1 tbsp rice vinegar","Steamed rice, to serve"],
-    "steps": ["Marinate the beef with soy sauce and 1 tbsp Five Spice for 10 minutes.","Heat oil in a wok over high heat; sear the beef for 3 minutes, then remove.","Stir-fry onion, pepper and snow peas for 5 minutes.","Return the beef, add remaining Five Spice and the vinegar; toss to coat.","Serve hot over rice."]
-  },
-  {
-    "id": "thai-green-curry-with-chicken-and-vegetables",
-    "title": "Thai Green Curry with Chicken & Vegetables",
-    "product": "bangkok-green-curry",
-    "serves": "4",
-    "prep": 20,
-    "cook": 25,
-    "summary": "A fragrant Thai classic simmered with Bangkok Green Curry, coconut milk and fresh vegetables.",
-    "image": "images/Thai_Green_Curry.webp",
-    "featured": true,
-    "equipment": ["Large skillet or wok","Wooden spoon","Cutting board & knife"],
-    "ingredients": ["1 lb chicken breast, thinly sliced","2 tbsp Bangkok Green Curry","2 tbsp vegetable oil","1 can (14 oz) coconut milk","1 red bell pepper, sliced","1 zucchini, sliced","1 cup broccoli florets","2 tbsp fish sauce (or soy sauce)","1 tbsp brown sugar","Fresh basil, to garnish"],
-    "steps": ["Heat oil in a large skillet or wok over medium heat.","Add chicken and sauté until lightly browned, about 5 minutes.","Stir in Bangkok Green Curry and cook 1 minute until fragrant.","Pour in coconut milk, fish sauce and sugar; stir well.","Add the vegetables and simmer 10–12 minutes.","Taste, adjust, and serve with basil and steamed rice."]
-  },
-  {
     "id": "pink-salt-crusted-salmon",
     "title": "Pink Salt & Citrus Salmon",
     "product": "himalayan-pink-salt",
@@ -79,8 +8,22 @@
     "cook": 15,
     "summary": "Crisp-skinned salmon finished with freshly cracked pink salt and a squeeze of citrus.",
     "image": "images/AdobeStock_617755840-p-800.webp",
-    "ingredients": ["4 salmon fillets, skin on","1 tbsp olive oil","Himalayan Pink Salt, freshly ground","1 lemon, zested and cut into wedges","1 orange, zested","2 cups broccoli florets","1 cup cherry tomatoes"],
-    "steps": ["Heat the oven to 425°F and pat the salmon very dry.","Toss broccoli and tomatoes with half the oil and a grind of pink salt on a sheet pan; roast 5 minutes.","Rub the salmon with the remaining oil, add to the pan skin-side up and roast 10 minutes.","Finish with citrus zest and a generous grind of pink salt; serve with lemon wedges."]
+    "ingredients": [
+      "4 salmon fillets, skin on",
+      "1 tbsp olive oil",
+      "Himalayan Pink Salt, freshly ground",
+      "1 lemon, zested and cut into wedges",
+      "1 orange, zested",
+      "2 cups broccoli florets",
+      "1 cup cherry tomatoes"
+    ],
+    "steps": [
+      "Heat the oven to 425°F and pat the salmon very dry.",
+      "Toss broccoli and tomatoes with half the oil and a grind of pink salt on a sheet pan; roast 5 minutes.",
+      "Rub the salmon with the remaining oil, add to the pan skin-side up and roast 10 minutes.",
+      "Finish with citrus zest and a generous grind of pink salt; serve with lemon wedges."
+    ],
+    "featured": true
   },
   {
     "id": "smoked-salt-jammy-eggs",
@@ -90,8 +33,22 @@
     "prep": 5,
     "cook": 7,
     "summary": "Six-and-a-half-minute eggs, buttered sourdough and a campfire finish of smoked salt.",
-    "ingredients": ["4 large eggs","2 thick slices sourdough","2 tbsp salted butter","1 small avocado, sliced","Smoked Salt, freshly ground","Chili oil or hot sauce, optional","Chives, snipped"],
-    "steps": ["Lower the eggs into boiling water and cook exactly 6½ minutes, then plunge into ice water.","Toast and butter the sourdough.","Peel and halve the eggs; arrange on toast with the avocado.","Grind over smoked salt, add chives and a drizzle of chili oil."]
+    "ingredients": [
+      "4 large eggs",
+      "2 thick slices sourdough",
+      "2 tbsp salted butter",
+      "1 small avocado, sliced",
+      "Smoked Salt, freshly ground",
+      "Chili oil or hot sauce, optional",
+      "Chives, snipped"
+    ],
+    "steps": [
+      "Lower the eggs into boiling water and cook exactly 6½ minutes, then plunge into ice water.",
+      "Toast and butter the sourdough.",
+      "Peel and halve the eggs; arrange on toast with the avocado.",
+      "Grind over smoked salt, add chives and a drizzle of chili oil."
+    ],
+    "image": "images/recipes/smoked-salt-jammy-eggs.jpg"
   },
   {
     "id": "chili-salt-mango-cups",
@@ -101,8 +58,21 @@
     "prep": 10,
     "cook": 0,
     "summary": "Mexico's favourite fruit-cart snack — mango, cucumber and jicama, lime and a fiery hit of chili salt.",
-    "ingredients": ["2 ripe mangoes, cut into spears","1 cucumber, cut into spears","1 small jicama, cut into spears","2 limes","Spicy Chili Salt, to taste","Chamoy or hot sauce, optional"],
-    "steps": ["Stand the fruit and vegetable spears in cups.","Squeeze over plenty of lime juice.","Grind or shake Spicy Chili Salt over the top.","Add a drizzle of chamoy if you like it extra tangy, and eat immediately."]
+    "ingredients": [
+      "2 ripe mangoes, cut into spears",
+      "1 cucumber, cut into spears",
+      "1 small jicama, cut into spears",
+      "2 limes",
+      "Spicy Chili Salt, to taste",
+      "Chamoy or hot sauce, optional"
+    ],
+    "steps": [
+      "Stand the fruit and vegetable spears in cups.",
+      "Squeeze over plenty of lime juice.",
+      "Grind or shake Spicy Chili Salt over the top.",
+      "Add a drizzle of chamoy if you like it extra tangy, and eat immediately."
+    ],
+    "image": "images/recipes/chili-salt-mango-cups.jpg"
   },
   {
     "id": "herb-salt-roast-potatoes",
@@ -112,8 +82,21 @@
     "prep": 10,
     "cook": 45,
     "summary": "Parboiled, shaken and roasted until shatteringly crisp, then showered with herb salt.",
-    "ingredients": ["2 lb Yukon Gold potatoes, halved","¼ cup olive oil","4 garlic cloves, smashed","2 sprigs rosemary","1–2 tsp Herb Salt"],
-    "steps": ["Heat the oven to 450°F. Boil the potatoes in salted water for 8 minutes; drain.","Shake them in the pot to rough up the edges.","Toss with oil, garlic and rosemary on a hot sheet pan.","Roast 35–40 minutes, turning once, until golden.","Finish with a generous grind of Herb Salt."]
+    "ingredients": [
+      "2 lb Yukon Gold potatoes, halved",
+      "¼ cup olive oil",
+      "4 garlic cloves, smashed",
+      "2 sprigs rosemary",
+      "1–2 tsp Herb Salt"
+    ],
+    "steps": [
+      "Heat the oven to 450°F. Boil the potatoes in salted water for 8 minutes; drain.",
+      "Shake them in the pot to rough up the edges.",
+      "Toss with oil, garlic and rosemary on a hot sheet pan.",
+      "Roast 35–40 minutes, turning once, until golden.",
+      "Finish with a generous grind of Herb Salt."
+    ],
+    "image": "images/recipes/herb-salt-roast-potatoes.jpg"
   },
   {
     "id": "herb-brined-turkey",
@@ -124,8 +107,23 @@
     "cook": 105,
     "rest": 720,
     "summary": "An overnight dry brine with Turkey Brine Blend seasons the meat all the way through — no bucket required.",
-    "ingredients": ["1 bone-in, skin-on turkey breast (5–6 lb)","¼ cup Turkey Brine Blend","4 tbsp butter, softened","1 tbsp fresh sage, chopped","1 tbsp fresh thyme leaves","1 orange, quartered","1 cup chicken stock"],
-    "steps": ["Pat the turkey dry. Rub the Turkey Brine Blend all over, working some under the skin.","Set it on a rack over a tray and refrigerate, uncovered, for 12–24 hours.","Heat the oven to 350°F. Mash the butter with the sage and thyme and rub it over the skin. Put the orange and stock in the roasting pan.","Roast 1½–2 hours, until an instant-read thermometer in the thickest part reads 165°F.","Rest 20 minutes before carving, and spoon the pan juices over."]
+    "ingredients": [
+      "1 bone-in, skin-on turkey breast (5–6 lb)",
+      "¼ cup Turkey Brine Blend",
+      "4 tbsp butter, softened",
+      "1 tbsp fresh sage, chopped",
+      "1 tbsp fresh thyme leaves",
+      "1 orange, quartered",
+      "1 cup chicken stock"
+    ],
+    "steps": [
+      "Pat the turkey dry. Rub the Turkey Brine Blend all over, working some under the skin.",
+      "Set it on a rack over a tray and refrigerate, uncovered, for 12–24 hours.",
+      "Heat the oven to 350°F. Mash the butter with the sage and thyme and rub it over the skin. Put the orange and stock in the roasting pan.",
+      "Roast 1½–2 hours, until an instant-read thermometer in the thickest part reads 165°F.",
+      "Rest 20 minutes before carving, and spoon the pan juices over."
+    ],
+    "image": "images/recipes/herb-brined-turkey.jpg"
   },
   {
     "id": "holiday-glazed-ham",
@@ -135,8 +133,21 @@
     "prep": 15,
     "cook": 90,
     "summary": "A crackly brown-sugar glaze with a cayenne wink — naughty, nice and the star of the table.",
-    "ingredients": ["1 fully cooked spiral-cut ham (7–8 lb)","1 tbsp Sweet & Spicy Holiday Rub","½ cup brown sugar","¼ cup Dijon mustard","¼ cup orange juice","2 tbsp honey"],
-    "steps": ["Heat the oven to 325°F. Set the ham cut-side down in a roasting pan, cover tightly with foil and bake about 1¼ hours (10–12 minutes per lb), until it reaches 120°F inside.","Simmer the rub, brown sugar, mustard, orange juice and honey for 3 minutes, until glossy.","Uncover the ham, brush with half the glaze and raise the oven to 400°F.","Bake 15–20 minutes more, glazing again halfway, until lacquered and 140°F inside."]
+    "ingredients": [
+      "1 fully cooked spiral-cut ham (7–8 lb)",
+      "1 tbsp Sweet & Spicy Holiday Rub",
+      "½ cup brown sugar",
+      "¼ cup Dijon mustard",
+      "¼ cup orange juice",
+      "2 tbsp honey"
+    ],
+    "steps": [
+      "Heat the oven to 325°F. Set the ham cut-side down in a roasting pan, cover tightly with foil and bake about 1¼ hours (10–12 minutes per lb), until it reaches 120°F inside.",
+      "Simmer the rub, brown sugar, mustard, orange juice and honey for 3 minutes, until glossy.",
+      "Uncover the ham, brush with half the glaze and raise the oven to 400°F.",
+      "Bake 15–20 minutes more, glazing again halfway, until lacquered and 140°F inside."
+    ],
+    "image": "images/recipes/holiday-glazed-ham.jpg"
   },
   {
     "id": "gingerbread-skillet-cookie",
@@ -146,8 +157,25 @@
     "prep": 15,
     "cook": 22,
     "summary": "A chewy, molasses-dark cookie baked in one pan and served warm with ice cream.",
-    "ingredients": ["½ cup butter, melted","¾ cup brown sugar","¼ cup molasses","1 egg","1 tbsp Gingerbread Spice","1¾ cups flour","1 tsp baking soda","½ tsp salt","½ cup white chocolate chips"],
-    "steps": ["Heat the oven to 350°F and butter a 10-inch skillet.","Whisk butter, sugar, molasses and egg; stir in Gingerbread Spice.","Fold in flour, baking soda and salt, then the chocolate chips.","Press into the skillet and bake 20–22 minutes until set at the edges.","Serve warm with a scoop of vanilla ice cream."]
+    "ingredients": [
+      "½ cup butter, melted",
+      "¾ cup brown sugar",
+      "¼ cup molasses",
+      "1 egg",
+      "1 tbsp Gingerbread Spice",
+      "1¾ cups flour",
+      "1 tsp baking soda",
+      "½ tsp salt",
+      "½ cup white chocolate chips"
+    ],
+    "steps": [
+      "Heat the oven to 350°F and butter a 10-inch skillet.",
+      "Whisk butter, sugar, molasses and egg; stir in Gingerbread Spice.",
+      "Fold in flour, baking soda and salt, then the chocolate chips.",
+      "Press into the skillet and bake 20–22 minutes until set at the edges.",
+      "Serve warm with a scoop of vanilla ice cream."
+    ],
+    "image": "images/recipes/gingerbread-skillet-cookie.jpg"
   },
   {
     "id": "harvest-roasted-roots",
@@ -157,8 +185,22 @@
     "prep": 15,
     "cook": 40,
     "summary": "Carrots, parsnips and squash roasted with herbs and a maple gloss.",
-    "ingredients": ["1 lb carrots","1 lb parsnips","½ butternut squash, cubed","1 red onion, wedged","3 tbsp olive oil","2 tbsp Harvest Herb Rub","2 tbsp maple syrup"],
-    "steps": ["Heat the oven to 425°F.","Cut the vegetables into even chunks and toss with oil and Harvest Herb Rub.","Spread on two sheet pans and roast 35 minutes, turning once.","Drizzle with maple syrup and roast 5 minutes more."]
+    "ingredients": [
+      "1 lb carrots",
+      "1 lb parsnips",
+      "½ butternut squash, cubed",
+      "1 red onion, wedged",
+      "3 tbsp olive oil",
+      "2 tbsp Harvest Herb Rub",
+      "2 tbsp maple syrup"
+    ],
+    "steps": [
+      "Heat the oven to 425°F.",
+      "Cut the vegetables into even chunks and toss with oil and Harvest Herb Rub.",
+      "Spread on two sheet pans and roast 35 minutes, turning once.",
+      "Drizzle with maple syrup and roast 5 minutes more."
+    ],
+    "image": "images/recipes/harvest-roasted-roots.jpg"
   },
   {
     "id": "classic-roast-chicken",
@@ -168,8 +210,23 @@
     "prep": 15,
     "cook": 75,
     "summary": "Golden skin, juicy meat and a pan of herby drippings for gravy.",
-    "ingredients": ["1 whole chicken (4 lb)","3 tbsp butter, softened","1 tbsp Poultry Seasoning","1 tsp salt","1 lemon, halved","1 onion, quartered","1 cup chicken stock"],
-    "steps": ["Heat the oven to 425°F and pat the chicken dry.","Mash butter with Poultry Seasoning and salt; rub under and over the skin.","Stuff with lemon and onion; set in a roasting pan with the stock.","Roast 65–75 minutes until the thigh reads 165°F.","Rest 15 minutes; whisk the drippings into a quick gravy."]
+    "ingredients": [
+      "1 whole chicken (4 lb)",
+      "3 tbsp butter, softened",
+      "1 tbsp Poultry Seasoning",
+      "1 tsp salt",
+      "1 lemon, halved",
+      "1 onion, quartered",
+      "1 cup chicken stock"
+    ],
+    "steps": [
+      "Heat the oven to 425°F and pat the chicken dry.",
+      "Mash butter with Poultry Seasoning and salt; rub under and over the skin.",
+      "Stuff with lemon and onion; set in a roasting pan with the stock.",
+      "Roast 65–75 minutes until the thigh reads 165°F.",
+      "Rest 15 minutes; whisk the drippings into a quick gravy."
+    ],
+    "image": "images/recipes/classic-roast-chicken.jpg"
   },
   {
     "id": "texas-bbq-oven-ribs",
@@ -179,8 +236,21 @@
     "prep": 15,
     "cook": 180,
     "summary": "Low-and-slow ribs with a peppery bark — no smoker required.",
-    "ingredients": ["2 racks baby back ribs","¼ cup BBQ Seasoning","2 tbsp yellow mustard","½ cup barbecue sauce","2 tbsp apple cider vinegar"],
-    "steps": ["Heat the oven to 275°F. Remove the membrane from the back of the ribs.","Brush with the mustard and coat generously with BBQ Seasoning.","Wrap tightly in foil and bake 2½–3 hours, until a toothpick slides easily between the bones.","Unwrap, brush with the sauce mixed with the vinegar and broil 3–5 minutes until sticky."]
+    "ingredients": [
+      "2 racks baby back ribs",
+      "¼ cup BBQ Seasoning",
+      "2 tbsp yellow mustard",
+      "½ cup barbecue sauce",
+      "2 tbsp apple cider vinegar"
+    ],
+    "steps": [
+      "Heat the oven to 275°F. Remove the membrane from the back of the ribs.",
+      "Brush with the mustard and coat generously with BBQ Seasoning.",
+      "Wrap tightly in foil and bake 2½–3 hours, until a toothpick slides easily between the bones.",
+      "Unwrap, brush with the sauce mixed with the vinegar and broil 3–5 minutes until sticky."
+    ],
+    "image": "images/recipes/texas-bbq-oven-ribs.jpg",
+    "featured": true
   },
   {
     "id": "sheet-pan-chicken-shawarma",
@@ -191,8 +261,23 @@
     "cook": 30,
     "rest": 30,
     "summary": "All the street-stall flavour, made on one pan — crisp-edged chicken, pickles and garlic sauce.",
-    "ingredients": ["2 lb boneless chicken thighs","3 tbsp Shawarma","¼ cup olive oil","2 tbsp lemon juice","1 red onion, sliced","4 pitas","Garlic sauce or tahini, pickles, tomatoes"],
-    "steps": ["Toss the chicken with Shawarma, oil and lemon; marinate 30 minutes.","Heat the oven to 450°F and spread chicken and onion on a sheet pan.","Roast 25–30 minutes until charred at the edges, then slice.","Pile into warm pitas with garlic sauce, pickles and tomatoes."]
+    "ingredients": [
+      "2 lb boneless chicken thighs",
+      "3 tbsp Shawarma",
+      "¼ cup olive oil",
+      "2 tbsp lemon juice",
+      "1 red onion, sliced",
+      "4 pitas",
+      "Garlic sauce or tahini, pickles, tomatoes"
+    ],
+    "steps": [
+      "Toss the chicken with Shawarma, oil and lemon; marinate 30 minutes.",
+      "Heat the oven to 450°F and spread chicken and onion on a sheet pan.",
+      "Roast 25–30 minutes until charred at the edges, then slice.",
+      "Pile into warm pitas with garlic sauce, pickles and tomatoes."
+    ],
+    "image": "images/recipes/sheet-pan-chicken-shawarma.jpg",
+    "featured": true
   },
   {
     "id": "asado-skirt-steak-chimichurri",
@@ -202,8 +287,23 @@
     "prep": 15,
     "cook": 10,
     "summary": "Fast, fiery skirt steak with a bright chimichurri — the Sunday parrilla, any night of the week.",
-    "ingredients": ["2 lb skirt steak","2 tbsp Asado Rub","1 cup parsley, finely chopped","3 garlic cloves, minced","½ cup olive oil","3 tbsp red wine vinegar","1 tsp Asado Rub (for the chimichurri)"],
-    "steps": ["Coat the steak with Asado Rub and let it sit while the grill heats.","Stir parsley, garlic, oil, vinegar and 1 tsp rub into a chimichurri.","Grill over high heat 3–4 minutes per side for medium-rare.","Rest 5 minutes, slice against the grain and spoon over chimichurri."]
+    "ingredients": [
+      "2 lb skirt steak",
+      "2 tbsp Asado Rub",
+      "1 cup parsley, finely chopped",
+      "3 garlic cloves, minced",
+      "½ cup olive oil",
+      "3 tbsp red wine vinegar",
+      "1 tsp Asado Rub (for the chimichurri)"
+    ],
+    "steps": [
+      "Coat the steak with Asado Rub and let it sit while the grill heats.",
+      "Stir parsley, garlic, oil, vinegar and 1 tsp rub into a chimichurri.",
+      "Grill over high heat 3–4 minutes per side for medium-rare.",
+      "Rest 5 minutes, slice against the grain and spoon over chimichurri."
+    ],
+    "image": "images/recipes/asado-skirt-steak-chimichurri.jpg",
+    "featured": true
   },
   {
     "id": "zaatar-manakish",
@@ -213,8 +313,21 @@
     "prep": 15,
     "cook": 10,
     "summary": "Lebanon's breakfast flatbread — soft dough, olive oil and a thick layer of za'atar.",
-    "ingredients": ["1 lb pizza dough","⅓ cup olive oil","¼ cup Za'atar","Labneh, cucumber, tomato and mint, to serve"],
-    "steps": ["Heat the oven to 475°F with a sheet pan inside.","Divide the dough into 4 and stretch into rounds.","Mix olive oil and Za'atar into a paste and spread over the dough, leaving a rim.","Bake on the hot pan 8–10 minutes until golden.","Serve warm with labneh and fresh vegetables."]
+    "ingredients": [
+      "1 lb pizza dough",
+      "⅓ cup olive oil",
+      "¼ cup Za'atar",
+      "Labneh, cucumber, tomato and mint, to serve"
+    ],
+    "steps": [
+      "Heat the oven to 475°F with a sheet pan inside.",
+      "Divide the dough into 4 and stretch into rounds.",
+      "Mix olive oil and Za'atar into a paste and spread over the dough, leaving a rim.",
+      "Bake on the hot pan 8–10 minutes until golden.",
+      "Serve warm with labneh and fresh vegetables."
+    ],
+    "image": "images/recipes/zaatar-manakish.jpg",
+    "featured": true
   },
   {
     "id": "sunday-roast-pork-shoulder",
@@ -224,8 +337,22 @@
     "prep": 15,
     "cook": 240,
     "summary": "Fennel-and-sage pork with crackling worth fighting over, roasted on a bed of apples.",
-    "ingredients": ["4 lb bone-in, skin-on pork shoulder, skin scored","3 tbsp Sunday Roast Pork Rub","1½ tsp kosher salt","2 tbsp olive oil","3 apples, quartered","2 onions, quartered","1 cup apple cider"],
-    "steps": ["Heat the oven to 450°F. Rub the pork all over with the oil, rub and salt, working them into the scores.","Set it on the apples and onions in a roasting pan and roast 30 minutes, until the skin starts to blister.","Add the cider, lower the oven to 325°F and roast 3–3½ hours, until the meat reads about 195°F and pulls apart easily.","Rest 20 minutes, then pull or slice and serve with the crackling and pan apples."]
+    "ingredients": [
+      "4 lb bone-in, skin-on pork shoulder, skin scored",
+      "3 tbsp Sunday Roast Pork Rub",
+      "1½ tsp kosher salt",
+      "2 tbsp olive oil",
+      "3 apples, quartered",
+      "2 onions, quartered",
+      "1 cup apple cider"
+    ],
+    "steps": [
+      "Heat the oven to 450°F. Rub the pork all over with the oil, rub and salt, working them into the scores.",
+      "Set it on the apples and onions in a roasting pan and roast 30 minutes, until the skin starts to blister.",
+      "Add the cider, lower the oven to 325°F and roast 3–3½ hours, until the meat reads about 195°F and pulls apart easily.",
+      "Rest 20 minutes, then pull or slice and serve with the crackling and pan apples."
+    ],
+    "image": "images/recipes/sunday-roast-pork-shoulder.jpg"
   },
   {
     "id": "citrus-herb-baked-cod",
@@ -235,8 +362,21 @@
     "prep": 10,
     "cook": 15,
     "summary": "Flaky cod roasted on lemon slices with butter and a bright herb crust.",
-    "ingredients": ["4 cod fillets","2 lemons, thinly sliced","3 tbsp butter, melted","1 tbsp Citrus Herb Blend","1 bunch asparagus","¼ cup panko"],
-    "steps": ["Heat the oven to 425°F and lay the lemon slices and asparagus on a sheet pan.","Set the cod on the lemons.","Mix butter, Citrus Herb Blend and panko; spoon over the fish.","Bake 12–15 minutes until the fish flakes easily."]
+    "ingredients": [
+      "4 cod fillets",
+      "2 lemons, thinly sliced",
+      "3 tbsp butter, melted",
+      "1 tbsp Citrus Herb Blend",
+      "1 bunch asparagus",
+      "¼ cup panko"
+    ],
+    "steps": [
+      "Heat the oven to 425°F and lay the lemon slices and asparagus on a sheet pan.",
+      "Set the cod on the lemons.",
+      "Mix butter, Citrus Herb Blend and panko; spoon over the fish.",
+      "Bake 12–15 minutes until the fish flakes easily."
+    ],
+    "image": "images/recipes/citrus-herb-baked-cod.jpg"
   },
   {
     "id": "chili-lime-elote",
@@ -246,8 +386,21 @@
     "prep": 10,
     "cook": 12,
     "summary": "Charred corn slathered in crema, rolled in cotija and zapped with chili lime.",
-    "ingredients": ["4 ears corn, husked","¼ cup mayonnaise or Mexican crema","½ cup cotija, crumbled","2 tsp Citrus Chili Lime","1 lime, cut into wedges","Cilantro, chopped"],
-    "steps": ["Grill the corn over high heat, turning, until charred in spots, about 10 minutes.","Brush each ear with crema.","Roll in cotija and shake over Citrus Chili Lime.","Finish with cilantro and lime wedges."]
+    "ingredients": [
+      "4 ears corn, husked",
+      "¼ cup mayonnaise or Mexican crema",
+      "½ cup cotija, crumbled",
+      "2 tsp Citrus Chili Lime",
+      "1 lime, cut into wedges",
+      "Cilantro, chopped"
+    ],
+    "steps": [
+      "Grill the corn over high heat, turning, until charred in spots, about 10 minutes.",
+      "Brush each ear with crema.",
+      "Roll in cotija and shake over Citrus Chili Lime.",
+      "Finish with cilantro and lime wedges."
+    ],
+    "image": "images/recipes/chili-lime-elote.jpg"
   },
   {
     "id": "chai-sugar-affogato",
@@ -257,8 +410,19 @@
     "prep": 5,
     "cook": 0,
     "summary": "Vanilla ice cream, hot espresso and a crunchy shower of chai sugar — dessert in two minutes.",
-    "ingredients": ["2 scoops vanilla ice cream","2 shots hot espresso","2 tsp Chai Sugar","Crushed biscotti, optional"],
-    "steps": ["Scoop the ice cream into two small glasses.","Sprinkle with Chai Sugar.","Pour the hot espresso over at the table.","Top with crushed biscotti and eat straight away."]
+    "ingredients": [
+      "2 scoops vanilla ice cream",
+      "2 shots hot espresso",
+      "2 tsp Chai Sugar",
+      "Crushed biscotti, optional"
+    ],
+    "steps": [
+      "Scoop the ice cream into two small glasses.",
+      "Sprinkle with Chai Sugar.",
+      "Pour the hot espresso over at the table.",
+      "Top with crushed biscotti and eat straight away."
+    ],
+    "image": "images/recipes/chai-sugar-affogato.jpg"
   },
   {
     "id": "cinnamon-sugar-churro-bites",
@@ -268,8 +432,22 @@
     "prep": 15,
     "cook": 15,
     "summary": "Crisp, puffy choux bites rolled warm in cinnamon sugar, with chocolate for dipping.",
-    "ingredients": ["1 cup water","½ cup butter","1 cup flour","3 eggs","¼ cup Cinnamon Sugar","Oil, for frying","Chocolate sauce, to serve"],
-    "steps": ["Bring water and butter to a boil; stir in the flour until a ball forms.","Cool 5 minutes, then beat in the eggs one at a time.","Pipe small rounds into 350°F oil and fry until golden, 2–3 minutes.","Toss warm in Cinnamon Sugar and serve with chocolate sauce."]
+    "ingredients": [
+      "1 cup water",
+      "½ cup butter",
+      "1 cup flour",
+      "3 eggs",
+      "¼ cup Cinnamon Sugar",
+      "Oil, for frying",
+      "Chocolate sauce, to serve"
+    ],
+    "steps": [
+      "Bring water and butter to a boil; stir in the flour until a ball forms.",
+      "Cool 5 minutes, then beat in the eggs one at a time.",
+      "Pipe small rounds into 350°F oil and fry until golden, 2–3 minutes.",
+      "Toss warm in Cinnamon Sugar and serve with chocolate sauce."
+    ],
+    "image": "images/recipes/cinnamon-sugar-churro-bites.jpg"
   },
   {
     "id": "penne-arrabbiata",
@@ -279,8 +457,22 @@
     "prep": 5,
     "cook": 20,
     "summary": "Rome's angry pasta — garlic, chile and tomatoes, ready in the time it takes to boil water.",
-    "ingredients": ["1 lb penne","¼ cup olive oil","4 garlic cloves, sliced","1 tbsp Arrabbiata","1 can (28 oz) crushed tomatoes","Pecorino Romano, grated","Parsley, chopped"],
-    "steps": ["Cook the penne in well-salted water until al dente; reserve a cup of the water.","Meanwhile, sizzle the garlic and Arrabbiata in the olive oil for 1 minute.","Add the tomatoes and simmer 15 minutes. Taste before adding any salt — the blend is already seasoned.","Toss with the pasta and a splash of pasta water; finish with pecorino and parsley."]
+    "ingredients": [
+      "1 lb penne",
+      "¼ cup olive oil",
+      "4 garlic cloves, sliced",
+      "1 tbsp Arrabbiata",
+      "1 can (28 oz) crushed tomatoes",
+      "Pecorino Romano, grated",
+      "Parsley, chopped"
+    ],
+    "steps": [
+      "Cook the penne in well-salted water until al dente; reserve a cup of the water.",
+      "Meanwhile, sizzle the garlic and Arrabbiata in the olive oil for 1 minute.",
+      "Add the tomatoes and simmer 15 minutes. Taste before adding any salt — the blend is already seasoned.",
+      "Toss with the pasta and a splash of pasta water; finish with pecorino and parsley."
+    ],
+    "image": "images/recipes/penne-arrabbiata.jpg"
   },
   {
     "id": "spaghetti-al-limone",
@@ -290,8 +482,21 @@
     "prep": 5,
     "cook": 12,
     "summary": "Amalfi's summer pasta — silky, lemony and on the table in 15 minutes.",
-    "ingredients": ["1 lb spaghetti","4 tbsp butter","2 tsp Lemon Herb","1 lemon, zested and juiced","1 cup Parmesan, finely grated","1 cup frozen peas, optional"],
-    "steps": ["Cook the spaghetti until al dente, adding peas for the last 2 minutes; reserve 1 cup water.","Melt butter with Lemon Herb and lemon zest in a large pan.","Add the pasta, lemon juice, Parmesan and a splash of pasta water.","Toss vigorously until glossy; serve at once."]
+    "ingredients": [
+      "1 lb spaghetti",
+      "4 tbsp butter",
+      "2 tsp Lemon Herb",
+      "1 lemon, zested and juiced",
+      "1 cup Parmesan, finely grated",
+      "1 cup frozen peas, optional"
+    ],
+    "steps": [
+      "Cook the spaghetti until al dente, adding peas for the last 2 minutes; reserve 1 cup water.",
+      "Melt butter with Lemon Herb and lemon zest in a large pan.",
+      "Add the pasta, lemon juice, Parmesan and a splash of pasta water.",
+      "Toss vigorously until glossy; serve at once."
+    ],
+    "image": "images/recipes/spaghetti-al-limone.jpg"
   },
   {
     "id": "hot-honey-pepperoni-pizza",
@@ -301,8 +506,23 @@
     "prep": 15,
     "cook": 12,
     "summary": "Crisp-cupped pepperoni, hot honey and a chili garlic crust — the slice-shop favourite at home.",
-    "ingredients": ["1 lb pizza dough","½ cup pizza sauce","8 oz low-moisture mozzarella, shredded","3 oz cup-and-char pepperoni","2 tbsp honey","2 tsp Chili Garlic","2 tbsp olive oil"],
-    "steps": ["Heat the oven to its hottest setting with a pizza stone or steel inside.","Stretch the dough and top with sauce, mozzarella and pepperoni.","Brush the crust with olive oil and shake over half the Chili Garlic.","Bake 10–12 minutes until blistered.","Warm the honey with the remaining Chili Garlic and drizzle over."]
+    "ingredients": [
+      "1 lb pizza dough",
+      "½ cup pizza sauce",
+      "8 oz low-moisture mozzarella, shredded",
+      "3 oz cup-and-char pepperoni",
+      "2 tbsp honey",
+      "2 tsp Chili Garlic",
+      "2 tbsp olive oil"
+    ],
+    "steps": [
+      "Heat the oven to its hottest setting with a pizza stone or steel inside.",
+      "Stretch the dough and top with sauce, mozzarella and pepperoni.",
+      "Brush the crust with olive oil and shake over half the Chili Garlic.",
+      "Bake 10–12 minutes until blistered.",
+      "Warm the honey with the remaining Chili Garlic and drizzle over."
+    ],
+    "image": "images/recipes/hot-honey-pepperoni-pizza.jpg"
   },
   {
     "id": "pizzeria-garlic-knots",
@@ -312,8 +532,21 @@
     "prep": 20,
     "cook": 15,
     "summary": "Soft, buttery knots tossed in garlic and Pizzeria Herb, with marinara for dunking.",
-    "ingredients": ["1 lb pizza dough","4 tbsp butter, melted","3 garlic cloves, grated","2 tsp Pizzeria Herb","¼ cup Parmesan, grated","Marinara, to serve"],
-    "steps": ["Heat the oven to 400°F. Cut the dough into 12 strips and tie each into a knot.","Bake on a lined sheet 12–15 minutes until golden.","Stir butter, garlic and Pizzeria Herb together.","Toss the hot knots in the garlic butter and Parmesan; serve with marinara."]
+    "ingredients": [
+      "1 lb pizza dough",
+      "4 tbsp butter, melted",
+      "3 garlic cloves, grated",
+      "2 tsp Pizzeria Herb",
+      "¼ cup Parmesan, grated",
+      "Marinara, to serve"
+    ],
+    "steps": [
+      "Heat the oven to 400°F. Cut the dough into 12 strips and tie each into a knot.",
+      "Bake on a lined sheet 12–15 minutes until golden.",
+      "Stir butter, garlic and Pizzeria Herb together.",
+      "Toss the hot knots in the garlic butter and Parmesan; serve with marinara."
+    ],
+    "image": "images/recipes/pizzeria-garlic-knots.jpg"
   },
   {
     "id": "sicilian-sheet-pan-focaccia",
@@ -324,8 +557,24 @@
     "cook": 25,
     "rest": 120,
     "summary": "Bubbly, olive-oil-rich focaccia with tomatoes, onions and Sicilian Sprinkle — a nod to Palermo's sfincione.",
-    "ingredients": ["4 cups bread flour","2 tsp instant yeast","2 tsp salt","1¾ cups warm water","½ cup olive oil","1 cup cherry tomatoes, halved","½ red onion, thinly sliced","1 tbsp Sicilian Sprinkle","Flaky sea salt"],
-    "steps": ["Mix the flour, yeast, salt and water into a shaggy dough. Cover and rest 2 hours, until doubled.","Pour half the oil into a sheet pan, add the dough and gently stretch it to the corners.","Dimple deeply, top with the tomatoes and onion and drizzle with the remaining oil.","Shower with Sicilian Sprinkle and a pinch of flaky salt, then bake at 450°F for 22–25 minutes, until deep golden."]
+    "ingredients": [
+      "4 cups bread flour",
+      "2 tsp instant yeast",
+      "2 tsp salt",
+      "1¾ cups warm water",
+      "½ cup olive oil",
+      "1 cup cherry tomatoes, halved",
+      "½ red onion, thinly sliced",
+      "1 tbsp Sicilian Sprinkle",
+      "Flaky sea salt"
+    ],
+    "steps": [
+      "Mix the flour, yeast, salt and water into a shaggy dough. Cover and rest 2 hours, until doubled.",
+      "Pour half the oil into a sheet pan, add the dough and gently stretch it to the corners.",
+      "Dimple deeply, top with the tomatoes and onion and drizzle with the remaining oil.",
+      "Shower with Sicilian Sprinkle and a pinch of flaky salt, then bake at 450°F for 22–25 minutes, until deep golden."
+    ],
+    "image": "images/recipes/sicilian-sheet-pan-focaccia.jpg"
   },
   {
     "id": "grilled-caesar-wedges",
@@ -335,8 +584,22 @@
     "prep": 15,
     "cook": 5,
     "summary": "Charred romaine, a punchy shake-and-whisk dressing and garlicky croutons — Tijuana's classic, sharpened.",
-    "ingredients": ["2 heads romaine, halved lengthwise","½ cup mayonnaise","2 tbsp lemon juice","2 tsp Caesar-Style","2 tbsp olive oil","2 cups croutons","Shaved Parmesan"],
-    "steps": ["Whisk mayonnaise, lemon juice and Caesar-Style into a dressing.","Brush the romaine with oil and grill cut-side down 2–3 minutes until charred.","Drizzle with dressing.","Finish with croutons, Parmesan and another shake of seasoning."]
+    "ingredients": [
+      "2 heads romaine, halved lengthwise",
+      "½ cup mayonnaise",
+      "2 tbsp lemon juice",
+      "2 tsp Caesar-Style",
+      "2 tbsp olive oil",
+      "2 cups croutons",
+      "Shaved Parmesan"
+    ],
+    "steps": [
+      "Whisk mayonnaise, lemon juice and Caesar-Style into a dressing.",
+      "Brush the romaine with oil and grill cut-side down 2–3 minutes until charred.",
+      "Drizzle with dressing.",
+      "Finish with croutons, Parmesan and another shake of seasoning."
+    ],
+    "image": "images/recipes/grilled-caesar-wedges.jpg"
   },
   {
     "id": "horiatiki-greek-salad",
@@ -346,8 +609,24 @@
     "prep": 15,
     "cook": 0,
     "summary": "The taverna salad — juicy tomatoes, cucumber, olives and a slab of feta. No lettuce allowed.",
-    "ingredients": ["4 ripe tomatoes, cut into wedges","1 cucumber, chunked","½ red onion, sliced","1 green pepper, sliced","½ cup Kalamata olives","7 oz block feta","¼ cup olive oil","2 tbsp red wine vinegar","2 tsp Greek Style"],
-    "steps": ["Arrange tomatoes, cucumber, onion, pepper and olives in a shallow bowl.","Whisk oil, vinegar and Greek Style.","Lay the feta on top and pour over the dressing.","Finish with another pinch of seasoning and serve with crusty bread."]
+    "ingredients": [
+      "4 ripe tomatoes, cut into wedges",
+      "1 cucumber, chunked",
+      "½ red onion, sliced",
+      "1 green pepper, sliced",
+      "½ cup Kalamata olives",
+      "7 oz block feta",
+      "¼ cup olive oil",
+      "2 tbsp red wine vinegar",
+      "2 tsp Greek Style"
+    ],
+    "steps": [
+      "Arrange tomatoes, cucumber, onion, pepper and olives in a shallow bowl.",
+      "Whisk oil, vinegar and Greek Style.",
+      "Lay the feta on top and pour over the dressing.",
+      "Finish with another pinch of seasoning and serve with crusty bread."
+    ],
+    "image": "images/recipes/horiatiki-greek-salad.jpg"
   },
   {
     "id": "green-goddess-crunch-bowl",
@@ -357,8 +636,23 @@
     "prep": 15,
     "cook": 0,
     "summary": "Cabbage, cucumber and herbs in a creamy Green Goddess yogurt dressing — crunchy, green and endlessly snackable.",
-    "ingredients": ["3 cups shredded green cabbage","1 cucumber, diced","1 avocado, diced","¼ cup chives, snipped","½ cup Greek yogurt","1 tbsp lemon juice","2 tsp Green Goddess","2 tbsp toasted pepitas"],
-    "steps": ["Whisk yogurt, lemon juice and Green Goddess with a splash of water.","Toss cabbage, cucumber and chives with the dressing.","Top with avocado and pepitas.","Eat as is, or scoop up with tortilla chips."]
+    "ingredients": [
+      "3 cups shredded green cabbage",
+      "1 cucumber, diced",
+      "1 avocado, diced",
+      "¼ cup chives, snipped",
+      "½ cup Greek yogurt",
+      "1 tbsp lemon juice",
+      "2 tsp Green Goddess",
+      "2 tbsp toasted pepitas"
+    ],
+    "steps": [
+      "Whisk yogurt, lemon juice and Green Goddess with a splash of water.",
+      "Toss cabbage, cucumber and chives with the dressing.",
+      "Top with avocado and pepitas.",
+      "Eat as is, or scoop up with tortilla chips."
+    ],
+    "image": "images/recipes/green-goddess-crunch-bowl.jpg"
   },
   {
     "id": "chicken-paprikash",
@@ -368,8 +662,25 @@
     "prep": 15,
     "cook": 40,
     "summary": "Hungary's comfort classic — chicken braised in a velvety, brick-red paprika and sour cream sauce.",
-    "ingredients": ["2 lb bone-in chicken thighs","1 tsp salt","2 tbsp butter","2 onions, finely chopped","2 tbsp Paprika","1 cup chicken stock","1 cup sour cream","1 tbsp flour","Egg noodles, to serve"],
-    "steps": ["Season the chicken with the salt and brown it in the butter; set aside.","Cook the onions gently in the same pan until soft and golden, about 10 minutes.","Off the heat, stir in the Paprika (it scorches easily), then add the stock and chicken.","Cover and simmer 25–30 minutes, until the thighs reach 175°F.","Whisk the sour cream with the flour and a ladle of hot sauce, stir it in and simmer gently 2 minutes without boiling. Serve over noodles."]
+    "ingredients": [
+      "2 lb bone-in chicken thighs",
+      "1 tsp salt",
+      "2 tbsp butter",
+      "2 onions, finely chopped",
+      "2 tbsp Paprika",
+      "1 cup chicken stock",
+      "1 cup sour cream",
+      "1 tbsp flour",
+      "Egg noodles, to serve"
+    ],
+    "steps": [
+      "Season the chicken with the salt and brown it in the butter; set aside.",
+      "Cook the onions gently in the same pan until soft and golden, about 10 minutes.",
+      "Off the heat, stir in the Paprika (it scorches easily), then add the stock and chicken.",
+      "Cover and simmer 25–30 minutes, until the thighs reach 175°F.",
+      "Whisk the sour cream with the flour and a ladle of hot sauce, stir it in and simmer gently 2 minutes without boiling. Serve over noodles."
+    ],
+    "image": "images/recipes/chicken-paprikash.jpg"
   },
   {
     "id": "patatas-bravas",
@@ -379,8 +690,22 @@
     "prep": 10,
     "cook": 40,
     "summary": "Crispy potatoes, smoky pimentón sauce and garlic aioli — Madrid's favourite tapa.",
-    "ingredients": ["2 lb potatoes, cubed","¼ cup olive oil","2 tsp Smoked Paprika","1 cup crushed tomatoes","1 garlic clove, minced","Pinch of cayenne","½ cup garlic aioli"],
-    "steps": ["Roast the potatoes with oil and salt at 450°F for 35–40 minutes until crisp.","Simmer tomatoes, garlic, cayenne and Smoked Paprika for 10 minutes.","Spoon the bravas sauce over the potatoes.","Finish with aioli and an extra dusting of pimentón."]
+    "ingredients": [
+      "2 lb potatoes, cubed",
+      "¼ cup olive oil",
+      "2 tsp Smoked Paprika",
+      "1 cup crushed tomatoes",
+      "1 garlic clove, minced",
+      "Pinch of cayenne",
+      "½ cup garlic aioli"
+    ],
+    "steps": [
+      "Roast the potatoes with oil and salt at 450°F for 35–40 minutes until crisp.",
+      "Simmer tomatoes, garlic, cayenne and Smoked Paprika for 10 minutes.",
+      "Spoon the bravas sauce over the potatoes.",
+      "Finish with aioli and an extra dusting of pimentón."
+    ],
+    "image": "images/recipes/patatas-bravas.jpg"
   },
   {
     "id": "herb-chive-champ",
@@ -390,8 +715,20 @@
     "prep": 10,
     "cook": 20,
     "summary": "Irish champ — fluffy, buttery mash with warm milk, green onions and herbs.",
-    "ingredients": ["2½ lb russet potatoes, peeled","1 cup whole milk","4 green onions, sliced","6 tbsp butter","1 tbsp Herb & Chive Potatoes"],
-    "steps": ["Boil the potatoes until tender; drain and steam dry.","Warm the milk with the green onions for 5 minutes.","Mash the potatoes with the milk and half the butter.","Fold in Herb & Chive Potatoes; serve with the rest of the butter melting on top."]
+    "ingredients": [
+      "2½ lb russet potatoes, peeled",
+      "1 cup whole milk",
+      "4 green onions, sliced",
+      "6 tbsp butter",
+      "1 tbsp Herb & Chive Potatoes"
+    ],
+    "steps": [
+      "Boil the potatoes until tender; drain and steam dry.",
+      "Warm the milk with the green onions for 5 minutes.",
+      "Mash the potatoes with the milk and half the butter.",
+      "Fold in Herb & Chive Potatoes; serve with the rest of the butter melting on top."
+    ],
+    "image": "images/recipes/herb-chive-champ.jpg"
   },
   {
     "id": "golden-tadka-dal",
@@ -401,8 +738,24 @@
     "prep": 10,
     "cook": 35,
     "summary": "Creamy yellow lentils finished with a sizzling tadka — India's everyday comfort food.",
-    "ingredients": ["1 cup yellow split lentils (toor or moong dal)","4 cups water","1 tsp Turmeric","1 tsp salt","2 tbsp ghee","1 tsp cumin seeds","3 garlic cloves, sliced","1 dried red chile","Cilantro and lime, to serve"],
-    "steps": ["Rinse the lentils and simmer with water, Turmeric and salt for 30 minutes until soft.","Whisk to a creamy consistency, adding water if needed.","Heat ghee; fry cumin, garlic and chile until golden.","Pour the sizzling tadka over the dal; finish with cilantro and lime."]
+    "ingredients": [
+      "1 cup yellow split lentils (toor or moong dal)",
+      "4 cups water",
+      "1 tsp Turmeric",
+      "1 tsp salt",
+      "2 tbsp ghee",
+      "1 tsp cumin seeds",
+      "3 garlic cloves, sliced",
+      "1 dried red chile",
+      "Cilantro and lime, to serve"
+    ],
+    "steps": [
+      "Rinse the lentils and simmer with water, Turmeric and salt for 30 minutes until soft.",
+      "Whisk to a creamy consistency, adding water if needed.",
+      "Heat ghee; fry cumin, garlic and chile until golden.",
+      "Pour the sizzling tadka over the dal; finish with cilantro and lime."
+    ],
+    "image": "images/recipes/golden-tadka-dal.jpg"
   },
   {
     "id": "provencal-ratatouille",
@@ -412,8 +765,24 @@
     "prep": 15,
     "cook": 45,
     "summary": "Provence's summer stew, roasted on one pan so every vegetable gets a little char.",
-    "ingredients": ["1 eggplant, cubed","2 zucchini, cubed","2 bell peppers, chopped","1 red onion, chopped","2 cups cherry tomatoes","4 garlic cloves","⅓ cup olive oil","1 tbsp Herbes de Provence","Fresh basil"],
-    "steps": ["Heat the oven to 425°F.","Toss all the vegetables and garlic with oil, Herbes de Provence and salt.","Roast 40–45 minutes, stirring once, until jammy and charred.","Finish with torn basil and a drizzle of olive oil."]
+    "ingredients": [
+      "1 eggplant, cubed",
+      "2 zucchini, cubed",
+      "2 bell peppers, chopped",
+      "1 red onion, chopped",
+      "2 cups cherry tomatoes",
+      "4 garlic cloves",
+      "⅓ cup olive oil",
+      "1 tbsp Herbes de Provence",
+      "Fresh basil"
+    ],
+    "steps": [
+      "Heat the oven to 425°F.",
+      "Toss all the vegetables and garlic with oil, Herbes de Provence and salt.",
+      "Roast 40–45 minutes, stirring once, until jammy and charred.",
+      "Finish with torn basil and a drizzle of olive oil."
+    ],
+    "image": "images/recipes/provencal-ratatouille.jpg"
   },
   {
     "id": "spiced-apple-cider",
@@ -423,8 +792,21 @@
     "prep": 5,
     "cook": 25,
     "summary": "A pot of cider simmered with cinnamon, orange and cloves — your house will smell incredible.",
-    "ingredients": ["½ gallon apple cider","3 Cinnamon Sticks","1 orange, sliced","6 whole cloves","2 Whole Star Anise","2 tbsp maple syrup"],
-    "steps": ["Combine everything in a large pot.","Bring just to a simmer, then lower the heat.","Steep 20 minutes without boiling.","Ladle into mugs with a cinnamon stick for stirring."]
+    "ingredients": [
+      "½ gallon apple cider",
+      "3 Cinnamon Sticks",
+      "1 orange, sliced",
+      "6 whole cloves",
+      "2 Whole Star Anise",
+      "2 tbsp maple syrup"
+    ],
+    "steps": [
+      "Combine everything in a large pot.",
+      "Bring just to a simmer, then lower the heat.",
+      "Steep 20 minutes without boiling.",
+      "Ladle into mugs with a cinnamon stick for stirring."
+    ],
+    "image": "images/recipes/spiced-apple-cider.jpg"
   },
   {
     "id": "quick-dill-pickles",
@@ -435,8 +817,23 @@
     "cook": 5,
     "rest": 1440,
     "summary": "Crunchy refrigerator pickles, ready by tomorrow's lunch.",
-    "ingredients": ["1 lb Persian or Kirby cucumbers","1 cup white vinegar","1 cup water","1 tbsp salt","1 tbsp sugar","2 tsp Dill Weed","3 garlic cloves, smashed","1 tsp mustard seeds"],
-    "steps": ["Slice the cucumbers into spears and pack into a 1-quart jar with garlic.","Bring vinegar, water, salt and sugar to a boil.","Add Dill Weed and mustard seeds to the jar and pour over the hot brine.","Cool, seal and refrigerate at least 24 hours."]
+    "ingredients": [
+      "1 lb Persian or Kirby cucumbers",
+      "1 cup white vinegar",
+      "1 cup water",
+      "1 tbsp salt",
+      "1 tbsp sugar",
+      "2 tsp Dill Weed",
+      "3 garlic cloves, smashed",
+      "1 tsp mustard seeds"
+    ],
+    "steps": [
+      "Slice the cucumbers into spears and pack into a 1-quart jar with garlic.",
+      "Bring vinegar, water, salt and sugar to a boil.",
+      "Add Dill Weed and mustard seeds to the jar and pour over the hot brine.",
+      "Cool, seal and refrigerate at least 24 hours."
+    ],
+    "image": "images/recipes/quick-dill-pickles.jpg"
   },
   {
     "id": "fennel-orange-pork-chops",
@@ -446,8 +843,22 @@
     "prep": 10,
     "cook": 15,
     "summary": "Toasted fennel seed crust, juicy chops and a quick orange pan sauce.",
-    "ingredients": ["4 bone-in pork chops","2 tsp Whole Fennel, lightly crushed","1 tsp salt","1 tsp black pepper","2 tbsp olive oil","1 orange, zested and juiced","2 tbsp butter"],
-    "steps": ["Rub the chops with the crushed fennel, salt, pepper and orange zest.","Sear in the oil over medium-high heat, 4–6 minutes per side, until 145°F in the centre.","Rest the chops 3 minutes. Add the orange juice and butter to the pan and swirl into a sauce.","Spoon the sauce over the chops."]
+    "ingredients": [
+      "4 bone-in pork chops",
+      "2 tsp Whole Fennel, lightly crushed",
+      "1 tsp salt",
+      "1 tsp black pepper",
+      "2 tbsp olive oil",
+      "1 orange, zested and juiced",
+      "2 tbsp butter"
+    ],
+    "steps": [
+      "Rub the chops with the crushed fennel, salt, pepper and orange zest.",
+      "Sear in the oil over medium-high heat, 4–6 minutes per side, until 145°F in the centre.",
+      "Rest the chops 3 minutes. Add the orange juice and butter to the pan and swirl into a sauce.",
+      "Spoon the sauce over the chops."
+    ],
+    "image": "images/recipes/fennel-orange-pork-chops.jpg"
   },
   {
     "id": "cinnamon-swirl-banana-bread",
@@ -457,8 +868,25 @@
     "prep": 15,
     "cook": 60,
     "summary": "Moist banana bread with a ribbon of cinnamon sugar through the middle.",
-    "ingredients": ["3 very ripe bananas","⅓ cup melted butter","¾ cup brown sugar","1 egg","1 tsp vanilla","1½ cups flour","1 tsp baking soda","2 tsp Ground Cinnamon, divided","2 tbsp sugar"],
-    "steps": ["Heat the oven to 350°F and line a loaf pan.","Mash bananas; whisk in butter, brown sugar, egg and vanilla.","Fold in flour, baking soda and 1 tsp cinnamon.","Layer half the batter, the remaining cinnamon mixed with sugar, then the rest of the batter.","Bake 55–60 minutes until a skewer comes out clean."]
+    "ingredients": [
+      "3 very ripe bananas",
+      "⅓ cup melted butter",
+      "¾ cup brown sugar",
+      "1 egg",
+      "1 tsp vanilla",
+      "1½ cups flour",
+      "1 tsp baking soda",
+      "2 tsp Ground Cinnamon, divided",
+      "2 tbsp sugar"
+    ],
+    "steps": [
+      "Heat the oven to 350°F and line a loaf pan.",
+      "Mash bananas; whisk in butter, brown sugar, egg and vanilla.",
+      "Fold in flour, baking soda and 1 tsp cinnamon.",
+      "Layer half the batter, the remaining cinnamon mixed with sugar, then the rest of the batter.",
+      "Bake 55–60 minutes until a skewer comes out clean."
+    ],
+    "image": "images/recipes/cinnamon-swirl-banana-bread.jpg"
   },
   {
     "id": "ginger-carrot-soup",
@@ -468,8 +896,22 @@
     "prep": 10,
     "cook": 30,
     "summary": "Bright carrot soup with warm ginger and a swirl of coconut milk.",
-    "ingredients": ["2 lb carrots, chopped","1 onion, chopped","2 tbsp olive oil","2 tsp Ground Ginger","4 cups vegetable stock","½ cup coconut milk","Lime juice, to taste"],
-    "steps": ["Soften the onion in oil, then stir in Ground Ginger for 30 seconds.","Add carrots and stock; simmer 25 minutes until tender.","Blend until silky, then stir in the coconut milk.","Season with salt and a squeeze of lime."]
+    "ingredients": [
+      "2 lb carrots, chopped",
+      "1 onion, chopped",
+      "2 tbsp olive oil",
+      "2 tsp Ground Ginger",
+      "4 cups vegetable stock",
+      "½ cup coconut milk",
+      "Lime juice, to taste"
+    ],
+    "steps": [
+      "Soften the onion in oil, then stir in Ground Ginger for 30 seconds.",
+      "Add carrots and stock; simmer 25 minutes until tender.",
+      "Blend until silky, then stir in the coconut milk.",
+      "Season with salt and a squeeze of lime."
+    ],
+    "image": "images/recipes/ginger-carrot-soup.jpg"
   },
   {
     "id": "pantry-tabbouleh",
@@ -479,8 +921,25 @@
     "prep": 20,
     "cook": 0,
     "summary": "The Lebanese way — mostly parsley, a little bulgur and plenty of lemon.",
-    "ingredients": ["½ cup fine bulgur","½ cup boiling water","1 tbsp Parsley","2 bunches fresh parsley, finely chopped","4 tomatoes, finely diced","4 green onions, sliced","⅓ cup lemon juice","⅓ cup olive oil","Fresh mint, chopped","Salt, to taste"],
-    "steps": ["Pour the boiling water over the bulgur and dried Parsley, cover and let stand 15 minutes, then fluff.","Combine the fresh parsley, tomatoes, green onions and mint.","Add the bulgur, lemon juice and olive oil and toss well.","Season with salt and serve with romaine leaves for scooping."]
+    "ingredients": [
+      "½ cup fine bulgur",
+      "½ cup boiling water",
+      "1 tbsp Parsley",
+      "2 bunches fresh parsley, finely chopped",
+      "4 tomatoes, finely diced",
+      "4 green onions, sliced",
+      "⅓ cup lemon juice",
+      "⅓ cup olive oil",
+      "Fresh mint, chopped",
+      "Salt, to taste"
+    ],
+    "steps": [
+      "Pour the boiling water over the bulgur and dried Parsley, cover and let stand 15 minutes, then fluff.",
+      "Combine the fresh parsley, tomatoes, green onions and mint.",
+      "Add the bulgur, lemon juice and olive oil and toss well.",
+      "Season with salt and serve with romaine leaves for scooping."
+    ],
+    "image": "images/recipes/pantry-tabbouleh.jpg"
   },
   {
     "id": "tomato-basil-soup",
@@ -490,8 +949,22 @@
     "prep": 10,
     "cook": 45,
     "summary": "Slow-roasted tomatoes blended with basil and a little cream — grilled cheese not optional.",
-    "ingredients": ["3 lb Roma tomatoes, halved","1 onion, quartered","6 garlic cloves","¼ cup olive oil","1 tbsp Basil","2 cups vegetable stock","½ cup cream"],
-    "steps": ["Roast tomatoes, onion and garlic with oil at 400°F for 40 minutes.","Transfer to a pot with the stock and Basil; simmer 5 minutes.","Blend until smooth and stir in the cream.","Season and serve with grilled cheese."]
+    "ingredients": [
+      "3 lb Roma tomatoes, halved",
+      "1 onion, quartered",
+      "6 garlic cloves",
+      "¼ cup olive oil",
+      "1 tbsp Basil",
+      "2 cups vegetable stock",
+      "½ cup cream"
+    ],
+    "steps": [
+      "Roast tomatoes, onion and garlic with oil at 400°F for 40 minutes.",
+      "Transfer to a pot with the stock and Basil; simmer 5 minutes.",
+      "Blend until smooth and stir in the cream.",
+      "Season and serve with grilled cheese."
+    ],
+    "image": "images/recipes/tomato-basil-soup.jpg"
   },
   {
     "id": "weeknight-pho-bo",
@@ -502,7 +975,23 @@
     "cook": 45,
     "summary": "A shortcut phở with charred aromatics and star anise — deep, fragrant broth in under an hour.",
     "image": "images/ramen-bowl---people-of-spice.jpg",
-    "ingredients": ["1 onion and a 3-inch piece ginger, halved","8 cups beef broth","4 Whole Star Anise","1 Cinnamon Stick","2 tbsp fish sauce","1 tbsp sugar","12 oz rice noodles","8 oz sirloin, sliced paper thin","Basil, bean sprouts, lime and chile"],
-    "steps": ["Char the onion and ginger in a dry pan until blackened in spots.","Toast the star anise and cinnamon, then add broth, onion and ginger; simmer 40 minutes.","Strain and season with fish sauce and sugar.","Divide cooked noodles and raw beef among bowls and ladle over the boiling broth.","Top with herbs, sprouts, lime and chile."]
+    "ingredients": [
+      "1 onion and a 3-inch piece ginger, halved",
+      "8 cups beef broth",
+      "4 Whole Star Anise",
+      "1 Cinnamon Stick",
+      "2 tbsp fish sauce",
+      "1 tbsp sugar",
+      "12 oz rice noodles",
+      "8 oz sirloin, sliced paper thin",
+      "Basil, bean sprouts, lime and chile"
+    ],
+    "steps": [
+      "Char the onion and ginger in a dry pan until blackened in spots.",
+      "Toast the star anise and cinnamon, then add broth, onion and ginger; simmer 40 minutes.",
+      "Strain and season with fish sauce and sugar.",
+      "Divide cooked noodles and raw beef among bowls and ladle over the boiling broth.",
+      "Top with herbs, sprouts, lime and chile."
+    ]
   }
 ]
