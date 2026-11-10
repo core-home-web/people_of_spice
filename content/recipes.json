@@ -1,180 +1,5 @@
 [
   {
-    "id": "grilled-chicken-kebabs",
-    "title": "Grilled Chicken Kebabs",
-    "product": "middle-eastern-manqual",
-    "serves": "4–6",
-    "prep": 20,
-    "cook": 15,
-    "rest": 60,
-    "summary": "Juicy kebabs marinated in Middle Eastern Manqual, grilled until smoky and tender.",
-    "image": "images/Grilled_Chicken_Kebabs.webp",
-    "featured": true,
-    "equipment": [
-      "Grill or grill pan",
-      "Skewers",
-      "Mixing bowl"
-    ],
-    "ingredients": [
-      "2 lb boneless chicken thighs, cubed",
-      "3 tbsp Middle Eastern Manqual",
-      "3 tbsp olive oil",
-      "2 tbsp lemon juice",
-      "2 garlic cloves, minced",
-      "1 red onion, cut in chunks",
-      "1 bell pepper, cut in chunks",
-      "Flatbreads and yogurt sauce, to serve"
-    ],
-    "steps": [
-      "Whisk olive oil, lemon juice, garlic and Manqual in a bowl.",
-      "Add the chicken, toss to coat and marinate for 1 hour.",
-      "Heat the grill to medium-high.",
-      "Thread chicken, onion and pepper onto skewers.",
-      "Grill 12–15 minutes, turning occasionally, until charred and cooked through.",
-      "Serve with warm flatbreads and yogurt sauce."
-    ]
-  },
-  {
-    "id": "fiesta-guacamole",
-    "title": "Fiesta Guacamole",
-    "product": "hacienda-salsa-guacamole",
-    "serves": "6",
-    "prep": 15,
-    "cook": 0,
-    "summary": "Creamy guacamole lifted with Hacienda Salsa Guacamole — zesty, fresh and made for dipping.",
-    "image": "images/Fiesta_Guacamole_with_Creamy_guacamole2.webp",
-    "featured": true,
-    "equipment": [
-      "Mixing bowl",
-      "Fork or masher",
-      "Measuring spoons"
-    ],
-    "ingredients": [
-      "3 ripe avocados",
-      "2 tbsp Hacienda Salsa Guacamole",
-      "1 tomato, diced",
-      "¼ cup red onion, finely chopped",
-      "1 jalapeño, minced",
-      "2 tbsp lime juice",
-      "2 tbsp cilantro, chopped",
-      "Tortilla chips, to serve"
-    ],
-    "steps": [
-      "Halve the avocados, remove the pits and scoop the flesh into a bowl.",
-      "Mash with a fork, leaving it a little chunky.",
-      "Stir in the lime juice and Hacienda Salsa Guacamole.",
-      "Fold through the tomato, red onion, jalapeño and cilantro.",
-      "Taste, adjust with more lime or seasoning, and serve right away with chips."
-    ]
-  },
-  {
-    "id": "moroccan-lamb-tagine",
-    "title": "Moroccan Lamb Tagine",
-    "product": "tangier-ras-el-hanout",
-    "serves": "6",
-    "prep": 20,
-    "cook": 120,
-    "summary": "Slow-cooked lamb with Tangier Ras El Hanout, dried fruit and tomatoes — a rich, royal Moroccan feast.",
-    "image": "images/Moroccan_Lamb_Tagine.webp",
-    "featured": true,
-    "equipment": [
-      "Dutch oven or tagine",
-      "Wooden spoon",
-      "Mixing bowl"
-    ],
-    "ingredients": [
-      "2 lb lamb shoulder, cubed",
-      "3 tbsp Tangier Ras El Hanout",
-      "2 tbsp olive oil",
-      "1 onion, chopped",
-      "3 garlic cloves, minced",
-      "1 cup chicken broth",
-      "1 can (14 oz) diced tomatoes",
-      "1 cup dried apricots, halved",
-      "½ cup golden raisins",
-      "¼ cup slivered almonds",
-      "Fresh cilantro, chopped"
-    ],
-    "steps": [
-      "Toss the lamb with Ras El Hanout until coated.",
-      "Heat oil in a Dutch oven and brown the lamb on all sides.",
-      "Add onion and garlic and cook until softened.",
-      "Stir in broth and tomatoes and bring to a simmer.",
-      "Add apricots and raisins, cover and simmer 1½–2 hours until tender.",
-      "Scatter with almonds and cilantro; serve with couscous or flatbread."
-    ]
-  },
-  {
-    "id": "spicy-beef-stir-fry",
-    "title": "Spicy Beef Stir-Fry",
-    "product": "szechuan-five-spice",
-    "serves": "4",
-    "prep": 15,
-    "cook": 15,
-    "summary": "A bold, fiery stir-fry with Szechuan Five Spice, tender beef and crisp vegetables. Weeknight perfect.",
-    "image": "images/Spicy_Beef_Stir-Fry_Recipe_Banner.jpg",
-    "featured": true,
-    "equipment": [
-      "Wok or large skillet",
-      "Wooden spoon",
-      "Mixing bowl"
-    ],
-    "ingredients": [
-      "1 lb flank steak, thinly sliced",
-      "2 tbsp soy sauce",
-      "2 tbsp Szechuan Five Spice",
-      "2 tbsp vegetable oil",
-      "1 red bell pepper, sliced",
-      "1 onion, sliced",
-      "1 cup snow peas",
-      "1 tbsp rice vinegar",
-      "Steamed rice, to serve"
-    ],
-    "steps": [
-      "Marinate the beef with soy sauce and 1 tbsp Five Spice for 10 minutes.",
-      "Heat oil in a wok over high heat; sear the beef for 3 minutes, then remove.",
-      "Stir-fry onion, pepper and snow peas for 5 minutes.",
-      "Return the beef, add remaining Five Spice and the vinegar; toss to coat.",
-      "Serve hot over rice."
-    ]
-  },
-  {
-    "id": "thai-green-curry-with-chicken-and-vegetables",
-    "title": "Thai Green Curry with Chicken & Vegetables",
-    "product": "bangkok-green-curry",
-    "serves": "4",
-    "prep": 20,
-    "cook": 25,
-    "summary": "A fragrant Thai classic simmered with Bangkok Green Curry, coconut milk and fresh vegetables.",
-    "image": "images/Thai_Green_Curry.webp",
-    "featured": true,
-    "equipment": [
-      "Large skillet or wok",
-      "Wooden spoon",
-      "Cutting board & knife"
-    ],
-    "ingredients": [
-      "1 lb chicken breast, thinly sliced",
-      "2 tbsp Bangkok Green Curry",
-      "2 tbsp vegetable oil",
-      "1 can (14 oz) coconut milk",
-      "1 red bell pepper, sliced",
-      "1 zucchini, sliced",
-      "1 cup broccoli florets",
-      "2 tbsp fish sauce (or soy sauce)",
-      "1 tbsp brown sugar",
-      "Fresh basil, to garnish"
-    ],
-    "steps": [
-      "Heat oil in a large skillet or wok over medium heat.",
-      "Add chicken and sauté until lightly browned, about 5 minutes.",
-      "Stir in Bangkok Green Curry and cook 1 minute until fragrant.",
-      "Pour in coconut milk, fish sauce and sugar; stir well.",
-      "Add the vegetables and simmer 10–12 minutes.",
-      "Taste, adjust, and serve with basil and steamed rice."
-    ]
-  },
-  {
     "id": "pink-salt-crusted-salmon",
     "title": "Pink Salt & Citrus Salmon",
     "product": "himalayan-pink-salt",
@@ -197,7 +22,8 @@
       "Toss broccoli and tomatoes with half the oil and a grind of pink salt on a sheet pan; roast 5 minutes.",
       "Rub the salmon with the remaining oil, add to the pan skin-side up and roast 10 minutes.",
       "Finish with citrus zest and a generous grind of pink salt; serve with lemon wedges."
-    ]
+    ],
+    "featured": true
   },
   {
     "id": "smoked-salt-jammy-eggs",
@@ -423,7 +249,8 @@
       "Wrap tightly in foil and bake 2½–3 hours, until a toothpick slides easily between the bones.",
       "Unwrap, brush with the sauce mixed with the vinegar and broil 3–5 minutes until sticky."
     ],
-    "image": "images/recipes/texas-bbq-oven-ribs.jpg"
+    "image": "images/recipes/texas-bbq-oven-ribs.jpg",
+    "featured": true
   },
   {
     "id": "sheet-pan-chicken-shawarma",
@@ -449,7 +276,8 @@
       "Roast 25–30 minutes until charred at the edges, then slice.",
       "Pile into warm pitas with garlic sauce, pickles and tomatoes."
     ],
-    "image": "images/recipes/sheet-pan-chicken-shawarma.jpg"
+    "image": "images/recipes/sheet-pan-chicken-shawarma.jpg",
+    "featured": true
   },
   {
     "id": "asado-skirt-steak-chimichurri",
@@ -474,7 +302,8 @@
       "Grill over high heat 3–4 minutes per side for medium-rare.",
       "Rest 5 minutes, slice against the grain and spoon over chimichurri."
     ],
-    "image": "images/recipes/asado-skirt-steak-chimichurri.jpg"
+    "image": "images/recipes/asado-skirt-steak-chimichurri.jpg",
+    "featured": true
   },
   {
     "id": "zaatar-manakish",
@@ -497,7 +326,8 @@
       "Bake on the hot pan 8–10 minutes until golden.",
       "Serve warm with labneh and fresh vegetables."
     ],
-    "image": "images/recipes/zaatar-manakish.jpg"
+    "image": "images/recipes/zaatar-manakish.jpg",
+    "featured": true
   },
   {
     "id": "sunday-roast-pork-shoulder",
